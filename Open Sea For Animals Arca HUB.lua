@@ -875,6 +875,7 @@ local EggController = nil
 local ReplicaController = nil
 local PickupController = nil
 local PickupUtils = nil
+local PlotUtils = nil
 local Modifiers = nil
 
 pcall(function()
@@ -888,6 +889,9 @@ end)
 
 pcall(function()
     PickupUtils = require(ReplicatedStorage:WaitForChild("GameShared"):WaitForChild("PickupUtils"))
+end)
+pcall(function()
+    PlotUtils = require(ReplicatedStorage:WaitForChild("GameShared"):WaitForChild("PlotUtils"))
 end)
 pcall(function()
     Modifiers = require(ReplicatedStorage:WaitForChild("Modifiers"))
@@ -1017,6 +1021,44 @@ local function finishAndDeliverWave()
     end)
 end
 
+-- Helper: Place egg from inventory onto player's plot surface
+local function placeEggFromInventory(selectedEggType)
+    local pData = nil
+    if ReplicaController then
+        pcall(function() pData = ReplicaController:GetPlayerData() end)
+    end
+    if not pData or not pData.Inventory then return false end
+
+    local myPlot = nil
+    if PlotUtils then
+        pcall(function() myPlot = PlotUtils.GetPlayerPlot(LocalPlayer) end)
+    end
+    if not myPlot then
+        local myPlotId = nil
+        pcall(function() myPlotId = PlotService.RF.GetMyPlotId:InvokeServer() end)
+        if myPlotId then myPlot = workspace.Plots:FindFirstChild(tostring(myPlotId)) end
+    end
+    local surface = myPlot and myPlot:FindFirstChild("PlotSurface", true)
+    if not surface then return false end
+
+    for id, item in pairs(pData.Inventory) do
+        if item.itemType == "Egg" and item.innerEntity then
+            if not selectedEggType or selectedEggType == "all" or item.innerEntity.eggType == selectedEggType then
+                local offsetX = math.random(-10, 10)
+                local offsetZ = math.random(-10, 10)
+                local targetCF = CFrame.new(surface.Position + Vector3.new(offsetX, 1.5, offsetZ))
+                local s, r = pcall(function()
+                    return EggService.RF.PlaceEgg:InvokeServer(id, targetCF)
+                end)
+                if s and r then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
 local EggsList = {
     { id = "basic_egg", name = "Basic Egg" },
     { id = "seal_egg", name = "Seal Egg" },
@@ -1046,6 +1088,8 @@ local EggsList = {
 -- Teleport Coordinate Constants
 local Coords = {
     Areas = {
+        ["Spawn Location"] = Vector3.new(717, 74, 308),
+        ["Sea Edge"] = Vector3.new(661, 78, 325),
         Common = Vector3.new(531, 42, 306),
         Uncommon = Vector3.new(391, 42, 306),
         Rare = Vector3.new(251, 42, 306),
@@ -1053,20 +1097,20 @@ local Coords = {
         Floor1 = Vector3.new(-599, 42, 306)
     },
     Portals = {
-        ["Boss 1"] = Vector3.new(412, 52, 320),
-        ["Boss 2"] = Vector3.new(211, 52, 246),
-        ["Boss 3"] = Vector3.new(-12, 51, 320),
-        ["Boss 4"] = Vector3.new(-194, 50, 248),
-        ["Boss 5"] = Vector3.new(-416, 51, 318),
+        ["Boss 1"] = Vector3.new(412, 50, 344),
+        ["Boss 2"] = Vector3.new(211, 50, 271),
+        ["Boss 3"] = Vector3.new(-12, 49, 344),
+        ["Boss 4"] = Vector3.new(-194, 48, 273),
+        ["Boss 5"] = Vector3.new(-416, 49, 342),
         ["Zeus Portal"] = Vector3.new(412, 43, 283),
         ["Devil Portal"] = Vector3.new(412, 43, 283)
     },
     Plots = {
-        ["Plot 1"] = Vector3.new(718, 66, 201),
-        ["Plot 2"] = Vector3.new(772, 67, 254),
-        ["Plot 3"] = Vector3.new(772, 67, 326),
-        ["Plot 4"] = Vector3.new(772, 67, 398),
-        ["Plot 5"] = Vector3.new(772, 67, 470)
+        ["Plot 1"] = Vector3.new(733, 81, 182),
+        ["Plot 2"] = Vector3.new(733, 81, 254),
+        ["Plot 3"] = Vector3.new(733, 81, 326),
+        ["Plot 4"] = Vector3.new(733, 81, 398),
+        ["Plot 5"] = Vector3.new(733, 81, 470)
     }
 }
 
@@ -1103,6 +1147,7 @@ local config = {
     AutoStealAnimals = false,
     
     -- Eggs
+    AutoPlaceEggs = false,
     AutoHatchEgg = false,
     FastHatch = true,
     SelectedEgg = "basic_egg",
@@ -1118,6 +1163,7 @@ local config = {
     AutoRebirth = false,
     SkipRebirthAnim = true,
     AutoSpeedUpgrade = false,
+    AutoCarryUpgrade = false,
     AutoSlotUpgrade = false,
     
     -- Player
@@ -1157,12 +1203,31 @@ task.spawn(function()
             pcall(function()
                 if TrainingController then
                     if not TrainingController:IsTraining() then
-                        TrainingController:StartTraining()
+                        local myPlot = nil
+                        if PlotUtils then
+                            pcall(function() myPlot = PlotUtils.GetPlayerPlot(LocalPlayer) end)
+                        end
+                        if not myPlot then
+                            local myPlotId = nil
+                            pcall(function() myPlotId = PlotService.RF.GetMyPlotId:InvokeServer() end)
+                            if myPlotId then myPlot = workspace.Plots:FindFirstChild(tostring(myPlotId)) end
+                        end
+                        local inner = myPlot and (myPlot:FindFirstChild(myPlot.Name) or myPlot)
+                        local placeholder = inner and inner:FindFirstChild("TrainingAreaPlaceholder")
+                        if placeholder then
+                            TrainingController:StartTraining(placeholder)
+                        else
+                            TrainingController:StartTraining()
+                        end
                     end
                 else
                     TrainingService.RF.StartTraining:InvokeServer()
                 end
             end)
+        else
+            if TrainingController and TrainingController:IsTraining() then
+                pcall(function() TrainingController:StopTraining() end)
+            end
         end
     end
 end)
@@ -1277,37 +1342,58 @@ task.spawn(function()
             pcall(function() AnimalService.RF.EquipBest:InvokeServer() end)
         end
         if config.AutoStealAnimals then
-            pcall(function() AnimalService.RF.Steal:InvokeServer() end)
+            pcall(function()
+                for _, plot in ipairs(workspace.Plots:GetChildren()) do
+                    local inner = plot:FindFirstChild(plot.Name)
+                    local animals = inner and inner:FindFirstChild("Animals")
+                    if animals then
+                        for _, anim in ipairs(animals:GetChildren()) do
+                            local ownerId = anim:GetAttribute("OwnerId")
+                            local entityId = anim:GetAttribute("EntityId")
+                            if ownerId and ownerId ~= LocalPlayer.UserId and entityId then
+                                local ownerPlayer = Players:GetPlayerByUserId(ownerId)
+                                if ownerPlayer then
+                                    pcall(function() AnimalService.RF.Steal:InvokeServer(ownerPlayer, entityId) end)
+                                    task.wait(0.08)
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
         end
     end
 end)
 
--- 4. Auto Egg Hatching Worker
+-- 4. Auto Egg Hatching & Placement Worker
 task.spawn(function()
     while true do
-        task.wait(1.0)
-        if config.AutoHatchEgg then
+        task.wait(1.5)
+        if config.AutoPlaceEggs then
             pcall(function()
-                if config.FastHatch then
-                    pcall(function() EggService.RF.InitSkip:InvokeServer() end)
-                end
-                EggService.RF.HatchEgg:InvokeServer(config.SelectedEgg, config.HatchAmount, config.FastHatch)
+                placeEggFromInventory(config.SelectedEgg)
             end)
         end
         if config.AutoHatchPlotEggs then
             pcall(function()
-                local myPlotId = PlotService.RF.GetMyPlotId:InvokeServer()
+                local myPlotId = nil
+                pcall(function() myPlotId = PlotService.RF.GetMyPlotId:InvokeServer() end)
                 if myPlotId then
                     local plot = workspace.Plots:FindFirstChild(tostring(myPlotId))
-                    local inner = plot and plot:FindFirstChild(tostring(myPlotId))
+                    local inner = plot and (plot:FindFirstChild(tostring(myPlotId)) or plot)
                     local eggsFolder = inner and inner:FindFirstChild("Eggs")
                     if eggsFolder then
                         for _, egg in ipairs(eggsFolder:GetChildren()) do
-                            pcall(function()
-                                if config.FastHatch then EggService.RF.InitSkip:InvokeServer() end
-                                EggService.RF.HatchEgg:InvokeServer(egg.Name, 1, config.FastHatch)
-                            end)
-                            task.wait(0.2)
+                            local eggId = egg:GetAttribute("EggId")
+                            if eggId then
+                                local remaining = (egg:GetAttribute("StartTime") or 0) + (egg:GetAttribute("Duration") or 0) - workspace:GetServerTimeNow()
+                                if remaining <= 0 then
+                                    pcall(function() EggService.RF.HatchEgg:InvokeServer(eggId) end)
+                                elseif config.FastHatch then
+                                    pcall(function() EggService.RF.InitSkip:InvokeServer(eggId) end)
+                                end
+                            end
+                            task.wait(0.15)
                         end
                     end
                 end
@@ -1332,7 +1418,14 @@ task.spawn(function()
             pcall(function() SpinWheelService.RF.SpinWheel:InvokeServer() end)
         end
         if config.AutoDailyReward then
-            pcall(function() DailyRewardService.RF.ClaimReward:InvokeServer() end)
+            pcall(function()
+                local pData = nil
+                if ReplicaController then pData = ReplicaController:GetPlayerData() end
+                local nextDay = ((pData and pData.DailyReward and pData.DailyReward.LastClaimedDay) or 0) + 1
+                if nextDay <= 7 then
+                    DailyRewardService.RF.ClaimReward:InvokeServer(nextDay)
+                end
+            end)
         end
         if config.AutoVIPDailyReward then
             pcall(function() DailyRewardService.RF.ClaimVIPReward:InvokeServer() end)
@@ -1349,10 +1442,13 @@ task.spawn(function()
             end)
         end
         if config.AutoSpeedUpgrade then
-            pcall(function() UpgradesService.RF.PromptSpeedTier:InvokeServer() end)
+            pcall(function() UpgradesService.RF.Upgrade:InvokeServer("MovementSpeed") end)
+        end
+        if config.AutoCarryUpgrade then
+            pcall(function() UpgradesService.RF.Upgrade:InvokeServer("Carry") end)
         end
         if config.AutoSlotUpgrade then
-            pcall(function() UpgradesService.RF.PromptAnimalSlotTier:InvokeServer() end)
+            pcall(function() UpgradesService.RF.Upgrade:InvokeServer("PlotUpgrade") end)
         end
     end
 end)
@@ -1679,34 +1775,53 @@ end)
 -- ==========================================
 -- 2. EGGS TAB (Hatching & Plot Eggs)
 -- ==========================================
-local eggHatchSec = createSection(tabEggs.left, "Egg Hatching System", "rbxassetid://10747372992")
-createToggle(eggHatchSec, "Auto Hatch Selected Egg", false, function(state) config.AutoHatchEgg = state end)
-createToggle(eggHatchSec, "Fast Hatch (Skip Animation)", true, function(state) config.FastHatch = state end)
+local eggHatchSec = createSection(tabEggs.left, "Egg Placement & Hatching", "rbxassetid://10747372992")
+createToggle(eggHatchSec, "Auto Place Selected Egg", false, function(state) config.AutoPlaceEggs = state end)
+createToggle(eggHatchSec, "Auto Hatch Plot Eggs", false, function(state) config.AutoHatchPlotEggs = state end)
+createToggle(eggHatchSec, "Fast Hatch (Skip Timer)", true, function(state) config.FastHatch = state end)
 
 local eggNames = {}
 for _, item in ipairs(EggsList) do
     table.insert(eggNames, item.name)
 end
 
-createDropdown(eggHatchSec, "Select Egg Type", eggNames, EggsList[1].name, function(selected, idx)
-    config.SelectedEgg = EggsList[idx].id
+createDropdown(eggHatchSec, "Select Egg Type", eggNames, (EggsList[1] and EggsList[1].name or "Basic Egg"), function(selected, idx)
+    if EggsList[idx] then
+        config.SelectedEgg = EggsList[idx].id
+    end
 end)
 
-createDropdown(eggHatchSec, "Hatch Amount", {"1 Egg", "3 Eggs", "8 Eggs"}, "1 Egg", function(selected, idx)
-    local amounts = {1, 3, 8}
-    config.HatchAmount = amounts[idx] or 1
-end)
-
-createButton(eggHatchSec, "Hatch Once Now", function()
+createButton(eggHatchSec, "Place Selected Egg to Plot", function()
     pcall(function()
-        if config.FastHatch then EggService.RF.InitSkip:InvokeServer() end
-        EggService.RF.HatchEgg:InvokeServer(config.SelectedEgg, config.HatchAmount, config.FastHatch)
+        placeEggFromInventory(config.SelectedEgg)
+    end)
+end)
+
+createButton(eggHatchSec, "Hatch Ready Plot Eggs Now", function()
+    pcall(function()
+        local myPlotId = PlotService.RF.GetMyPlotId:InvokeServer()
+        if myPlotId then
+            local plot = workspace.Plots:FindFirstChild(tostring(myPlotId))
+            local inner = plot and plot:FindFirstChild(tostring(myPlotId))
+            local eggsFolder = inner and inner:FindFirstChild("Eggs")
+            if eggsFolder then
+                for _, egg in ipairs(eggsFolder:GetChildren()) do
+                    local eggId = egg:GetAttribute("EggId")
+                    if eggId then
+                        local remaining = (egg:GetAttribute("StartTime") or 0) + (egg:GetAttribute("Duration") or 0) - workspace:GetServerTimeNow()
+                        if remaining <= 0 then
+                            EggService.RF.HatchEgg:InvokeServer(eggId)
+                        elseif config.FastHatch then
+                            EggService.RF.InitSkip:InvokeServer(eggId)
+                        end
+                    end
+                end
+            end
+        end
     end)
 end)
 
 local plotEggSec = createSection(tabEggs.right, "Plot Egg Automation", "rbxassetid://10709789810")
-createToggle(plotEggSec, "Auto Hatch Plot Eggs", false, function(state) config.AutoHatchPlotEggs = state end)
-
 local plotEggCountLabel = createLabel(plotEggSec, "<b>Plot Eggs Placed</b>", "<font color=\"#55FF55\">0</font>")
 task.spawn(function()
     while true do
@@ -1749,6 +1864,8 @@ for i = 1, 5 do
 end
 
 local seaAreaSec = createSection(tabTeleport.left, "Sea Exploration Areas", "rbxassetid://10734898592")
+createButton(seaAreaSec, "Teleport to Spawn Location", function() teleportPlayer(Coords.Areas["Spawn Location"]) end)
+createButton(seaAreaSec, "Teleport to Sea Edge (Wave Station)", function() teleportPlayer(Coords.Areas["Sea Edge"]) end)
 createButton(seaAreaSec, "Teleport to Common Sea", function() teleportPlayer(Coords.Areas.Common) end)
 createButton(seaAreaSec, "Teleport to Uncommon Sea", function() teleportPlayer(Coords.Areas.Uncommon) end)
 createButton(seaAreaSec, "Teleport to Rare Sea", function() teleportPlayer(Coords.Areas.Rare) end)
@@ -1788,18 +1905,37 @@ createButton(rewardSec, "Spin Lucky Wheel Now", function()
 end)
 
 createButton(rewardSec, "Claim Daily Reward Now", function()
-    pcall(function() DailyRewardService.RF.ClaimReward:InvokeServer() end)
+    pcall(function()
+        local pData = ReplicaController and ReplicaController:GetPlayerData()
+        local nextDay = ((pData and pData.DailyReward and pData.DailyReward.LastClaimedDay) or 0) + 1
+        if nextDay <= 7 then
+            DailyRewardService.RF.ClaimReward:InvokeServer(nextDay)
+        end
+    end)
 end)
 
 local upgradeSec = createSection(tabRewards.right, "Stat & Slot Upgrades", "rbxassetid://10723425376")
-createToggle(upgradeSec, "Auto Speed Tier Upgrade", false, function(state) config.AutoSpeedUpgrade = state end)
-createToggle(upgradeSec, "Auto Animal Slot Upgrade", false, function(state) config.AutoSlotUpgrade = state end)
+createToggle(upgradeSec, "Auto Upgrade Speed (Cash)", false, function(state) config.AutoSpeedUpgrade = state end)
+createToggle(upgradeSec, "Auto Upgrade Carry (Cash)", false, function(state) config.AutoCarryUpgrade = state end)
+createToggle(upgradeSec, "Auto Upgrade Base Slots (Cash)", false, function(state) config.AutoSlotUpgrade = state end)
 
-createButton(upgradeSec, "Upgrade Speed Tier Now", function()
+createButton(upgradeSec, "Upgrade Speed Once (Cash)", function()
+    pcall(function() UpgradesService.RF.Upgrade:InvokeServer("MovementSpeed") end)
+end)
+
+createButton(upgradeSec, "Upgrade Carry Once (Cash)", function()
+    pcall(function() UpgradesService.RF.Upgrade:InvokeServer("Carry") end)
+end)
+
+createButton(upgradeSec, "Upgrade Base Slots Once (Cash)", function()
+    pcall(function() UpgradesService.RF.Upgrade:InvokeServer("PlotUpgrade") end)
+end)
+
+createButton(upgradeSec, "Prompt Speed Tier (Robux)", function()
     pcall(function() UpgradesService.RF.PromptSpeedTier:InvokeServer() end)
 end)
 
-createButton(upgradeSec, "Upgrade Animal Slot Now", function()
+createButton(upgradeSec, "Prompt Animal Slot Tier (Robux)", function()
     pcall(function() UpgradesService.RF.PromptAnimalSlotTier:InvokeServer() end)
 end)
 
