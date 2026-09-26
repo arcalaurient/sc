@@ -1,12 +1,2231 @@
 --[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+    ArcaHUB - Open Sea For Animals!
+    Place ID: 88047783411976
+    Game ID: 10765091041
+    Created with ArcaHUB Modern Edition Design System
+]]
 
-]]--
+-- Services
+local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local UIS = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TeleportService = game:GetService("TeleportService")
+local VirtualUser = game:GetService("VirtualUser")
+local HttpService = game:GetService("HttpService")
+local Lighting = game:GetService("Lighting")
 
-local v0=(1 + 1)^(74 -42) ;local v1=v0-1 ;local function v2(v320,v321) local v322=1202 -(373 + 829) ;local v323;local v324;while true do if (v322==(731 -(476 + 255))) then v323,v324=1130 -(369 + 761) ,1;while (v320~=(0 + 0)) or (v321~=(0 -0))  do local v1326,v1327=v320%(3 -1) ,v321%2 ;local v1328=(v1326 + v1327)%(240 -(64 + 174)) ;v323=v323 + (v1328 * v324) ;v320=math.floor(v320/(1 + 1) );v321=math.floor(v321/(2 -0) );v324=v324 * (338 -(144 + 192)) ;end v322=1;end if (v322==(217 -(42 + 174))) then return v323%v0 ;end end end local function v3(v325,v326,v327,...) local v328=0;local v329;while true do if (v328==(0 + 0)) then v329=nil;if v326 then v325=v325%v0 ;v326=v326%v0 ;v329=v2(v325,v326);if v327 then v329=v3(v329,v327,...);end return v329;elseif v325 then return v325%v0 ;else return 0;end break;end end end local function v4(v330,v331,v332,...) local v333=0 + 0 ;local v334;while true do if (v333==(0 + 0)) then v334=nil;if v331 then local v1403=1504 -(363 + 1141) ;while true do if (v1403==(1581 -(1183 + 397))) then v334=((v330 + v331) -v2(v330,v331))/(5 -3) ;if v332 then v334=v4(v334,v332,...);end v1403=2 + 0 ;end if (v1403==(2 + 0)) then return v334;end if (v1403==(1975 -(1913 + 62))) then v330=v330%v0 ;v331=v331%v0 ;v1403=1 + 0 ;end end elseif v330 then return v330%v0 ;else return v1;end break;end end end local function v5(v335) return v1-v335 ;end local function v6(v336,v337) local v338=0;while true do if (v338==(0 -0)) then if (v337<0) then return lshift(v336, -v337);end return math.floor((v336%((1935 -(565 + 1368))^(120 -88)))/(2^v337) );end end end local function v7(v339,v340) local v341=1661 -(1477 + 184) ;while true do if (v341==0) then if ((v340>31) or (v340< -(41 -10))) then return 0 + 0 ;end return v6(v339%v0 ,v340);end end end local function v8(v342,v343) local v344=856 -(564 + 292) ;while true do if (v344==0) then if (v343<(0 -0)) then return v7(v342, -v343);end return (v342 * (2^v343))%(2^32) ;end end end local function v9(v345,v346) local v347=0 -0 ;local v348;while true do if (v347==0) then v345=v345%v0 ;v346=v346%32 ;v347=305 -(244 + 60) ;end if ((1 + 0)==v347) then v348=v4(v345,(2^v346) -(477 -(41 + 435)) );return v7(v345,v346) + v8(v348,(1033 -(938 + 63)) -v346 ) ;end end end local v10={1116352408,625109108 + 1274338333 ,3049324609 -(782 + 356) ,3921009573,2521514262 -1559527099 ,1508970993,2453635748,2870763221 -0 ,5400122238 -1775741158 ,310599419 -(697 + 321) ,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,3981891461 -  -40333313 ,264347078,604808239 -(602 + 9) ,770256855 -(826 + 46) ,1524039226 -274889104 ,499911011 + 1055170681 ,1996065426 -(382 + 58) ,2554222789 -(957 + 950) ,2821834349,2835326716 -  -117670092 ,3210313671,3911140925 -574569034 ,3584528711 -0 ,113927676 -(483 + 200) ,925679630 -587437735 ,666307970 -(468 + 297) ,773529912,1586036099 -291278727 ,1396182291,481370924 + 1213812776 ,1951513161 + 35147890 ,3100377965 -923351615 ,2424096934 -  -32859103 ,2737294995 -6809074 ,2820302574 -(92 + 71) ,3259730800 -0 ,3345766497 -(600 + 1126) ,3516065817,3600352804,4094571909,275423470 -(55 + 71) ,430227734,506950406 -(573 + 1217) ,659060556,883997877,958139571,3035249209 -1712426991 ,1537002063,1747873779,1955562222,2024104863 -(25 + 23) ,2227732338 -(927 + 959) ,2361852424,2428436474,2756734919 -(16 + 716) ,3204031479 -0 ,3329325395 -(11 + 86) };local function v11(v349) return string.gsub(v349,".",function(v886) return string.format("%02x",string.byte(v886));end);end local function v12(v350,v351) local v352=0;local v353;while true do if (v352==1) then return v353;end if (v352==(0 -0)) then v353="";for v1329=286 -(175 + 110) ,v351 do local v1330=v350%(645 -389) ;v353=string.char(v1330)   .. v353 ;v350=(v350-v1330)/(1262 -1006) ;end v352=1;end end end local function v13(v354,v355) local v356=0;local v357;while true do if (v356==0) then v357=1796 -(503 + 1293) ;for v1331=v355,v355 + (8 -5)  do v357=(v357 * (186 + 70)) + string.byte(v354,v1331) ;end v356=1062 -(810 + 251) ;end if (1==v356) then return v357;end end end local function v14(v358,v359) local v360=0;local v361;while true do if (v360==0) then v361=64 -((v359 + 9)%64) ;v359=v12((6 + 2) * v359 ,8);v360=1 + 0 ;end if (v360==1) then v358=v358   .. "\128"   .. string.rep("\0",v361)   .. v359 ;assert(( #v358%(58 + 6))==0 );v360=535 -(43 + 490) ;end if (v360==(735 -(711 + 22))) then return v358;end end end local function v15(v362) local v363=0;while true do if (v363==0) then v362[3 -2 ]=1779034562 -(240 + 619) ;v362[2]=3144134277 -0 ;v363=1;end if (v363==(697 -(648 + 46))) then v362[1751 -(1344 + 400) ]=528735040 -(255 + 150) ;v362[8]=1214170107 + 327289118 ;v363=4;end if (v363==4) then return v362;end if (v363==(1 + 0)) then v362[12 -9 ]=2255525900 -1241621658 ;v362[4]=2773480762;v363=2;end if (v363==(1741 -(404 + 1335))) then v362[411 -(183 + 223) ]=1359893119;v362[7 -1 ]=2600823261 -(10 + 327) ;v363=3 + 0 ;end end end local function v16(v364,v365,v366) local v367={};for v887=339 -(118 + 220) ,16 do v367[v887]=v13(v364,v365 + ((v887-1) * (2 + 2)) );end for v889=17,513 -(108 + 341)  do local v890=v367[v889-15 ];local v891=v3(v9(v890,4 + 3 ),v9(v890,76 -58 ),v7(v890,1496 -(711 + 782) ));v890=v367[v889-(3 -1) ];v367[v889]=(v367[v889-16 ] + v891 + v367[v889-(476 -(270 + 199)) ] + v3(v9(v890,6 + 11 ),v9(v890,1838 -(580 + 1239) ),v7(v890,29 -19 )))%v0 ;end local v368,v369,v370,v371,v372,v373,v374,v375=v366[1],v366[2 + 0 ],v366[3],v366[4],v366[1 + 4 ],v366[3 + 3 ],v366[18 -11 ],v366[5 + 3 ];for v894=1168 -(645 + 522) ,1854 -(1010 + 780)  do local v895=0;local v896;local v897;local v898;local v899;local v900;local v901;while true do if (v895==(4 + 0)) then v369=v368;v368=(v901 + v898)%v0 ;break;end if (v895==2) then v375=v374;v374=v373;v373=v372;v895=3;end if (0==v895) then v896=v3(v9(v368,2),v9(v368,61 -48 ),v9(v368,64 -42 ));v897=v3(v4(v368,v369),v4(v368,v370),v4(v369,v370));v898=(v896 + v897)%v0 ;v895=1;end if (v895==(1837 -(1045 + 791))) then v899=v3(v9(v372,6),v9(v372,11),v9(v372,63 -38 ));v900=v3(v4(v372,v373),v4(v5(v372),v374));v901=(v375 + v899 + v900 + v10[v894] + v367[v894])%v0 ;v895=2 -0 ;end if (v895==(508 -(351 + 154))) then v372=(v371 + v901)%v0 ;v371=v370;v370=v369;v895=1578 -(1281 + 293) ;end end end v366[267 -(28 + 238) ]=(v366[2 -1 ] + v368)%v0 ;v366[1561 -(1381 + 178) ]=(v366[2 + 0 ] + v369)%v0 ;v366[3 + 0 ]=(v366[2 + 1 ] + v370)%v0 ;v366[13 -9 ]=(v366[4] + v371)%v0 ;v366[3 + 2 ]=(v366[475 -(381 + 89) ] + v372)%v0 ;v366[6]=(v366[6] + v373)%v0 ;v366[7 + 0 ]=(v366[5 + 2 ] + v374)%v0 ;v366[8]=(v366[8] + v375)%v0 ;end local function v17(v384) local v385=0;local v386;while true do if (v385==(1 -0)) then for v1332=1157 -(1074 + 82) , #v384,64 do v16(v384,v1332,v386);end return v11(v12(v386[1 -0 ],1788 -(214 + 1570) )   .. v12(v386[1457 -(990 + 465) ],4)   .. v12(v386[3],2 + 2 )   .. v12(v386[4],4)   .. v12(v386[5],2 + 2 )   .. v12(v386[6 + 0 ],4)   .. v12(v386[27 -20 ],1730 -(1668 + 58) )   .. v12(v386[634 -(512 + 114) ],10 -6 ) );end if (v385==(0 -0)) then v384=v14(v384, #v384);v386=v15({});v385=1;end end end local v18;local v19={["\\"]="\\",['\"']='\"',["\b"]="b",["\f"]="f",["\n"]="n",["\r"]="r",["\t"]="t"};local v20={["/"]="/"};for v387,v388 in pairs(v19) do v20[v388]=v387;end local v21=function(v390) return "\\"   .. (v19[v390] or string.format("u%04x",v390:byte())) ;end;local v22=function(v391) return "null";end;local v10=function(v392,v393) local v394={};v393=v393 or {} ;if v393[v392] then error("circular reference");end v393[v392]=true;if ((rawget(v392,3 -2 )~=nil) or (next(v392)==nil)) then local v1100=0 + 0 ;local v1101;while true do if (0==v1100) then v1101=0;for v1479 in pairs(v392) do if (type(v1479)~="number") then error("invalid table: mixed or invalid key types");end v1101=v1101 + 1 + 0 ;end v1100=1 + 0 ;end if (v1100==(3 -2)) then if (v1101~= #v392) then error("invalid table: sparse array");end for v1480,v1481 in ipairs(v392) do table.insert(v394,v18(v1481,v393));end v1100=2;end if (v1100==(1996 -(109 + 1885))) then v393[v392]=nil;return "["   .. table.concat(v394,",")   .. "]" ;end end else local v1102=1469 -(1269 + 200) ;while true do if (0==v1102) then for v1482,v1483 in pairs(v392) do local v1484=0;while true do if (v1484==(0 -0)) then if (type(v1482)~="string") then error("invalid table: mixed or invalid key types");end table.insert(v394,v18(v1482,v393)   .. ":"   .. v18(v1483,v393) );break;end end end v393[v392]=nil;v1102=816 -(98 + 717) ;end if (v1102==1) then return "{"   .. table.concat(v394,",")   .. "}" ;end end end end;local v23=function(v396) return '"'   .. v396:gsub('[%z\1-\31\\"]',v21)   .. '"' ;end;local v24=function(v397) local v398=0;while true do if (v398==(826 -(802 + 24))) then if ((v397~=v397) or (v397<= -math.huge) or (v397>=math.huge)) then error("unexpected number value '"   .. tostring(v397)   .. "'" );end return string.format("%.14g",v397);end end end;local v25={["nil"]=v22,table=v10,string=v23,number=v24,boolean=tostring};function v18(v399,v400) local v401=0 -0 ;local v402;local v403;while true do if (v401==(1 -0)) then if v403 then return v403(v399,v400);end error("unexpected type '"   .. v402   .. "'" );break;end if (v401==0) then v402=type(v399);v403=v25[v402];v401=1;end end end local v26=function(v404) return v18(v404);end;local v27;local v28=function(...) local v405={};for v902=1,select("#",...) do v405[select(v902,...)]=true;end return v405;end;local v29=v28(" ","\t","\r","\n");local v30=v28(" ","\t","\r","\n","]","}",",");local v31=v28("\\","/",'"',"b","f","n","r","t","u");local v32=v28("true","false","null");local v33={["true"]=true,["false"]=false,null=nil};local v34=function(v406,v407,v408,v409) for v904=v407, #v406 do if (v408[v406:sub(v904,v904)]~=v409) then return v904;end end return  #v406 + 1 ;end;local v35=function(v410,v411,v412) local v413=1 + 0 ;local v414=1 + 0 ;for v905=1 + 0 ,v411-(1 + 0)  do local v906=0 -0 ;while true do if (v906==(0 -0)) then v414=v414 + 1 ;if (v410:sub(v905,v905)=="\n") then local v1485=0 + 0 ;while true do if (v1485==(0 + 0)) then v413=v413 + 1 ;v414=1;break;end end end break;end end end error(string.format("%s at line %d col %d",v412,v413,v414));end;local v36=function(v415) local v416=math.floor;if (v415<=127) then return string.char(v415);elseif (v415<=(1689 + 358)) then return string.char(v416(v415/(47 + 17) ) + 90 + 102 ,(v415%(1497 -(797 + 636))) + 128 );elseif (v415<=65535) then return string.char(v416(v415/(19887 -15791) ) + 224 ,v416((v415%(5715 -(1427 + 192)))/(23 + 41) ) + 128 ,(v415%(148 -84)) + 116 + 12 );elseif (v415<=1114111) then return string.char(v416(v415/(118800 + 143344) ) + (566 -(192 + 134)) ,v416((v415%262144)/4096 ) + (1404 -(316 + 960)) ,v416((v415%(2280 + 1816))/(50 + 14) ) + 119 + 9 ,(v415%64) + (489 -361) );end error(string.format("invalid unicode codepoint '%x'",v415));end;local v37=function(v417) local v418=551 -(83 + 468) ;local v419;local v420;while true do if (v418==(1807 -(1202 + 604))) then if v420 then return v36(((((v419-55296) * (4780 -3756)) + v420) -(93734 -37414)) + (181452 -115916) );else return v36(v419);end break;end if (v418==(325 -(45 + 280))) then v419=tonumber(v417:sub(1 + 0 ,4),14 + 2 );v420=tonumber(v417:sub(3 + 4 ,6 + 4 ),16);v418=1 + 0 ;end end end;local v38=function(v421,v422) local v423=0 -0 ;local v424;local v425;local v426;while true do if (v423==0) then v424="";v425=v422 + (1912 -(340 + 1571)) ;v423=1;end if (v423==(1 + 0)) then v426=v425;while v425<= #v421  do local v1333=1772 -(1733 + 39) ;local v1334;while true do if (v1333==1) then v425=v425 + (2 -1) ;break;end if (v1333==0) then v1334=v421:byte(v425);if (v1334<(1066 -(125 + 909))) then v35(v421,v425,"control character in string");elseif (v1334==92) then v424=v424   .. v421:sub(v426,v425-(1949 -(1096 + 852)) ) ;v425=v425 + 1 ;local v1582=v421:sub(v425,v425);if (v1582=="u") then local v1610=0 + 0 ;local v1611;while true do if ((0 -0)==v1610) then v1611=v421:match("^[dD][89aAbB]%x%x\\u%x%x%x%x",v425 + 1 + 0 ) or v421:match("^%x%x%x%x",v425 + 1 ) or v35(v421,v425-(513 -(409 + 103)) ,"invalid unicode escape in string") ;v424=v424   .. v37(v1611) ;v1610=237 -(46 + 190) ;end if (v1610==(96 -(51 + 44))) then v425=v425 +  #v1611 ;break;end end else local v1612=0 + 0 ;while true do if (v1612==0) then if  not v31[v1582] then v35(v421,v425-(1318 -(1114 + 203)) ,"invalid escape char '"   .. v1582   .. "' in string" );end v424=v424   .. v20[v1582] ;break;end end end v426=v425 + (727 -(228 + 498)) ;elseif (v1334==34) then v424=v424   .. v421:sub(v426,v425-1 ) ;return v424,v425 + 1 + 0 ;end v1333=1;end end end v423=2;end if (v423==(2 + 0)) then v35(v421,v422,"expected closing quote for string");break;end end end;local v39=function(v427,v428) local v429=0;local v430;local v431;local v432;while true do if (v429==(664 -(174 + 489))) then v432=tonumber(v431);if  not v432 then v35(v427,v428,"invalid number '"   .. v431   .. "'" );end v429=2;end if (v429==(0 -0)) then v430=v34(v427,v428,v30);v431=v427:sub(v428,v430-(1906 -(830 + 1075)) );v429=1;end if (v429==(526 -(303 + 221))) then return v432,v430;end end end;local v40=function(v433,v434) local v435=0;local v436;local v437;while true do if (v435==1) then if  not v32[v437] then v35(v433,v434,"invalid literal '"   .. v437   .. "'" );end return v33[v437],v436;end if (v435==(1269 -(231 + 1038))) then v436=v34(v433,v434,v30);v437=v433:sub(v434,v436-1 );v435=1;end end end;local v41=function(v438,v439) local v440=0 + 0 ;local v441;local v442;while true do if (v440==1) then v439=v439 + 1 ;while 1 do local v1335;v439=v34(v438,v439,v29,true);if (v438:sub(v439,v439)=="]") then v439=v439 + (1163 -(171 + 991)) ;break;end v1335,v439=v27(v438,v439);v441[v442]=v1335;v442=v442 + 1 ;v439=v34(v438,v439,v29,true);local v1337=v438:sub(v439,v439);v439=v439 + (4 -3) ;if (v1337=="]") then break;end if (v1337~=",") then v35(v438,v439,"expected ']' or ','");end end v440=5 -3 ;end if (v440==0) then v441={};v442=2 -1 ;v440=1 + 0 ;end if (v440==(6 -4)) then return v441,v439;end end end;local v42=function(v443,v444) local v445={};v444=v444 + (2 -1) ;while 1 do local v907,v908;v444=v34(v443,v444,v29,true);if (v443:sub(v444,v444)=="}") then v444=v444 + (1 -0) ;break;end if (v443:sub(v444,v444)~='"') then v35(v443,v444,"expected string for key");end v907,v444=v27(v443,v444);v444=v34(v443,v444,v29,true);if (v443:sub(v444,v444)~=":") then v35(v443,v444,"expected ':' after key");end v444=v34(v443,v444 + (3 -2) ,v29,true);v908,v444=v27(v443,v444);v445[v907]=v908;v444=v34(v443,v444,v29,true);local v910=v443:sub(v444,v444);v444=v444 + 1 ;if (v910=="}") then break;end if (v910~=",") then v35(v443,v444,"expected '}' or ','");end end return v445,v444;end;local v43={['"']=v38,["0"]=v39,["1"]=v39,["2"]=v39,["3"]=v39,["4"]=v39,["5"]=v39,["6"]=v39,["7"]=v39,["8"]=v39,["9"]=v39,["-"]=v39,t=v40,f=v40,n=v40,["["]=v41,["{"]=v42};function v27(v446,v447) local v448=v446:sub(v447,v447);local v449=v43[v448];if v449 then return v449(v446,v447);end v35(v446,v447,"unexpected character '"   .. v448   .. "'" );end local v44=function(v450) if (type(v450)~="string") then error("expected argument of type string, got "   .. type(v450) );end local v451,v452=v27(v450,v34(v450,1249 -(111 + 1137) ,v29,true));v452=v34(v450,v452,v29,true);if (v452<= #v450) then v35(v450,v452,"trailing garbage");end return v451;end;local v45,v46,v47=v26,v44,v17;local v48=29516;local v49="bd04450f-879f-4a31-92e2-867f27de1700";local v50=true;local v51=function(v453) end;if  not game:IsLoaded() then game.Loaded:Wait();end local v52=false;local v53=request or http_request or syn_request ;local v54=function(v454) local v455=158 -(91 + 67) ;local v456;local v457;while true do if ((0 -0)==v455) then v456,v457=pcall(v53,v454);if (v456 and v457) then return v457;else return {StatusCode=125 + 375 ,Body='{"success":false,"message":"Network error. Could not resolve host."}'};end break;end end end;local v55,v56,v57,v58,v59,v60,v61,v62=setclipboard or toclipboard ,string.char,tostring,string.sub,os.time,math.random,math.floor,gethwid or function() return game:GetService("Players").LocalPlayer.UserId;end ;local v63,v64="",523 -(423 + 100) ;local v65="https://api.platoboost.com";local v66,v67=pcall(function() return v54({Url=v65   .. "/public/connectivity" ,Method="GET"});end);if ( not v66 or (v67 and (v67.StatusCode~=200) and (v67.StatusCode~=(4 + 425)))) then v65="https://api.platoboost.net";end function cacheLink() if ((v64 + ((27 -17) * 60))<v59()) then local v1103=0;local v1104;local v1105;while true do if (v1103==(2 + 0)) then return false,v1105;end if (v1103==1) then v1105="Failed to cache link.";v51(v1105);v1103=773 -(326 + 445) ;end if (v1103==(0 -0)) then v1104=v54({Url=v65   .. "/public/start" ,Method="POST",Body=v45({service=v48,identifier=v47(v62())}),Headers={["Content-Type"]="application/json"}});if (v1104.StatusCode==(445 -245)) then local v1521=v46(v1104.Body);if (v1521.success==true) then local v1559=0;while true do if (v1559==0) then v63=v1521.data.url;v64=v59();v1559=2 -1 ;end if (v1559==(712 -(530 + 181))) then return true,v63;end end else v51(v1521.message);return false,v1521.message;end elseif (v1104.StatusCode==(1310 -(614 + 267))) then local v1560="you are being rate limited, please wait 20 seconds and try again.";v51(v1560);return false,v1560;end v1103=1;end end else return true,v63;end end cacheLink();local v68=function() local v458="";for v911=33 -(19 + 13) ,25 -9  do v458=v458   .. v56(v61(v60() * ((122 -(225 -128)) + (2 -1)) ) + 26 + 71 ) ;end return v458;end;for v459=1 -0 ,10 -5  do local v460=1812 -(1293 + 519) ;local v461;while true do if (v460==(0 -0)) then v461=v68();task.wait(0.2);v460=2 -1 ;end if (v460==(1 -0)) then if (v68()==v461) then local v1406=0 -0 ;local v1407;while true do if (v1406==(2 -1)) then error(v1407);break;end if (v1406==0) then v1407="platoboost nonce error.";v51(v1407);v1406=1 + 0 ;end end end break;end end end local v69=function() local v462=0;local v463;local v464;while true do if (v462==(0 + 0)) then v463,v464=cacheLink();if v463 then v55(v464);end break;end end end;local v70=function(v465) local v466=v68();local v467=v65   .. "/public/redeem/"   .. v57(v48) ;local v468={identifier=v47(v62()),key=v465};if v50 then v468.nonce=v466;end local v469=v54({Url=v467,Method="POST",Body=v45(v468),Headers={["Content-Type"]="application/json"}});if (v469.StatusCode==(464 -264)) then local v1107=v46(v469.Body);if (v1107.success==true) then if (v1107.data.valid==true) then if v50 then if (v1107.data.hash==v47("true"   .. "-"   .. v466   .. "-"   .. v49 )) then return true;else local v1573=0 + 0 ;while true do if (v1573==0) then v51("failed to verify integrity.");return false;end end end else return true;end else v51("key is invalid.");return false;end elseif (v58(v1107.message,1 + 0 ,17 + 10 )=="unique constraint violation") then v51("you already have an active key, please wait for it to expire before redeeming it.");return false;else local v1486=0;while true do if (v1486==0) then v51(v1107.message);return false;end end end elseif (v469.StatusCode==(1525 -(709 + 387))) then local v1338=1858 -(673 + 1185) ;while true do if (v1338==(0 -0)) then v51("you are being rate limited, please wait 20 seconds and try again.");return false;end end else v51("server returned an invalid status code, please try again later.");return false;end end;local v71=function(v470) if (v52==true) then v51("a request is already being sent, please slow down.");return false;else v52=true;end local v471=v68();local v472=v65   .. "/public/whitelist/"   .. v57(v48)   .. "?identifier="   .. v47(v62())   .. "&key="   .. v470 ;if v50 then v472=v472   .. "&nonce="   .. v471 ;end local v473=v54({Url=v472,Method="GET"});v52=false;if (v473.StatusCode==200) then local v1108=v46(v473.Body);if (v1108.success==true) then if (v1108.data.valid==true) then if v50 then if (v1108.data.hash==v47("true"   .. "-"   .. v471   .. "-"   .. v49 )) then return true;else local v1574=0;while true do if (0==v1574) then v51("failed to verify integrity.");return false;end end end else return true;end elseif (v58(v470,1,12 -8 )=="KEY_") then return v70(v470);else local v1528=0 -0 ;while true do if (v1528==0) then v51("key is invalid.");return false;end end end else local v1339=0 + 0 ;while true do if (v1339==(0 + 0)) then v51(v1108.message);return false;end end end elseif (v473.StatusCode==(578 -149)) then v51("you are being rate limited, please wait 20 seconds and try again.");return false;else local v1340=0 + 0 ;while true do if (v1340==(0 -0)) then v51("server returned an invalid status code, please try again later.");return false;end end end end;local v72=function(v474) local v475=0 -0 ;local v476;local v477;local v478;while true do if (v475==(1881 -(446 + 1434))) then if v50 then v477=v477   .. "&nonce="   .. v476 ;end v478=v54({Url=v477,Method="GET"});v475=1285 -(1040 + 243) ;end if (v475==2) then if (v478.StatusCode==(596 -396)) then local v1408=1847 -(559 + 1288) ;local v1409;while true do if (v1408==(1931 -(609 + 1322))) then v1409=v46(v478.Body);if (v1409.success==true) then if v50 then if (v1409.data.hash==v47(v57(v1409.data.value)   .. "-"   .. v476   .. "-"   .. v49 )) then return v1409.data.value;else v51("failed to verify integrity.");return nil;end else return v1409.data.value;end else local v1575=0;while true do if (v1575==0) then v51(v1409.message);return nil;end end end break;end end else return nil;end break;end if (v475==(454 -(13 + 441))) then v476=v68();v477=v65   .. "/public/flag/"   .. v57(v48)   .. "?name="   .. v474 ;v475=1;end end end;local v73=game:GetService("CoreGui");local v74=game:GetService("TweenService");local v75=game:GetService("HttpService");local v76="ArcaHUB_Key.txt";local v77=false;if (isfile and readfile and isfile(v76)) then local v912=readfile(v76);if (v912 and (v912~="")) then if v71(v912) then v77=true;end end end if  not v77 then if v73:FindFirstChild("ArcaHUB_Gatekeeper") then v73:FindFirstChild("ArcaHUB_Gatekeeper"):Destroy();end local v913=Instance.new("ScreenGui");v913.Name="ArcaHUB_Gatekeeper";v913.Parent=v73;v913.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;v913.ResetOnSpawn=false;local v919=Instance.new("Frame");v919.Name="MainFrame";v919.Parent=v913;v919.BackgroundColor3=Color3.fromRGB(15,55 -40 ,47 -29 );v919.BackgroundTransparency=0.1 -0 ;v919.Position=UDim2.new(0.5 + 0 ,0 -0 ,0.5 + 0 ,0 + 0 );v919.Size=UDim2.new(0 -0 ,0 + 0 ,0,0 -0 );v919.AnchorPoint=Vector2.new(0.5,0.5 + 0 );v919.BorderSizePixel=0 + 0 ;v919.ClipsDescendants=true;v919.Active=true;local v930=game:GetService("UserInputService");local v931,v932,v933,v934;local function v935(v1109) local v1110=0 + 0 ;local v1111;while true do if (v1110==(0 + 0)) then v1111=v1109.Position-v933 ;v919.Position=UDim2.new(v934.X.Scale,v934.X.Offset + v1111.X ,v934.Y.Scale,v934.Y.Offset + v1111.Y );break;end end end v919.InputBegan:Connect(function(v1112) if ((v1112.UserInputType==Enum.UserInputType.MouseButton1) or (v1112.UserInputType==Enum.UserInputType.Touch)) then v931=true;v933=v1112.Position;v934=v919.Position;v1112.Changed:Connect(function() if (v1112.UserInputState==Enum.UserInputState.End) then v931=false;end end);end end);v919.InputChanged:Connect(function(v1113) if ((v1113.UserInputType==Enum.UserInputType.MouseMovement) or (v1113.UserInputType==Enum.UserInputType.Touch)) then v932=v1113;end end);v930.InputChanged:Connect(function(v1114) if ((v1114==v932) and v931) then v935(v1114);end end);local v936=Instance.new("UICorner");v936.CornerRadius=UDim.new(0,12);v936.Parent=v919;local v939=Instance.new("UIStroke");v939.Parent=v919;v939.Color=Color3.fromRGB(250 + 5 ,688 -(153 + 280) ,255);v939.Transparency=0.9;v939.Thickness=1.5;v74:Create(v919,TweenInfo.new(0.6 -0 ,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Size=UDim2.new(0 + 0 ,135 + 205 ,0,370)}):Play();local v944=Instance.new("Frame");v944.Parent=v919;v944.BackgroundTransparency=1 + 0 ;v944.Size=UDim2.new(1,0 + 0 ,1 + 0 ,0 -0 );local v948=Instance.new("ImageLabel");v948.Parent=v944;v948.BackgroundTransparency=0 + 0 ;v948.BackgroundColor3=Color3.fromRGB(687 -(89 + 578) ,20,18 + 6 );local v952=Instance.new("UICorner");v952.CornerRadius=UDim.new(0 -0 ,1073 -(572 + 477) );v952.Parent=v948;v948.Position=UDim2.new(0.5 + 0 , -(31 + 19),0 + 0 ,111 -(84 + 2) );v948.Size=UDim2.new(0,164 -64 ,0 + 0 ,942 -(497 + 345) );local v957="rbxassetid://10723381666";if (isfile and isfile("ARCA_HUB_LOGO.png") and getcustomasset) then pcall(function() v957=getcustomasset("ARCA_HUB_LOGO.png");end);end v948.Image=v957;v948.ScaleType=Enum.ScaleType.Fit;local v961=Instance.new("TextLabel");v961.Parent=v944;v961.BackgroundTransparency=1 + 0 ;v961.Position=UDim2.new(0 + 0 ,0,0,1473 -(605 + 728) );v961.Size=UDim2.new(1 + 0 ,0 -0 ,0 + 0 ,110 -80 );v961.Font=Enum.Font.Gotham;v961.Text="ARCA HUB";v961.TextColor3=Color3.fromRGB(230 + 25 ,255,706 -451 );v961.TextSize=19 + 5 ;local v971=Instance.new("TextLabel");v971.Parent=v944;v971.BackgroundTransparency=490 -(457 + 32) ;v971.Position=UDim2.new(0,0 + 0 ,1402 -(832 + 570) ,170);v971.Size=UDim2.new(1,0 + 0 ,0 + 0 ,70 -50 );v971.Font=Enum.Font.Gotham;v971.Text="Authentication Required";v971.TextColor3=Color3.fromRGB(73 + 77 ,946 -(588 + 208) ,150);v971.TextSize=13;local v980=Instance.new("Frame");v980.Parent=v944;v980.BackgroundColor3=Color3.fromRGB(67 -42 ,1825 -(884 + 916) ,30);v980.Position=UDim2.new(0.5, -(293 -153),0,122 + 88 );v980.Size=UDim2.new(653 -(232 + 421) ,280,0,42);v980.BorderSizePixel=1889 -(1569 + 320) ;Instance.new("UICorner",v980).CornerRadius=UDim.new(0,2 + 6 );local v987=Instance.new("UIStroke",v980);v987.Color=Color3.fromRGB(100,19 + 81 ,255);v987.Transparency=3 -2 ;v987.Thickness=1.5;local v991=Instance.new("ImageLabel");v991.Parent=v980;v991.BackgroundTransparency=1;v991.Position=UDim2.new(605 -(316 + 289) ,31 -19 ,0.5, -(1 + 9));v991.Size=UDim2.new(0,1473 -(666 + 787) ,425 -(360 + 65) ,20);v991.Image="rbxassetid://10734938361";v991.ImageColor3=Color3.fromRGB(141 + 9 ,150,150);local v998=Instance.new("TextBox");v998.Parent=v980;v998.BackgroundTransparency=255 -(79 + 175) ;v998.Position=UDim2.new(0 -0 ,42,0 + 0 ,0 -0 );v998.Size=UDim2.new(1 -0 , -(951 -(503 + 396)),182 -(92 + 89) ,0 -0 );v998.PlaceholderColor3=Color3.fromRGB(62 + 58 ,72 + 48 ,509 -379 );v998.Font=Enum.Font.Gotham;v998.PlaceholderText="Enter License Key...";v998.Text="";v998.TextColor3=Color3.fromRGB(35 + 220 ,581 -326 ,223 + 32 );v998.TextSize=7 + 7 ;v998.TextXAlignment=Enum.TextXAlignment.Left;v998.ClearTextOnFocus=false;v998.Focused:Connect(function() v74:Create(v987,TweenInfo.new(0.3),{Transparency=0.5}):Play();v74:Create(v991,TweenInfo.new(0.3 -0 ),{ImageColor3=Color3.fromRGB(13 + 87 ,152 -52 ,1499 -(485 + 759) )}):Play();end);v998.FocusLost:Connect(function() v74:Create(v987,TweenInfo.new(0.3),{Transparency=2 -1 }):Play();v74:Create(v991,TweenInfo.new(0.3),{ImageColor3=Color3.fromRGB(150,150,1339 -(442 + 747) )}):Play();end);local function v1012(v1115,v1116,v1117,v1118) local v1119=1135 -(832 + 303) ;local v1120;local v1121;local v1122;local v1123;local v1124;while true do if (v1119==(950 -(88 + 858))) then v1123=Instance.new("ImageLabel");v1123.Parent=v1121;v1123.BackgroundTransparency=1 + 0 ;v1123.Size=UDim2.new(0,15 + 3 ,0,1 + 17 );v1123.Image=v1116;v1119=794 -(766 + 23) ;end if (7==v1119) then v1124.TextSize=64 -51 ;v1124.LayoutOrder=2 -0 ;v1120.MouseEnter:Connect(function() v74:Create(v1120,TweenInfo.new(0.2),{BackgroundColor3=Color3.fromRGB((v1118.R * 255) + (52 -32) ,(v1118.G * 255) + (67 -47) ,(v1118.B * (1328 -(1036 + 37))) + 15 + 5 )}):Play();end);v1120.MouseLeave:Connect(function() v74:Create(v1120,TweenInfo.new(0.2),{BackgroundColor3=v1118}):Play();end);return v1120,v1124;end if (v1119==2) then v1121.Parent=v1120;v1121.BackgroundTransparency=1 -0 ;v1121.Size=UDim2.new(1 + 0 ,1480 -(641 + 839) ,914 -(910 + 3) ,0 -0 );v1122=Instance.new("UIListLayout");v1122.Parent=v1121;v1119=3;end if (v1119==(1687 -(1466 + 218))) then v1122.FillDirection=Enum.FillDirection.Horizontal;v1122.HorizontalAlignment=Enum.HorizontalAlignment.Center;v1122.VerticalAlignment=Enum.VerticalAlignment.Center;v1122.Padding=UDim.new(0 + 0 ,1156 -(556 + 592) );v1122.SortOrder=Enum.SortOrder.LayoutOrder;v1119=2 + 2 ;end if (v1119==(809 -(329 + 479))) then v1120.Font=Enum.Font.Gotham;v1120.Text="";v1120.AutoButtonColor=false;Instance.new("UICorner",v1120).CornerRadius=UDim.new(854 -(174 + 680) ,27 -19 );v1121=Instance.new("Frame");v1119=3 -1 ;end if (v1119==(0 + 0)) then v1120=Instance.new("TextButton");v1120.Parent=v944;v1120.BackgroundColor3=v1118;v1120.Position=UDim2.new(0.5,v1117,739 -(396 + 343) ,265);v1120.Size=UDim2.new(0 + 0 ,1612 -(29 + 1448) ,0,1429 -(135 + 1254) );v1119=1;end if (v1119==(18 -13)) then v1123.ImageColor3=Color3.fromRGB(255,1190 -935 ,255);v1123.LayoutOrder=1 + 0 ;v1124=Instance.new("TextLabel");v1124.Parent=v1121;v1124.BackgroundTransparency=1528 -(389 + 1138) ;v1119=6;end if (v1119==(580 -(102 + 472))) then v1124.Size=UDim2.new(0 + 0 ,0 + 0 ,1 + 0 ,1545 -(320 + 1225) );v1124.AutomaticSize=Enum.AutomaticSize.X;v1124.Font=Enum.Font.Gotham;v1124.Text=v1115;v1124.TextColor3=Color3.fromRGB(453 -198 ,157 + 98 ,1719 -(157 + 1307) );v1119=7;end end end local v1013=v1012("Get Key","rbxassetid://10723415903", -140,Color3.fromRGB(1899 -(821 + 1038) ,99 -59 ,5 + 40 ));local v1014,v1015=v1012("Verify","rbxassetid://10709790644",8 -3 ,Color3.fromRGB(50,100,95 + 160 ));local v1016=Instance.new("Frame");v1016.Parent=v944;v1016.BackgroundColor3=Color3.fromRGB(632 -377 ,1076 -(834 + 192) ,4 + 46 );v1016.BackgroundTransparency=1 + 0 ;v1016.Position=UDim2.new(0.5, -(4 + 136),0,320);v1016.Size=UDim2.new(0 -0 ,280,304 -(300 + 4) ,30);Instance.new("UICorner",v1016).CornerRadius=UDim.new(0 + 0 ,6);local v1023=Instance.new("TextLabel");v1023.Parent=v1016;v1023.BackgroundTransparency=2 -1 ;v1023.Size=UDim2.new(363 -(112 + 250) ,0 + 0 ,1,0);v1023.Font=Enum.Font.Gotham;v1023.Text="";v1023.TextColor3=Color3.fromRGB(638 -383 ,147 + 108 ,132 + 123 );v1023.TextSize=9 + 3 ;v1023.TextTransparency=1 + 0 ;local function v1032(v1125,v1126) local v1127=0 + 0 ;while true do if (0==v1127) then v1023.Text=v1125;v74:Create(v1016,TweenInfo.new(1414.3 -(1001 + 413) ),{BackgroundColor3=v1126,BackgroundTransparency=0.2}):Play();v1127=1;end if (v1127==(2 -1)) then v74:Create(v1023,TweenInfo.new(882.3 -(244 + 638) ),{TextTransparency=0}):Play();task.delay(696 -(627 + 66) ,function() v74:Create(v1016,TweenInfo.new(0.3),{BackgroundTransparency=2 -1 }):Play();v74:Create(v1023,TweenInfo.new(602.3 -(512 + 90) ),{TextTransparency=1907 -(1665 + 241) }):Play();end);break;end end end function v51(v1128) v1032(v1128,Color3.fromRGB(255,867 -(373 + 344) ,23 + 27 ));end task.delay(0.4,function() end);v1013.MouseButton1Click:Connect(function() local v1129=0 + 0 ;while true do if (v1129==0) then v69();v1032("Link copied! Open browser to get key.",Color3.fromRGB(131 -81 ,338 -138 ,100));break;end end end);v1014.MouseButton1Click:Connect(function() local v1130=v998.Text;if (v1130=="") then v1032("Please enter your key!",Color3.fromRGB(1354 -(35 + 1064) ,80,59 + 21 ));return;end v1015.Text="Verifying";local v1132=v71(v1130);v1015.Text="Verify";if v1132 then local v1343=0 -0 ;while true do if (v1343==2) then v74:Create(v919,TweenInfo.new(0.5 + 0 ,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{Size=UDim2.new(1236 -(298 + 938) ,0,1259 -(233 + 1026) ,1666 -(636 + 1030) )}):Play();v913:Destroy();break;end if (v1343==1) then v1032("Authenticated! Loading...",Color3.fromRGB(50,103 + 97 ,100));task.wait(0.3);v1343=2;end if (v1343==0) then v77=true;if writefile then writefile(v76,v1130);end v1343=1 + 0 ;end end else v1032("Invalid License Key!",Color3.fromRGB(76 + 179 ,80,6 + 74 ));end end);while  not v77 do task.wait(0.5);end end local v74=game:GetService("TweenService");local v73=game:GetService("CoreGui");local v78=game:GetService("Players");local v79=v78.LocalPlayer;local v80=game:GetService("UserInputService");local v81=game:GetService("RunService");local v82=game:GetService("ReplicatedStorage");local v83=game:GetService("TeleportService");local v84=game:GetService("VirtualUser");local v75=game:GetService("HttpService");local v85=game:GetService("Lighting");if v79.PlayerGui:FindFirstChild("ArcaHUB") then v79.PlayerGui.ArcaHUB:Destroy();end local v86=Instance.new("ScreenGui");v86.Name="ArcaHUB";v86.ResetOnSpawn=false;v86.Parent=v79.PlayerGui;local v91={Accent=Color3.fromRGB(255,306 -(55 + 166) ,0 + 0 ),Background=Color3.fromRGB(12,2 + 10 ,45 -33 ),Sidebar=Color3.fromRGB(313 -(36 + 261) ,16,16),Card=Color3.fromRGB(31 -13 ,1386 -(34 + 1334) ,7 + 11 ),Element=Color3.fromRGB(19 + 5 ,1307 -(1035 + 248) ,45 -(20 + 1) ),Border=Color3.fromRGB(19 + 16 ,354 -(134 + 185) ,35),Text=Color3.fromRGB(1378 -(549 + 584) ,930 -(314 + 371) ,840 -595 ),TextDim=Color3.fromRGB(1108 -(478 + 490) ,75 + 65 ,1312 -(786 + 386) ),Hover=Color3.fromRGB(97 -67 ,1409 -(1055 + 324) ,1370 -(1093 + 247) ),Radius=UDim.new(0 + 0 ,6)};local function v92(v479,v480,v481) v479.MouseEnter:Connect(function() v74:Create(v479,TweenInfo.new(0.2 + 0 ),{BackgroundColor3=v481}):Play();end);v479.MouseLeave:Connect(function() v74:Create(v479,TweenInfo.new(0.2 -0 ),{BackgroundColor3=v480}):Play();end);end local v93={UIScale=1};local v94=Instance.new("UIScale");v94.Scale=v93.UIScale;v94.Parent=v86;local v98=Instance.new("Frame");v98.Size=UDim2.new(0 -0 ,2134 -1384 ,0 -0 ,185 + 335 );v98.Position=UDim2.new(0.5 -0 , -(1292 -917),0.5 + 0 , -260);v98.BackgroundColor3=v91.Background;v98.BorderSizePixel=0;v98.Active=true;v98.Draggable=true;v98.Parent=v86;Instance.new("UICorner",v98).CornerRadius=v91.Radius;local v109=Instance.new("UIStroke");v109.Color=v91.Border;v109.Parent=v98;local v113={"","rbxassetid://10709761813","rbxassetid://7733917120","rbxassetid://10723415766"};local v114=2 -1 ;local v115=Instance.new("ImageLabel");v115.Size=UDim2.new(1 + 0 ,0,4 -3 ,0);v115.BackgroundTransparency=1 -0 ;v115.ImageTransparency=0.8 -0 ;v115.ZIndex=1268 -(1249 + 19) ;v115.Parent=v98;Instance.new("UICorner",v115).CornerRadius=v91.Radius;local v122=Instance.new("Frame");v122.Size=UDim2.new(0,64,1,0);v122.BackgroundColor3=v91.Sidebar;v122.BorderSizePixel=0 + 0 ;v122.Parent=v98;Instance.new("UICorner",v122).CornerRadius=v91.Radius;local v129=Instance.new("ImageLabel");v129.Size=UDim2.new(0 -0 ,1112 -(686 + 400) ,0 + 0 ,26);v129.Position=UDim2.new(229.5 -(73 + 156) , -(1 + 12),0,826 -(721 + 90) );v129.BackgroundTransparency=1 + 0 ;v129.Image="rbxassetid://10709761813";v129.ImageColor3=v91.Accent;v129.Parent=v122;local v137=Instance.new("Frame");v137.Size=UDim2.new(3 -2 ,470 -(224 + 246) ,1 -0 , -(211 -96));v137.Position=UDim2.new(0,0 + 0 ,0 + 0 ,45 + 15 );v137.BackgroundTransparency=1 -0 ;v137.Parent=v122;local v142=Instance.new("UIListLayout");v142.Padding=UDim.new(0 -0 ,521 -(203 + 310) );v142.HorizontalAlignment=Enum.HorizontalAlignment.Center;v142.Parent=v137;local v147={};local v148=nil;local v149=Instance.new("Frame");v149.Name="Content";v149.Size=UDim2.new(1994 -(1238 + 755) , -64,1 + 0 ,1534 -(709 + 825) );v149.Position=UDim2.new(0 -0 ,64,0 -0 ,864 -(196 + 668) );v149.BackgroundTransparency=3 -2 ;v149.Parent=v98;local v155=Instance.new("Frame");v155.Size=UDim2.new(1 -0 ,833 -(171 + 662) ,93 -(4 + 89) ,60);v155.Position=UDim2.new(0 -0 ,0,0 + 0 ,0);v155.BackgroundTransparency=4 -3 ;v155.Parent=v149;local v160=Instance.new("TextLabel");v160.Size=UDim2.new(0 + 0 ,320,1,0);v160.Position=UDim2.new(0,1502 -(35 + 1451) ,1453 -(28 + 1425) ,1993 -(941 + 1052) );v160.BackgroundTransparency=1 + 0 ;v160.Text="ArcaHUB";v160.TextColor3=v91.Text;v160.Font=Enum.Font.Gotham;v160.TextSize=1534 -(822 + 692) ;v160.TextXAlignment=Enum.TextXAlignment.Left;v160.Parent=v155;local v173=Instance.new("Frame");v173.Size=UDim2.new(0 -0 ,220,0 + 0 ,329 -(45 + 252) );v173.Position=UDim2.new(1 + 0 , -(82 + 154),0.5 -0 , -(449 -(114 + 319)));v173.BackgroundColor3=v91.Element;v173.Parent=v155;Instance.new("UICorner",v173).CornerRadius=v91.Radius;Instance.new("UIStroke",v173).Color=v91.Border;local v181=Instance.new("ImageLabel");v181.Size=UDim2.new(0 -0 ,16,0 -0 ,16);v181.Position=UDim2.new(0 + 0 ,10,0.5, -(11 -3));v181.BackgroundTransparency=1 -0 ;v181.Image="rbxassetid://10734943674";v181.ImageColor3=v91.TextDim;v181.Parent=v173;local v189=Instance.new("TextBox");v189.Size=UDim2.new(1964 -(556 + 1407) , -(1240 -(741 + 465)),466 -(170 + 295) ,0 + 0 );v189.Position=UDim2.new(0 + 0 ,83 -49 ,0,0 + 0 );v189.BackgroundTransparency=1 + 0 ;v189.Text="";v189.PlaceholderText="Search features...";v189.PlaceholderColor3=v91.TextDim;v189.TextColor3=v91.Text;v189.Font=Enum.Font.Gotham;v189.TextSize=8 + 5 ;v189.TextXAlignment=Enum.TextXAlignment.Left;v189.Parent=v173;local v201={};v189:GetPropertyChangedSignal("Text"):Connect(function() local v482=1230 -(957 + 273) ;local v483;while true do if (v482==0) then v483=string.lower(v189.Text);for v1344,v1345 in ipairs(v201) do if (v1345.frame and v1345.name) then if ((v483=="") or string.find(string.lower(v1345.name),v483)) then v1345.frame.Visible=true;else v1345.frame.Visible=false;end end end break;end end end);local function v202(v484,v485) local v486=0 + 0 ;local v487;local v488;local v489;local v490;local v491;local v492;local v493;local v494;local v495;local v496;local v497;while true do if (v486==(0 + 0)) then v487=v484=="Settings" ;v488=Instance.new("TextButton");v488.Size=UDim2.new(0 -0 ,110 -68 ,0 -0 ,207 -165 );v488.BackgroundColor3=v91.Sidebar;v488.BackgroundTransparency=1781 -(389 + 1391) ;v488.Text="";v488.AutoButtonColor=false;v488.Parent=(v487 and v122) or v137 ;v486=1;end if (v486==1) then if v487 then v488.Position=UDim2.new(0,7 + 4 ,1, -55);end Instance.new("UICorner",v488).CornerRadius=v91.Radius;v489=Instance.new("Frame");v489.Size=UDim2.new(0,3,0 + 0 ,0);v489.Position=UDim2.new(0, -(24 -13),951.5 -(783 + 168) ,0 -0 );v489.AnchorPoint=Vector2.new(0,0.5);v489.BackgroundColor3=v91.Accent;v489.BorderSizePixel=0;v486=2 + 0 ;end if (v486==(317 -(309 + 2))) then v494.Parent=v492;v495=Instance.new("ScrollingFrame");v495.Size=UDim2.new(0.5, -24,2 -1 , -(1252 -(1090 + 122)));v495.Position=UDim2.new(0.5,3 + 5 ,0 -0 ,14 + 6 );v495.BackgroundTransparency=1;v495.ScrollBarThickness=2;v495.ScrollBarImageColor3=v91.Border;v495.BorderSizePixel=1118 -(628 + 490) ;v486=7;end if (v486==(2 + 6)) then v497.Parent=v495;v488.MouseButton1Click:Connect(function() if (v148==v484) then return;end if v148 then local v1487=v147[v148];local v1488=v1487.frame;local v1489=v148;v74:Create(v1487.btn,TweenInfo.new(0.2 -0 ),{BackgroundTransparency=1}):Play();v74:Create(v1487.icon,TweenInfo.new(0.2 -0 ),{ImageColor3=v91.TextDim}):Play();v74:Create(v1487.highlight,TweenInfo.new(774.2 -(431 + 343) ),{Size=UDim2.new(0,5 -2 ,0 -0 ,0)}):Play();v74:Create(v1487.left,TweenInfo.new(0.25 + 0 ,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{Position=UDim2.new(0, -24,0 + 0 ,1715 -(556 + 1139) )}):Play();v74:Create(v1487.right,TweenInfo.new(15.25 -(6 + 9) ,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{Position=UDim2.new(0.5 + 0 ,48,0 + 0 ,189 -(28 + 141) )}):Play();task.delay(0.25,function() if (v148~=v1489) then v1488.Visible=false;end end);end local v1346=Color3.new(v91.Accent.R * (0.2 + 0) ,v91.Accent.G * 0.2 ,v91.Accent.B * (0.2 -0) );v74:Create(v488,TweenInfo.new(0.2 + 0 ),{BackgroundTransparency=1317 -(486 + 831) ,BackgroundColor3=v1346}):Play();v74:Create(v490,TweenInfo.new(0.2),{ImageColor3=v91.Accent}):Play();v74:Create(v489,TweenInfo.new(0.2 -0 ,Enum.EasingStyle.Bounce),{Size=UDim2.new(0 -0 ,1 + 2 ,0 -0 ,1285 -(668 + 595) )}):Play();v491.Visible=true;v492.Position=UDim2.new(0 + 0 ,12 + 44 ,0,54 -34 );v495.Position=UDim2.new(290.5 -(23 + 267) , -32,0,1964 -(1129 + 815) );v74:Create(v492,TweenInfo.new(387.4 -(371 + 16) ,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position=UDim2.new(0,1766 -(1326 + 424) ,0 -0 ,73 -53 )}):Play();v74:Create(v495,TweenInfo.new(118.4 -(88 + 30) ,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,8,771 -(720 + 51) ,20)}):Play();v160.Text="ArcaHUB - "   .. v484 ;v148=v484;end);v147[v484]={left=v492,right=v495,btn=v488,icon=v490,frame=v491,highlight=v489};return v147[v484];end if (v486==(6 -3)) then v490.Parent=v488;v488.MouseEnter:Connect(function() if (v148~=v484) then local v1490=1776 -(421 + 1355) ;while true do if (v1490==(0 -0)) then v74:Create(v490,TweenInfo.new(0.2 + 0 ),{ImageColor3=v91.Text}):Play();v74:Create(v488,TweenInfo.new(1083.2 -(286 + 797) ),{BackgroundTransparency=0.6 -0 ,BackgroundColor3=v91.Hover}):Play();break;end end end end);v488.MouseLeave:Connect(function() if (v148~=v484) then v74:Create(v490,TweenInfo.new(0.2 -0 ),{ImageColor3=v91.TextDim}):Play();v74:Create(v488,TweenInfo.new(439.2 -(397 + 42) ),{BackgroundTransparency=1 + 0 }):Play();end end);v491=Instance.new("Frame");v491.Size=UDim2.new(1,0,801 -(24 + 776) , -(92 -32));v491.Position=UDim2.new(785 -(222 + 563) ,0 -0 ,0 + 0 ,250 -(23 + 167) );v491.BackgroundTransparency=1;v491.Visible=false;v486=4;end if (v486==4) then v491.Parent=v149;v492=Instance.new("ScrollingFrame");v492.Size=UDim2.new(1798.5 -(690 + 1108) , -24,1 + 0 , -40);v492.Position=UDim2.new(0 + 0 ,864 -(40 + 808) ,0 + 0 ,76 -56 );v492.BackgroundTransparency=1 + 0 ;v492.ScrollBarThickness=2 + 0 ;v492.ScrollBarImageColor3=v91.Border;v492.BorderSizePixel=0;v486=5;end if (v486==(2 + 0)) then v489.Parent=v488;Instance.new("UICorner",v489).CornerRadius=UDim.new(571 -(47 + 524) ,2 + 0 );v490=Instance.new("ImageLabel");v490.Size=UDim2.new(0,54 -34 ,0 -0 ,45 -25 );v490.Position=UDim2.new(1726.5 -(1165 + 561) , -10,0.5, -(1 + 9));v490.BackgroundTransparency=1;v490.Image=v485 or "rbxassetid://6026568210" ;v490.ImageColor3=v91.TextDim;v486=3;end if (v486==5) then v492.AutomaticCanvasSize=Enum.AutomaticSize.Y;v492.CanvasSize=UDim2.new(0 -0 ,0 + 0 ,479 -(341 + 138) ,0 + 0 );v492.Parent=v491;v493=Instance.new("UIPadding");v493.PaddingBottom=UDim.new(0,41 -21 );v493.Parent=v492;v494=Instance.new("UIListLayout");v494.Padding=UDim.new(326 -(89 + 237) ,38 -26 );v486=12 -6 ;end if (v486==7) then v495.AutomaticCanvasSize=Enum.AutomaticSize.Y;v495.CanvasSize=UDim2.new(0,881 -(581 + 300) ,1220 -(855 + 365) ,0 -0 );v495.Parent=v491;v496=Instance.new("UIPadding");v496.PaddingBottom=UDim.new(0 + 0 ,1255 -(1030 + 205) );v496.Parent=v495;v497=Instance.new("UIListLayout");v497.Padding=UDim.new(0 + 0 ,12 + 0 );v486=8;end end end local function v203(v498,v499,v500) local v501=Instance.new("Frame");v501.Size=UDim2.new(287 -(156 + 130) ,0,0 -0 ,67 -27 );v501.BackgroundColor3=v91.Card;v501.Parent=v498;Instance.new("UICorner",v501).CornerRadius=v91.Radius;local v508=Instance.new("UIStroke");v508.Color=v91.Border;v508.Parent=v501;local v512=Instance.new("TextLabel");v512.Size=UDim2.new(1 -0 , -(7 + 17),0 + 0 ,35);v512.Position=UDim2.new(69 -(10 + 59) ,4 + 8 ,0 -0 ,0);if v500 then v512.Position=UDim2.new(0,1199 -(671 + 492) ,0 + 0 ,0);local v1134=Instance.new("ImageLabel");v1134.Size=UDim2.new(0,1231 -(369 + 846) ,0,16);v1134.Position=UDim2.new(0,4 + 8 ,0 + 0 ,1954 -(1036 + 909) );v1134.BackgroundTransparency=1 + 0 ;v1134.Image=v500;v1134.ImageColor3=v91.TextDim;v1134.Parent=v501;end v512.BackgroundTransparency=1 -0 ;v512.Text=string.upper(v499);v512.TextColor3=v91.TextDim;v512.Font=Enum.Font.Gotham;v512.TextSize=214 -(11 + 192) ;v512.TextXAlignment=Enum.TextXAlignment.Left;v512.Parent=v501;local v525=Instance.new("Frame");v525.Size=UDim2.new(1 + 0 , -16,176 -(135 + 40) , -35);v525.Position=UDim2.new(0,8,0 -0 ,22 + 13 );v525.BackgroundTransparency=2 -1 ;v525.Parent=v501;local v530=Instance.new("UIListLayout");v530.Padding=UDim.new(0 -0 ,182 -(50 + 126) );v530.HorizontalAlignment=Enum.HorizontalAlignment.Center;v530.Parent=v525;local function v535() v501.Size=UDim2.new(2 -1 ,0 + 0 ,1413 -(1233 + 180) ,35 + v530.AbsoluteContentSize.Y + (981 -(522 + 447)) );end v530:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(v535);task.delay(0.1,v535);return v525;end local function v204(v536,v537,v538,v539) local v540=Instance.new("Frame");v540.Size=UDim2.new(1,0,0,1453 -(107 + 1314) );v540.BackgroundTransparency=1;v540.Parent=v536;local v544=Instance.new("TextLabel");v544.Size=UDim2.new(1, -(28 + 32),1,0);v544.Position=UDim2.new(0 -0 ,8,0,0 + 0 );v544.BackgroundTransparency=1;v544.Text=v537;v544.TextColor3=v91.Text;v544.Font=Enum.Font.Gotham;v544.TextSize=25 -12 ;v544.TextXAlignment=Enum.TextXAlignment.Left;v544.Parent=v540;local v557=Instance.new("TextButton");v557.Size=UDim2.new(0 -0 ,38,1910 -(716 + 1194) ,1 + 19 );v557.Position=UDim2.new(1 + 0 , -(549 -(74 + 429)),0.5 -0 , -10);v557.BackgroundColor3=(v538 and v91.Accent) or v91.Element ;v557.Text="";v557.AutoButtonColor=false;v557.Parent=v540;Instance.new("UICorner",v557).CornerRadius=UDim.new(1 + 0 ,0 -0 );local v565=Instance.new("UIStroke");v565.Color=v91.Border;v565.Parent=v557;local v569=Instance.new("Frame");v569.Size=UDim2.new(0 + 0 ,14,0,14);v569.Position=(v538 and UDim2.new(2 -1 , -(41 -24),433.5 -(279 + 154) , -7)) or UDim2.new(0,3,778.5 -(454 + 324) , -(6 + 1)) ;v569.BackgroundColor3=v91.Text;v569.Parent=v557;Instance.new("UICorner",v569).CornerRadius=UDim.new(18 -(12 + 5) ,0 + 0 );local v575=v538;local function v576(v1034) v575=v1034;local v1035=(v575 and v91.Accent) or v91.Element ;local v1036=(v575 and UDim2.new(2 -1 , -17,0.5, -(3 + 4))) or UDim2.new(1093 -(277 + 816) ,12 -9 ,1183.5 -(1058 + 125) , -(2 + 5)) ;v74:Create(v557,TweenInfo.new(975.25 -(815 + 160) ,Enum.EasingStyle.Quint),{BackgroundColor3=v1035}):Play();v74:Create(v569,TweenInfo.new(0.25 -0 ,Enum.EasingStyle.Quint),{Position=v1036}):Play();if v565 then v74:Create(v565,TweenInfo.new(0.2 -0 ),{Transparency=(v575 and (1 + 0)) or 0 }):Play();end v539(v575);end v557.MouseButton1Click:Connect(function() v576( not v575);end);table.insert(v201,{name=v537,frame=v540});return {Set=v576,Get=function() return v575;end};end local function v205(v577,v578,v579,v580,v581,v582) local v583=0 -0 ;local v584;local v585;local v586;local v587;local v588;local v589;local v590;local v591;while true do if (v583==(1903 -(41 + 1857))) then v588=Instance.new("Frame");v588.Size=UDim2.new((v581-v579)/(v580-v579) ,0,1894 -(1222 + 671) ,0 -0 );v588.BackgroundColor3=v91.Accent;v588.Parent=v586;Instance.new("UICorner",v588).CornerRadius=UDim.new(1 -0 ,1182 -(229 + 953) );v583=1780 -(1111 + 663) ;end if (v583==(1585 -(874 + 705))) then v589=Instance.new("TextBox");v589.Size=UDim2.new(0 + 0 ,28 + 12 ,0 -0 ,1 + 17 );v589.Position=UDim2.new(680 -(642 + 37) , -(11 + 37),0 + 0 ,2);v589.BackgroundColor3=v91.Element;v589.Text=tostring(v581);v583=17 -10 ;end if (v583==(462 -(233 + 221))) then Instance.new("UIStroke",v589).Color=v91.Border;v590=v581;v591=false;v589.FocusLost:Connect(function() local v1351=tonumber(v589.Text);if v1351 then local v1491=0 -0 ;local v1492;while true do if (v1491==(2 + 0)) then v74:Create(v588,TweenInfo.new(1541.05 -(718 + 823) ),{Size=UDim2.new(v1492,0 + 0 ,1,805 -(266 + 539) )}):Play();v582(v1351);break;end if (v1491==(0 -0)) then v1351=math.clamp(v1351,v579,v580);v590=v1351;v1491=1;end if (v1491==(1226 -(636 + 589))) then v589.Text=tostring(v1351);v1492=(v1351-v579)/(v580-v579) ;v1491=2;end end else v589.Text=tostring(v590);end end);v586.MouseButton1Down:Connect(function() v591=true;end);v583=20 -11 ;end if (v583==(5 -2)) then v586.Size=UDim2.new(1, -(13 + 3),0 + 0 ,1021 -(657 + 358) );v586.Position=UDim2.new(0 -0 ,18 -10 ,1187 -(1151 + 36) ,24);v586.BackgroundColor3=v91.Element;v586.Text="";v586.AutoButtonColor=false;v583=4 + 0 ;end if (v583==(1 + 1)) then v585.Font=Enum.Font.Gotham;v585.TextSize=38 -25 ;v585.TextXAlignment=Enum.TextXAlignment.Left;v585.Parent=v584;v586=Instance.new("TextButton");v583=1835 -(1552 + 280) ;end if (v583==(843 -(64 + 770))) then v80.InputEnded:Connect(function(v1352) if (v1352.UserInputType==Enum.UserInputType.MouseButton1) then v591=false;end end);v80.InputChanged:Connect(function(v1353) if (v591 and (v1353.UserInputType==Enum.UserInputType.MouseMovement)) then local v1494=0 + 0 ;local v1495;local v1496;local v1497;local v1498;while true do if (v1494==3) then v74:Create(v588,TweenInfo.new(0.05 -0 ),{Size=UDim2.new(v1497,0 + 0 ,1,1243 -(157 + 1086) )}):Play();v589.Text=tostring(v1498);v1494=7 -3 ;end if (v1494==(4 -3)) then v1497=math.clamp(v1496/v586.AbsoluteSize.X ,0 -0 ,1);v1498=v579 + ((v580-v579) * v1497) ;v1494=2 -0 ;end if (v1494==0) then v1495=v80:GetMouseLocation().X;v1496=v1495-v586.AbsolutePosition.X ;v1494=820 -(599 + 220) ;end if (v1494==(3 -1)) then v1498=math.floor(v1498 * 10 )/(1941 -(1813 + 118)) ;v590=v1498;v1494=3;end if (v1494==(3 + 1)) then v582(v1498);break;end end end end);table.insert(v201,{name=v578,frame=v584});break;end if (v583==(1218 -(841 + 376))) then v585.Size=UDim2.new(0.4 -0 ,0 + 0 ,0 -0 ,875 -(464 + 395) );v585.Position=UDim2.new(0 -0 ,4 + 4 ,837 -(467 + 370) ,3 -1 );v585.BackgroundTransparency=1;v585.Text=v578;v585.TextColor3=v91.Text;v583=2 + 0 ;end if (v583==7) then v589.TextColor3=v91.TextDim;v589.Font=Enum.Font.Gotham;v589.TextSize=11;v589.Parent=v584;Instance.new("UICorner",v589).CornerRadius=v91.Radius;v583=8;end if (v583==(0 -0)) then v584=Instance.new("Frame");v584.Size=UDim2.new(1 + 0 ,0 -0 ,520 -(150 + 370) ,1320 -(74 + 1208) );v584.BackgroundTransparency=2 -1 ;v584.Parent=v577;v585=Instance.new("TextLabel");v583=1;end if ((18 -14)==v583) then v586.Parent=v584;Instance.new("UICorner",v586).CornerRadius=UDim.new(1,0 + 0 );v587=Instance.new("UIStroke");v587.Color=v91.Border;v587.Parent=v586;v583=5;end end end local function v206(v592,v593,v594) local v595=Instance.new("Frame");v595.Size=UDim2.new(1,390 -(14 + 376) ,0,36);v595.BackgroundTransparency=1 -0 ;v595.Parent=v592;local v599=Instance.new("TextButton");v599.Size=UDim2.new(1 + 0 , -(15 + 1),0,31 + 1 );v599.Position=UDim2.new(0,8,0 -0 ,2 + 0 );v599.BackgroundColor3=v91.Element;v599.Text=v593;v599.TextColor3=v91.Text;v599.Font=Enum.Font.Gotham;v599.TextSize=91 -(23 + 55) ;v599.AutoButtonColor=false;v599.Parent=v595;Instance.new("UICorner",v599).CornerRadius=v91.Radius;local v614=Instance.new("UIStroke");v614.Color=v91.Border;v614.Parent=v599;v599.MouseButton1Click:Connect(function() v74:Create(v599,TweenInfo.new(0.1 -0 ),{BackgroundColor3=v91.Accent}):Play();task.delay(0.12,function() v74:Create(v599,TweenInfo.new(0.2 + 0 ),{BackgroundColor3=v91.Element}):Play();end);v594();end);v92(v599,v91.Element,v91.Hover);table.insert(v201,{name=v593,frame=v595});return v599;end local function v207(v618,v619,v620,v621,v622) local v623=Instance.new("Frame");v623.Size=UDim2.new(1 + 0 ,0 -0 ,0 + 0 ,937 -(652 + 249) );v623.BackgroundTransparency=1;v623.ClipsDescendants=true;v623.Parent=v618;local v628=Instance.new("TextLabel");v628.Size=UDim2.new(2 -1 , -130,1868 -(708 + 1160) ,86 -54 );v628.Position=UDim2.new(0 -0 ,8,0,2);v628.BackgroundTransparency=28 -(10 + 17) ;v628.Text=v619;v628.TextColor3=v91.Text;v628.Font=Enum.Font.Gotham;v628.TextSize=3 + 10 ;v628.TextXAlignment=Enum.TextXAlignment.Left;v628.Parent=v623;local v641=Instance.new("TextButton");v641.Size=UDim2.new(0,115,1732 -(1400 + 332) ,45 -21 );v641.Position=UDim2.new(1909 -(242 + 1666) , -(53 + 70),0 + 0 ,6 + 0 );v641.BackgroundColor3=v91.Element;v641.TextColor3=v91.TextDim;v641.Font=Enum.Font.Gotham;v641.TextSize=951 -(850 + 90) ;v641.AutoButtonColor=false;v641.Text=v621;v641.Parent=v623;Instance.new("UICorner",v641).CornerRadius=v91.Radius;Instance.new("UIStroke",v641).Color=v91.Border;local v657=Instance.new("ScrollingFrame");local v658=math.min( #v620 * 24 ,245 -105 );v657.Size=UDim2.new(1391 -(360 + 1030) , -16,0 + 0 ,v658);v657.Position=UDim2.new(0 -0 ,10 -2 ,1661 -(909 + 752) ,1259 -(109 + 1114) );v657.BackgroundColor3=v91.Element;v657.BorderSizePixel=0;v657.ScrollBarThickness=3 -1 ;v657.ScrollBarImageColor3=v91.Border;v657.AutomaticCanvasSize=Enum.AutomaticSize.Y;v657.CanvasSize=UDim2.new(0 + 0 ,242 -(6 + 236) ,0 + 0 ,0 + 0 );v657.Parent=v623;Instance.new("UICorner",v657).CornerRadius=v91.Radius;Instance.new("UIStroke",v657).Color=v91.Border;local v671=Instance.new("UIListLayout");v671.Parent=v657;local v673=false;v641.MouseButton1Click:Connect(function() local v1037=0 -0 ;while true do if (v1037==0) then v673= not v673;if v673 then v74:Create(v623,TweenInfo.new(0.3 -0 ,Enum.EasingStyle.Quint),{Size=UDim2.new(1134 -(1076 + 57) ,0 + 0 ,689 -(579 + 110) ,3 + 33 + v658 + 4 + 0 )}):Play();else v74:Create(v623,TweenInfo.new(0.3,Enum.EasingStyle.Quint),{Size=UDim2.new(1 + 0 ,0,407 -(174 + 233) ,36)}):Play();end break;end end end);for v1038,v1039 in ipairs(v620) do local v1040=Instance.new("TextButton");v1040.Size=UDim2.new(1,0 -0 ,0 -0 ,24);v1040.BackgroundTransparency=1 + 0 ;v1040.TextColor3=v91.TextDim;v1040.Font=Enum.Font.Gotham;v1040.TextSize=1185 -(663 + 511) ;v1040.Text=v1039;v1040.Parent=v657;v1040.MouseButton1Click:Connect(function() local v1142=0 + 0 ;while true do if (v1142==0) then v641.Text=v1039;v673=false;v1142=1;end if ((1 + 0)==v1142) then v74:Create(v623,TweenInfo.new(0.3 -0 ,Enum.EasingStyle.Quint),{Size=UDim2.new(1 + 0 ,0,0 -0 ,86 -50 )}):Play();v622(v1039,v1038);break;end end end);end table.insert(v201,{name=v619,frame=v623});return {Set=function(v1050) v641.Text=v1050;end};end local function v208(v674,v675,v676,v677) local v678=0 + 0 ;local v679;local v680;local v681;local v682;while true do if (v678==(5 -2)) then v680.TextXAlignment=Enum.TextXAlignment.Left;v680.Parent=v679;v681=Instance.new("TextButton");v681.Size=UDim2.new(0 + 0 ,10 + 90 ,0,746 -(478 + 244) );v678=4;end if (v678==(522 -(440 + 77))) then v681.TextSize=12;v681.AutoButtonColor=false;v681.Text=v676.Name;v681.Parent=v679;v678=6;end if ((0 + 0)==v678) then v679=Instance.new("Frame");v679.Size=UDim2.new(1,0 -0 ,0,1592 -(655 + 901) );v679.BackgroundTransparency=1;v679.Parent=v674;v678=1 + 0 ;end if (v678==(4 + 0)) then v681.Position=UDim2.new(1 + 0 , -108,0 -0 ,1451 -(695 + 750) );v681.BackgroundColor3=v91.Element;v681.TextColor3=v91.TextDim;v681.Font=Enum.Font.Gotham;v678=16 -11 ;end if (v678==7) then v80.InputBegan:Connect(function(v1354,v1355) if (v682 and (v1354.UserInputType==Enum.UserInputType.Keyboard)) then v682=false;local v1499=v1354.KeyCode;v681.Text=v1499.Name;v74:Create(v681,TweenInfo.new(0.2 -0 ),{TextColor3=v91.TextDim}):Play();v677(v1499);end end);table.insert(v201,{name=v675,frame=v679});break;end if (2==v678) then v680.Text=v675;v680.TextColor3=v91.Text;v680.Font=Enum.Font.Gotham;v680.TextSize=52 -39 ;v678=354 -(285 + 66) ;end if (v678==1) then v680=Instance.new("TextLabel");v680.Size=UDim2.new(2 -1 , -120,1310 -(682 + 628) ,36);v680.Position=UDim2.new(0 + 0 ,307 -(176 + 123) ,0,0 + 0 );v680.BackgroundTransparency=1 + 0 ;v678=2;end if ((275 -(239 + 30))==v678) then Instance.new("UICorner",v681).CornerRadius=v91.Radius;Instance.new("UIStroke",v681).Color=v91.Border;v682=false;v681.MouseButton1Click:Connect(function() if  not v682 then local v1502=0 + 0 ;while true do if ((1 + 0)==v1502) then v74:Create(v681,TweenInfo.new(0.2 -0 ),{TextColor3=v91.Accent}):Play();break;end if ((0 -0)==v1502) then v682=true;v681.Text="...";v1502=316 -(306 + 9) ;end end end end);v678=7;end end end local function v209(v683,v684,v685,v686) local v687=Instance.new("Frame");v687.Size=UDim2.new(1,0,0 -0 ,32);v687.BackgroundTransparency=1 + 0 ;v687.Parent=v683;v687.ClipsDescendants=true;local v692=Instance.new("TextLabel");v692.Size=UDim2.new(1 + 0 , -(29 + 31),0,32);v692.Position=UDim2.new(0,22 -14 ,1375 -(1140 + 235) ,0 + 0 );v692.BackgroundTransparency=1 + 0 ;v692.Text=v684;v692.TextColor3=v91.Text;v692.Font=Enum.Font.Gotham;v692.TextSize=4 + 9 ;v692.TextXAlignment=Enum.TextXAlignment.Left;v692.Parent=v687;local v705=Instance.new("TextButton");v705.Size=UDim2.new(52 -(33 + 19) ,16 + 26 ,0 -0 ,9 + 11 );v705.Position=UDim2.new(1, -(98 -48),0 + 0 ,6);v705.BackgroundColor3=v685;v705.Text="";v705.AutoButtonColor=false;v705.Parent=v687;Instance.new("UICorner",v705).CornerRadius=UDim.new(689 -(586 + 103) ,1 + 3 );Instance.new("UIStroke",v705).Color=v91.Border;local v715=false;local v716=v685;local v717=Instance.new("Frame");v717.Size=UDim2.new(2 -1 , -16,0,1583 -(1309 + 179) );v717.Position=UDim2.new(0,14 -6 ,0 + 0 ,96 -60 );v717.BackgroundColor3=v91.Element;v717.Parent=v687;Instance.new("UICorner",v717).CornerRadius=v91.Radius;Instance.new("UIStroke",v717).Color=v91.Border;local function v726(v1052,v1053,v1054,v1055) local v1056=0 + 0 ;local v1057;local v1058;local v1059;local v1060;local v1061;while true do if (v1056==(16 -8)) then v80.InputChanged:Connect(function(v1453) if (v1061 and (v1453.UserInputType==Enum.UserInputType.MouseMovement)) then local v1522=math.clamp((v80:GetMouseLocation().X-v1059.AbsolutePosition.X)/v1059.AbsoluteSize.X ,0 -0 ,1);v74:Create(v1060,TweenInfo.new(0.05),{Size=UDim2.new(v1522,0,610 -(295 + 314) ,0 -0 )}):Play();v1055(math.floor(v1522 * 255 ));end end);break;end if (v1056==(1965 -(1300 + 662))) then v1058.Parent=v1057;v1059=Instance.new("TextButton");v1059.Size=UDim2.new(1, -(78 -53),0,4);v1059.Position=UDim2.new(0,1780 -(1178 + 577) ,0.5, -(2 + 0));v1056=11 -7 ;end if (v1056==7) then Instance.new("UICorner",v1060).CornerRadius=UDim.new(1406 -(851 + 554) ,0 + 0 );v1061=false;v1059.MouseButton1Down:Connect(function() v1061=true;end);v80.InputEnded:Connect(function(v1454) if (v1454.UserInputType==Enum.UserInputType.MouseButton1) then v1061=false;end end);v1056=22 -14 ;end if (v1056==(3 -1)) then v1058.Text=v1053;v1058.TextColor3=v91.TextDim;v1058.Font=Enum.Font.Gotham;v1058.TextSize=11;v1056=305 -(115 + 187) ;end if (v1056==(5 + 1)) then if (v1053=="R") then v1060.BackgroundColor3=Color3.fromRGB(255,67 + 3 ,70);end if (v1053=="G") then v1060.BackgroundColor3=Color3.fromRGB(275 -205 ,1416 -(160 + 1001) ,62 + 8 );end if (v1053=="B") then v1060.BackgroundColor3=Color3.fromRGB(70,83 + 37 ,522 -267 );end v1060.Parent=v1059;v1056=365 -(237 + 121) ;end if (v1056==(898 -(525 + 372))) then v1057.Parent=v717;v1058=Instance.new("TextLabel");v1058.Size=UDim2.new(0 -0 ,49 -34 ,1,142 -(96 + 46) );v1058.BackgroundTransparency=778 -(643 + 134) ;v1056=1 + 1 ;end if (v1056==(11 -6)) then Instance.new("UICorner",v1059).CornerRadius=UDim.new(3 -2 ,0 + 0 );v1060=Instance.new("Frame");v1060.Size=UDim2.new(v1054/(500 -245) ,0 -0 ,1,0);v1060.BackgroundColor3=Color3.fromRGB(974 -(316 + 403) ,170 + 85 ,701 -446 );v1056=6;end if (v1056==(2 + 2)) then v1059.BackgroundColor3=v91.Card;v1059.Text="";v1059.AutoButtonColor=false;v1059.Parent=v1057;v1056=5;end if (v1056==0) then v1057=Instance.new("Frame");v1057.Size=UDim2.new(2 -1 , -(15 + 5),0,7 + 13 );v1057.Position=UDim2.new(0,34 -24 ,0 -0 ,v1052);v1057.BackgroundTransparency=1 -0 ;v1056=1 + 0 ;end end end local v727,v728,v729=math.floor(v716.R * (502 -247) ),math.floor(v716.G * (13 + 242) ),math.floor(v716.B * (750 -495) );local v730=function() local v1062=17 -(12 + 5) ;while true do if (v1062==0) then v716=Color3.fromRGB(v727,v728,v729);v705.BackgroundColor3=v716;v1062=3 -2 ;end if (v1062==1) then v686(v716);break;end end end;v726(21 -11 ,"R",v727,function(v1063) local v1064=0 -0 ;while true do if (0==v1064) then v727=v1063;v730();break;end end end);v726(86 -51 ,"G",v728,function(v1065) local v1066=0 + 0 ;while true do if (v1066==(1973 -(1656 + 317))) then v728=v1065;v730();break;end end end);v726(54 + 6 ,"B",v729,function(v1067) v729=v1067;v730();end);v705.MouseButton1Click:Connect(function() local v1068=0 + 0 ;while true do if (v1068==(0 -0)) then v715= not v715;if v715 then v74:Create(v687,TweenInfo.new(0.3 -0 ,Enum.EasingStyle.Quint),{Size=UDim2.new(355 -(5 + 349) ,0 -0 ,1271 -(266 + 1005) ,140)}):Play();else v74:Create(v687,TweenInfo.new(0.3,Enum.EasingStyle.Quint),{Size=UDim2.new(1,0 + 0 ,0 -0 ,41 -9 )}):Play();end break;end end end);end local function v210(v731,v732,v733) local v734=Instance.new("Frame");v734.Size=UDim2.new(1697 -(561 + 1135) ,0 -0 ,0 -0 ,24);v734.BackgroundTransparency=1067 -(507 + 559) ;v734.Parent=v731;local v738=Instance.new("TextLabel");v738.Size=UDim2.new(0.55 -0 , -(24 -16),389 -(212 + 176) ,905 -(250 + 655) );v738.Position=UDim2.new(0 -0 ,8,0 -0 ,0 -0 );v738.BackgroundTransparency=1;v738.Text=v732;v738.RichText=true;v738.TextColor3=v91.Text;v738.Font=Enum.Font.Gotham;v738.TextSize=1969 -(1869 + 87) ;v738.TextXAlignment=Enum.TextXAlignment.Left;v738.Parent=v734;local v752=Instance.new("TextLabel");v752.Size=UDim2.new(0.45 -0 , -(1909 -(484 + 1417)),1,0 -0 );v752.Position=UDim2.new(0.55,0 -0 ,773 -(48 + 725) ,0 -0 );v752.BackgroundTransparency=1;v752.Text=v733 or "" ;v752.RichText=true;v752.TextColor3=v91.TextDim;v752.Font=Enum.Font.Gotham;v752.TextSize=13;v752.TextXAlignment=Enum.TextXAlignment.Right;v752.Parent=v734;local v765={frame=v734,label=v738,rightLabel=v752,Set=function(v1069,v1070,v1071) local v1072=0 -0 ;while true do if (v1072==(0 + 0)) then if v1070 then v752.Text=v1070;end if v1071 then v738.Text=v1071;end break;end end end};return setmetatable(v765,{__index=v738,__newindex=function(v1073,v1074,v1075) if (v1074=="Text") then if string.find(tostring(v1075)," %- ") then local v1455=0 -0 ;local v1456;while true do if (v1455==(0 + 0)) then v1456=string.split(tostring(v1075)," - ");v738.Text=v1456[1 + 0 ];v1455=1;end if (v1455==1) then v752.Text=v1456[2];break;end end else v738.Text=tostring(v1075);end else v738[v1074]=v1075;end end});end local v211=v82:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.7.0"):WaitForChild("knit");local v212=v211:WaitForChild("Services");local v213=v212:WaitForChild("TrainingService");local v214=v212:WaitForChild("PlaytimeRewardService");local v215=v212:WaitForChild("DailyRewardService");local v216=v212:WaitForChild("FreeShopService");local v217=v212:WaitForChild("SpinWheelService");local v218=v212:WaitForChild("AnimalService");local v219=v212:WaitForChild("EggService");local v220=v212:WaitForChild("RebirthService");local v221=v212:WaitForChild("WaveService");local v222=v212:WaitForChild("UpgradesService");local v223=v212:WaitForChild("PlotService");local v224=v212:WaitForChild("WarpService");local v225=v212:FindFirstChild("PickaxeService");local v226=nil;local v227=nil;local v228=nil;local v229=nil;local v230=nil;local v231=nil;local v232=nil;local v233=nil;pcall(function() local v766=853 -(152 + 701) ;local v767;while true do if (v766==1) then v227=v767.GetController("WaveController");v228=v767.GetController("EggController");v766=2;end if (v766==0) then v767=require(v211);v226=v767.GetController("TrainingController");v766=1312 -(430 + 881) ;end if (v766==(1 + 1)) then v229=v767.GetController("ReplicaController");v230=v767.GetController("PickupController");break;end end end);pcall(function() v231=require(v82:WaitForChild("GameShared"):WaitForChild("PickupUtils"));end);pcall(function() v232=require(v82:WaitForChild("GameShared"):WaitForChild("PlotUtils"));end);pcall(function() v233=require(v82:WaitForChild("Modifiers"));end);local v234={};pcall(function() local v768=895 -(557 + 338) ;local v769;local v770;while true do if (v768==(0 + 0)) then v769=require(v82.Configs.TrainToolConfig);v770=v769.TRAIN_TOOLS or v769 ;v768=1;end if (v768==(2 -1)) then for v1382,v1383 in pairs(v770) do table.insert(v234,{id=v1382,name=v1383.name or v1383.displayName or v1382 ,gain=v1383.gainPerTrain or v1383.power or (0 -0) ,order=v1383.layoutOrder or v1383.order or (0 -0) ,price=v1383.defaultPrice or v1383.price or 0 });end table.sort(v234,function(v1384,v1385) if (v1384.order~=v1385.order) then return v1384.order<v1385.order ;end return v1384.gain<v1385.gain ;end);break;end end end);if ( #v234==(0 -0)) then v234={{id="dumbell",name="Dumbbell",gain=867 -(39 + 827) ,order=5 -3 ,price=22 -12 },{id="dumbbellcircle",name="Circle Dumbbell",gain=2 -0 ,order=1 + 2 ,price=15},{id="strawberry dumbbell",name="Strawberry Dumbbell",gain=1 + 4 ,order=5 -1 ,price=19},{id="wooddumbbell",name="Wood Dumbbell",gain=20,order=109 -(103 + 1) ,price=39},{id="geardumbbell",name="Gear Dumbbell",gain=216 -116 ,order=19 -13 ,price=9 + 60 },{id="nucleardumbbell",name="Nuclear Dumbbell",gain=500,order=7,price=99},{id="Present dumbbell",name="Present Dumbbell",gain=4003 -(1395 + 108) ,order=23 -15 ,price=1343 -(7 + 1197) },{id="donutdumbbell",name="Donut Dumbbell",gain=4362 + 8138 ,order=328 -(27 + 292) ,price=582 -383 },{id="pancakedumbbell",name="Pancake Dumbbell",gain=60000,order=10,price=316 -67 },{id="cubedumbbell",name="Frozen Dumbbell",gain=1258142 -958142 ,order=21 -10 ,price=299},{id="rocketdumbbell",name="Rocket Dumbbell",gain=2856823 -1356823 ,order=151 -(43 + 96) ,price=399},{id="anvildumbbell",name="Anvil Dumbbell",gain=16956633 -9456633 ,order=11 + 2 ,price=549},{id="burger dumbbell",name="Burger Dumbbell",gain=37500000,order=14,price=799},{id="skulldumbbell",name="Skull Dumbbell",gain=69273602 + 111476398 ,order=28 -13 ,price=999},{id="rubikdumbbell",name="Rubik Dumbbell",gain=68744627 + 868755373 ,order=16,price=2950 -(1414 + 337) },{id="spikedumbbell",name="Spike Dumbbell",gain=5000000000,order=44 -27 ,price=1499},{id="golddumbbell",name="Gold Dumbbell",gain=25000000000,order=51 -33 ,price=1749},{id="diamonddumbbell",name="Diamond Dumbbell",gain=125044215061 -44215061 ,order=13 + 6 ,price=1999},{id="bunnydumbbell",name="Bunny Dumbbell",gain=625000001928 -(1000 + 928) ,order=20,price=1288 + 961 },{id="birthdaydumbbell",name="Birthday Dumbbell",gain=3125000000000 -0 ,order=21,price=1999 + 500 },{id="1970car",name="1970 Car",gain=15625000000000,order=22,price=1728 + 1021 },{id="passenger_plane",name="Plane Dumbbell",gain=78125000000697 -(128 + 569) ,order=23,price=5042 -(1407 + 136) },{id="summerdumbbell",name="Summer Dumbbell",gain=1000001710 -(556 + 1154) ,order=84 -60 ,price=0}};end local function v235() local v771=0;local v772;while true do if (v771==(96 -(9 + 86))) then if ( not v772 or  not v772.OwnedTrainTools) then return nil,nil;end for v1386= #v234,1, -(422 -(275 + 146)) do local v1387=v234[v1386];if (v772.OwnedTrainTools[v1387.id]==true) then return v1387,v772.EquippedTrainTool;end end v771=1 + 1 ;end if (v771==(66 -(29 + 35))) then return nil,v772.EquippedTrainTool;end if (v771==0) then v772=nil;if v229 then pcall(function() v772=v229:GetPlayerData();end);end v771=4 -3 ;end end end local function v236() local v773=0;local v774;local v775;local v776;local v777;while true do if (v773==(5 -3)) then v776=0;if v231 then pcall(function() v776= #v231.GetPickables(v79);end);end v773=13 -10 ;end if (v773==0) then v774=workspace:FindFirstChild("SpawnedItems");if  not v774 then return 0;end v773=1 + 0 ;end if (v773==(1015 -(53 + 959))) then v777=408 -(312 + 96) ;for v1388,v1389 in ipairs(v774:GetChildren()) do if (v776>=v775) then break;end if (v1389:HasTag("Pickable") and  not v1389:GetAttribute("OwnerId")) then if v230 then local v1535=0;local v1536;local v1537;while true do if (v1535==0) then v1536,v1537=pcall(function() return v230:Pickup(v1389);end);if (v1536 and v1537) then v776=v776 + (1 -0) ;v777=v777 + (286 -(147 + 138)) ;end break;end end end end end v773=903 -(813 + 86) ;end if (v773==4) then return v777;end if (v773==(1 + 0)) then v775=1;if v233 then pcall(function() v775=v233.Get(v79,"MaxPickup");end);end v773=3 -1 ;end end end local function v237() local v778={};if v230 then pcall(function() v778=v230:GetItemIds();end);end if v231 then pcall(function() for v1390,v1391 in ipairs(v231.GetPickables(v79)) do v1391:Destroy();end end);end pcall(function() v221.RF.Finished:InvokeServer(v778);end);end local function v238(v779) local v780=492 -(18 + 474) ;local v781;local v782;local v783;while true do if (v780==3) then v783=v782 and v782:FindFirstChild("PlotSurface",true) ;if  not v783 then return false;end v780=2 + 2 ;end if ((3 -2)==v780) then if ( not v781 or  not v781.Inventory) then return false;end v782=nil;v780=1088 -(860 + 226) ;end if (v780==0) then v781=nil;if v229 then pcall(function() v781=v229:GetPlayerData();end);end v780=304 -(121 + 182) ;end if (v780==4) then for v1392,v1393 in pairs(v781.Inventory) do if ((v1393.itemType=="Egg") and v1393.innerEntity) then if ( not v779 or (v779=="all") or (v1393.innerEntity.eggType==v779)) then local v1538=math.random( -(2 + 8),1250 -(988 + 252) );local v1539=math.random( -(2 + 8),4 + 6 );local v1540=CFrame.new(v783.Position + Vector3.new(v1538,1971.5 -(49 + 1921) ,v1539) );local v1541,v1542=pcall(function() return v219.RF.PlaceEgg:InvokeServer(v1392,v1540);end);if (v1541 and v1542) then return true;end end end end return false;end if (v780==(892 -(223 + 667))) then if v232 then pcall(function() v782=v232.GetPlayerPlot(v79);end);end if  not v782 then local v1458=nil;pcall(function() v1458=v223.RF.GetMyPlotId:InvokeServer();end);if v1458 then v782=workspace.Plots:FindFirstChild(tostring(v1458));end end v780=55 -(51 + 1) ;end end end local v239={{id="basic_egg",name="Basic Egg"},{id="seal_egg",name="Seal Egg"},{id="tiger_egg",name="Tiger Egg"},{id="bats_egg",name="Bat Egg"},{id="ocean_egg",name="Ocean Egg"},{id="mamut_egg",name="Mamut Egg"},{id="gorilla_egg",name="Gorilla Egg"},{id="snake_egg",name="Snake Egg"},{id="la_everything_egg",name="La Everything Egg"},{id="snails_egg",name="Snails Egg"},{id="magician_egg",name="Magician Egg"},{id="osctrich_egg",name="Osctrich Egg"},{id="polarbear_egg",name="Polarbear Egg"},{id="deer_egg",name="Corals Egg"},{id="glacial_egg",name="Glacial Egg"},{id="trex_egg",name="Trex Egg"},{id="sleepy_egg",name="Sleepy Egg"},{id="volt_egg",name="Volt Egg"},{id="dragon_egg",name="Dragon Egg"},{id="capybara_egg",name="Capybara Egg"},{id="mouse_egg",name="Mouse Egg"},{id="frogs_egg",name="Frog Egg"},{id="sphinx_egg",name="Sphinx Egg"}};local v240={Areas={["Spawn Location"]=Vector3.new(599 + 118 ,1578 -(504 + 1000) ,208 + 100 ),["Sea Edge"]=Vector3.new(602 + 59 ,8 + 70 ,479 -154 ),Common=Vector3.new(454 + 77 ,25 + 17 ,488 -(156 + 26) ),Uncommon=Vector3.new(226 + 165 ,65 -23 ,470 -(149 + 15) ),Rare=Vector3.new(251,1002 -(890 + 70) ,423 -(39 + 78) ),Epic=Vector3.new(592 -(14 + 468) ,92 -50 ,306),Floor1=Vector3.new( -599,117 -75 ,306)},Portals={["Boss 1"]=Vector3.new(412,50,178 + 166 ),["Boss 2"]=Vector3.new(127 + 84 ,50,58 + 213 ),["Boss 3"]=Vector3.new( -12,23 + 26 ,91 + 253 ),["Boss 4"]=Vector3.new( -(370 -176),48 + 0 ,959 -686 ),["Boss 5"]=Vector3.new( -(11 + 405),100 -(12 + 39) ,319 + 23 ),["Zeus Portal"]=Vector3.new(1275 -863 ,152 -109 ,84 + 199 ),["Devil Portal"]=Vector3.new(217 + 195 ,108 -65 ,283)},Plots={["Plot 1"]=Vector3.new(489 + 244 ,391 -310 ,182),["Plot 2"]=Vector3.new(2443 -(1596 + 114) ,211 -130 ,967 -(164 + 549) ),["Plot 3"]=Vector3.new(2171 -(1059 + 379) ,100 -19 ,169 + 157 ),["Plot 4"]=Vector3.new(124 + 609 ,473 -(145 + 247) ,398),["Plot 5"]=Vector3.new(602 + 131 ,38 + 43 ,1393 -923 )}};local function v241(v784) pcall(function() local v1076=v79.Character;local v1077=v1076 and v1076:FindFirstChild("HumanoidRootPart") ;if v1077 then v1077.CFrame=CFrame.new(v784);end end);end local v242={AutoTrain=false,AutoEquipBestDumbbell=false,AutoBuyDumbbells=false,AutoClaimTrainBonus=false,SelectedDumbbell="dumbell",AutoWaveFarm=false,AutoStartWave=false,AutoCollectWaveItems=false,AutoFinishWave=false,AutoResetWave=false,AutoCollectOfflineCash=false,AutoEquipBestAnimals=false,AutoStealAnimals=false,AutoPlaceEggs=false,AutoHatchEgg=false,FastHatch=true,SelectedEgg="basic_egg",HatchAmount=1,AutoHatchPlotEggs=false,AutoClaimGifts=false,AutoSpinWheel=false,AutoDailyReward=false,AutoVIPDailyReward=false,AutoFreeShop=false,AutoRebirth=false,SkipRebirthAnim=true,AutoSpeedUpgrade=false,AutoCarryUpgrade=false,AutoSlotUpgrade=false,WalkSpeed=4 + 12 ,JumpPower=44 + 6 ,InfiniteJump=false,Noclip=false,PlayerESP=false,AnimalESP=false,EggESP=false,AntiAFK=false};local function v243(v785) v785=tonumber(v785) or (0 -0) ;if (v785>=(999999996624 -(254 + 466))) then return string.format("%.2fT",v785/999999995904 );end if (v785>=1000000000) then return string.format("%.2fB",v785/1000000000 );end if (v785>=(1000560 -(544 + 16))) then return string.format("%.2fM",v785/(3178086 -2178086) );end if (v785>=1000) then return string.format("%.2fK",v785/(1628 -(294 + 334)) );end return tostring(math.floor(v785));end task.spawn(function() while true do local v1078=253 -(236 + 17) ;while true do if (v1078==(0 + 0)) then task.wait(0.5 + 0 );if v242.AutoTrain then pcall(function() if v226 then if  not v226:IsTraining() then local v1583=0 -0 ;local v1584;local v1585;local v1586;while true do if ((0 -0)==v1583) then v1584=nil;if v232 then pcall(function() v1584=v232.GetPlayerPlot(v79);end);end v1583=1 + 0 ;end if ((2 + 0)==v1583) then v1586=v1585 and v1585:FindFirstChild("TrainingAreaPlaceholder") ;if v1586 then v226:StartTraining(v1586);else v226:StartTraining();end break;end if (v1583==1) then if  not v1584 then local v1635=nil;pcall(function() v1635=v223.RF.GetMyPlotId:InvokeServer();end);if v1635 then v1584=workspace.Plots:FindFirstChild(tostring(v1635));end end v1585=v1584 and (v1584:FindFirstChild(v1584.Name) or v1584) ;v1583=796 -(413 + 381) ;end end end else v213.RF.StartTraining:InvokeServer();end end);elseif (v226 and v226:IsTraining()) then pcall(function() v226:StopTraining();end);end break;end end end end);task.spawn(function() while true do local v1079=0 + 0 ;while true do if (v1079==0) then task.wait(3 -1 );if v242.AutoBuyDumbbells then pcall(function() for v1543,v1544 in ipairs(v234) do local v1545=0;while true do if (v1545==(0 -0)) then pcall(function() v213.RF.BuyTrainTool:InvokeServer(v1544.id);end);task.wait(1970.1 -(582 + 1388) );break;end end end end);end v1079=1 -0 ;end if (v1079==(1 + 0)) then if v242.AutoEquipBestDumbbell then pcall(function() local v1523,v1524=v235();if (v1523 and (v1524~=v1523.id)) then v213.RF.EquipTrainTool:InvokeServer(v1523.id);end end);end if v242.AutoClaimTrainBonus then pcall(function() v213.RF.ClaimBonus:InvokeServer();end);end break;end end end end);local v244=false;task.spawn(function() while true do task.wait(365 -(326 + 38) );if v242.AutoWaveFarm then if  not v244 then local v1459=0 -0 ;while true do if ((1 -0)==v1459) then v244=false;break;end if (v1459==(620 -(47 + 573))) then v244=true;pcall(function() local v1566=v79:GetAttribute("IsWaveActive")==true ;if  not v1566 then if v227 then pcall(function() v227:Start(5);end);else pcall(function() v221.RF.Start:InvokeServer(5);end);end task.wait(1.6);end if (v79:GetAttribute("IsWaveActive")==true) then v236();local v1587=0 + 0 ;if v231 then pcall(function() v1587= #v231.GetPickables(v79);end);end local v1588=1;if v233 then pcall(function() v1588=v233.Get(v79,"MaxPickup");end);end local v1589=workspace:FindFirstChild("SpawnedItems");local v1590=(v1589 and  #v1589:GetChildren()) or (0 -0) ;if ((v1587>=v1588) or (v1590==(0 -0))) then v237();task.wait(1665 -(1269 + 395) );elseif v242.AutoResetWave then pcall(function() v221.RF.ResetWaveToMax:InvokeServer();end);end end end);v1459=1;end end end else if (v242.AutoStartWave and  not v79:GetAttribute("IsWaveActive")) then pcall(function() if v227 then v227:Start(5);else v221.RF.Start:InvokeServer(497 -(76 + 416) );end end);end if (v242.AutoCollectWaveItems and v79:GetAttribute("IsWaveActive")) then pcall(function() v236();end);end if (v242.AutoFinishWave and v79:GetAttribute("IsWaveActive")) then pcall(function() v237();end);end if (v242.AutoResetWave and v79:GetAttribute("IsWaveActive")) then pcall(function() v221.RF.ResetWaveToMax:InvokeServer();end);end end if v242.AutoCollectOfflineCash then pcall(function() v218.RF.CollectOfflineCash:InvokeServer();end);end if v242.AutoEquipBestAnimals then pcall(function() v218.RF.EquipBest:InvokeServer();end);end if v242.AutoStealAnimals then pcall(function() for v1460,v1461 in ipairs(workspace.Plots:GetChildren()) do local v1462=443 -(319 + 124) ;local v1463;local v1464;while true do if (v1462==(0 -0)) then v1463=v1461:FindFirstChild(v1461.Name);v1464=v1463 and v1463:FindFirstChild("Animals") ;v1462=1008 -(564 + 443) ;end if (1==v1462) then if v1464 then for v1591,v1592 in ipairs(v1464:GetChildren()) do local v1593=0;local v1594;local v1595;while true do if (v1593==(2 -1)) then if (v1594 and (v1594~=v79.UserId) and v1595) then local v1636=v78:GetPlayerByUserId(v1594);if v1636 then pcall(function() v218.RF.Steal:InvokeServer(v1636,v1595);end);task.wait(458.08 -(337 + 121) );end end break;end if (v1593==(0 -0)) then v1594=v1592:GetAttribute("OwnerId");v1595=v1592:GetAttribute("EntityId");v1593=3 -2 ;end end end end break;end end end end);end end end);task.spawn(function() while true do task.wait(1.5);if v242.AutoPlaceEggs then pcall(function() v238(v242.SelectedEgg);end);end if v242.AutoHatchPlotEggs then pcall(function() local v1394=1911 -(1261 + 650) ;local v1395;while true do if (v1394==(0 + 0)) then v1395=nil;pcall(function() v1395=v223.RF.GetMyPlotId:InvokeServer();end);v1394=1 -0 ;end if (v1394==(1818 -(772 + 1045))) then if v1395 then local v1567=workspace.Plots:FindFirstChild(tostring(v1395));local v1568=v1567 and (v1567:FindFirstChild(tostring(v1395)) or v1567) ;local v1569=v1568 and v1568:FindFirstChild("Eggs") ;if v1569 then for v1600,v1601 in ipairs(v1569:GetChildren()) do local v1602=v1601:GetAttribute("EggId");if v1602 then local v1628=0 + 0 ;local v1629;while true do if (v1628==0) then v1629=((v1601:GetAttribute("StartTime") or (144 -(102 + 42))) + (v1601:GetAttribute("Duration") or (1844 -(1524 + 320)))) -workspace:GetServerTimeNow() ;if (v1629<=0) then pcall(function() v219.RF.HatchEgg:InvokeServer(v1602);end);elseif v242.FastHatch then pcall(function() v219.RF.InitSkip:InvokeServer(v1602);end);end break;end end end task.wait(1270.15 -(1049 + 221) );end end end break;end end end);end end end);task.spawn(function() while true do task.wait(3);if v242.AutoClaimGifts then pcall(function() for v1465=157 -(18 + 138) ,29 -17  do pcall(function() v214.RF.ClaimGift:InvokeServer(v1465);end);task.wait(1102.1 -(67 + 1035) );end end);end if v242.AutoSpinWheel then pcall(function() v217.RF.SpinWheel:InvokeServer();end);end if v242.AutoDailyReward then pcall(function() local v1396=348 -(136 + 212) ;local v1397;local v1398;while true do if (v1396==(4 -3)) then v1398=((v1397 and v1397.DailyReward and v1397.DailyReward.LastClaimedDay) or (0 + 0)) + 1 + 0 ;if (v1398<=(1611 -(240 + 1364))) then v215.RF.ClaimReward:InvokeServer(v1398);end break;end if (v1396==0) then v1397=nil;if v229 then v1397=v229:GetPlayerData();end v1396=1083 -(1050 + 32) ;end end end);end if v242.AutoVIPDailyReward then pcall(function() v215.RF.ClaimVIPReward:InvokeServer();end);end if v242.AutoFreeShop then pcall(function() v216.RF.Claim:InvokeServer();end);end if v242.AutoRebirth then pcall(function() local v1399=0;while true do if (v1399==(0 -0)) then if v242.SkipRebirthAnim then pcall(function() v220.RF.InitSkip:InvokeServer();end);end v220.RF.Rebirth:InvokeServer();break;end end end);end if v242.AutoSpeedUpgrade then pcall(function() v222.RF.Upgrade:InvokeServer("MovementSpeed");end);end if v242.AutoCarryUpgrade then pcall(function() v222.RF.Upgrade:InvokeServer("Carry");end);end if v242.AutoSlotUpgrade then pcall(function() v222.RF.Upgrade:InvokeServer("PlotUpgrade");end);end end end);v81.Stepped:Connect(function() local v786=0 + 0 ;while true do if (v786==(1055 -(331 + 724))) then if (v242.Noclip and v79.Character) then for v1508,v1509 in ipairs(v79.Character:GetDescendants()) do if (v1509:IsA("BasePart") and v1509.CanCollide) then v1509.CanCollide=false;end end end if v79.Character then local v1466=0 + 0 ;local v1467;while true do if (v1466==(644 -(269 + 375))) then v1467=v79.Character:FindFirstChildOfClass("Humanoid");if v1467 then local v1576=725 -(267 + 458) ;while true do if (v1576==(0 + 0)) then if ((v1467.WalkSpeed~=v242.WalkSpeed) and (v242.WalkSpeed~=(30 -14))) then v1467.WalkSpeed=v242.WalkSpeed;end if ((v1467.JumpPower~=v242.JumpPower) and (v242.JumpPower~=(868 -(667 + 151)))) then v1467.JumpPower=v242.JumpPower;end break;end end end break;end end end break;end end end);v80.JumpRequest:Connect(function() if (v242.InfiniteJump and v79.Character) then local v1143=v79.Character:FindFirstChildOfClass("Humanoid");if v1143 then v1143:ChangeState(Enum.HumanoidStateType.Jumping);end end end);local v245=Instance.new("Folder");v245.Name="ArcaHUB_ESP";v245.Parent=v73;local function v248() for v1080,v1081 in ipairs(v245:GetChildren()) do v1081:Destroy();end end task.spawn(function() while true do task.wait(1499 -(1410 + 87) );if  not (v242.PlayerESP or v242.AnimalESP or v242.EggESP) then v248();else if v242.PlayerESP then for v1510,v1511 in ipairs(v78:GetPlayers()) do if ((v1511~=v79) and v1511.Character and v1511.Character:FindFirstChild("HumanoidRootPart")) then local v1547=1897 -(1504 + 393) ;local v1548;local v1549;while true do if (v1547==0) then v1548=v1511.Character.HumanoidRootPart;v1549=v245:FindFirstChild("PESP_"   .. v1511.Name );v1547=2 -1 ;end if (v1547==1) then if  not v1549 then v1549=Instance.new("BillboardGui");v1549.Name="PESP_"   .. v1511.Name ;v1549.AlwaysOnTop=true;v1549.Size=UDim2.new(0 -0 ,896 -(461 + 335) ,0 + 0 ,1791 -(1730 + 31) );v1549.Adornee=v1548;v1549.Parent=v245;local v1618=Instance.new("TextLabel",v1549);v1618.Size=UDim2.new(1668 -(728 + 939) ,0,3 -2 ,0 -0 );v1618.BackgroundTransparency=2 -1 ;v1618.TextColor3=Color3.fromRGB(1323 -(138 + 930) ,92 + 8 ,100);v1618.Text=v1511.DisplayName   .. "\n["   .. math.floor((v1548.Position-v79.Character.HumanoidRootPart.Position).Magnitude)   .. "m]" ;v1618.Font=Enum.Font.GothamBold;v1618.TextSize=9 + 2 ;else local v1626=v1549:FindFirstChildOfClass("TextLabel");if (v1626 and v79.Character and v79.Character:FindFirstChild("HumanoidRootPart")) then v1626.Text=v1511.DisplayName   .. "\n["   .. math.floor((v1548.Position-v79.Character.HumanoidRootPart.Position).Magnitude)   .. "m]" ;end end break;end end end end end if v242.EggESP then for v1512,v1513 in ipairs(workspace.Plots:GetChildren()) do local v1514=0 + 0 ;local v1515;local v1516;while true do if (v1514==(4 -3)) then if v1516 then for v1603,v1604 in ipairs(v1516:GetChildren()) do local v1605=0;local v1606;while true do if (v1605==0) then v1606=(v1604:IsA("BasePart") and v1604) or v1604:FindFirstChildWhichIsA("BasePart",true) ;if v1606 then local v1637=0;local v1638;while true do if (v1637==(1766 -(459 + 1307))) then v1638=v245:FindFirstChild("EESP_"   .. v1604:GetDebugId() );if  not v1638 then local v1639=1870 -(474 + 1396) ;local v1640;while true do if (1==v1639) then v1638.Size=UDim2.new(0 -0 ,94 + 6 ,0 + 0 ,68 -44 );v1638.Adornee=v1606;v1638.Parent=v245;v1639=2;end if (v1639==(0 + 0)) then v1638=Instance.new("BillboardGui");v1638.Name="EESP_"   .. v1604:GetDebugId() ;v1638.AlwaysOnTop=true;v1639=1;end if (v1639==(9 -6)) then v1640.TextColor3=Color3.fromRGB(255,215,0 -0 );v1640.Text="🥚 "   .. v1604.Name ;v1640.Font=Enum.Font.GothamBold;v1639=595 -(562 + 29) ;end if (v1639==2) then v1640=Instance.new("TextLabel",v1638);v1640.Size=UDim2.new(1 + 0 ,1419 -(374 + 1045) ,1 + 0 ,0 -0 );v1640.BackgroundTransparency=639 -(448 + 190) ;v1639=1 + 2 ;end if (v1639==(2 + 2)) then v1640.TextSize=10;break;end end end break;end end end break;end end end end break;end if ((0 + 0)==v1514) then v1515=v1513:FindFirstChild(v1513.Name);v1516=v1515 and v1515:FindFirstChild("Eggs") ;v1514=3 -2 ;end end end end end end end);local v249=v202("Main","rbxassetid://10709761813");local v250=v202("Eggs","rbxassetid://10747372992");local v251=v202("Teleport","rbxassetid://10723415903");local v252=v202("Rewards","rbxassetid://10709789810");local v253=v202("Player","rbxassetid://10747373176");local v254=v202("Profile","rbxassetid://10747373176");local v255=v202("Customization","rbxassetid://10747376349");local v256=v202("Settings","rbxassetid://10734950309");local v257=v203(v249.left,"Auto Training & Dumbbell","rbxassetid://10709761813");v204(v257,"Auto Train (Power)",false,function(v787) v242.AutoTrain=v787;if ( not v787 and v226) then pcall(function() v226:StopTraining();end);end end);v204(v257,"Auto Equip Best Dumbbell (Anti-Spam)",false,function(v789) v242.AutoEquipBestDumbbell=v789;end);v204(v257,"Auto Buy Dumbbells",false,function(v791) v242.AutoBuyDumbbells=v791;end);v204(v257,"Auto Claim Train Bonus",false,function(v793) v242.AutoClaimTrainBonus=v793;end);local v258=v210(v257,"<b>Equipped Dumbbell</b>",'<font color=\"#FFAA00\">Loading...</font>');task.spawn(function() while true do task.wait(2 -1 );pcall(function() local v1144=nil;if v229 then v1144=v229:GetPlayerData();end local v1145=(v1144 and v1144.EquippedTrainTool) or "None" ;local v1146=v1145;for v1315,v1316 in ipairs(v234) do if (v1316.id==v1145) then v1146=v1316.name;break;end end v258.Text='<b>Equipped</b> - <font color=\"#FFAA00\">'   .. v1146   .. "</font>" ;end);end end);local v259={};for v795,v796 in ipairs(v234) do table.insert(v259,v796.name);end v207(v257,"Select Dumbbell",v259,(v234[1495 -(1307 + 187) ] and v234[3 -2 ].name) or "Dumbbell" ,function(v797,v798) if v234[v798] then v242.SelectedDumbbell=v234[v798].id;end end);v206(v257,"Equip Selected Dumbbell",function() pcall(function() v213.RF.EquipTrainTool:InvokeServer(v242.SelectedDumbbell);end);end);v206(v257,"Buy Selected Dumbbell",function() pcall(function() v213.RF.BuyTrainTool:InvokeServer(v242.SelectedDumbbell);end);end);v206(v257,"Train Once Now",function() pcall(function() if v226 then v226:StartTraining();task.delay(0.5,function() if  not v242.AutoTrain then v226:StopTraining();end end);else v213.RF.StartTraining:InvokeServer();end end);end);local v260=v203(v249.left,"Rebirth & Progression","rbxassetid://10747375132");v204(v260,"Auto Rebirth",false,function(v799) v242.AutoRebirth=v799;end);v204(v260,"Skip Rebirth Animation",true,function(v801) v242.SkipRebirthAnim=v801;end);local v261=v210(v260,"<b>Power</b>",'<font color=\"#55FF55\">0</font>');local v262=v210(v260,"<b>Cash</b>",'<font color=\"#FFAA00\">0</font>');local v263=v210(v260,"<b>Speed</b>",'<font color=\"#55AAFF\">0</font>');task.spawn(function() while true do task.wait(2 -1 );pcall(function() local v1150=0 -0 ;local v1151;while true do if (v1150==(683 -(232 + 451))) then v1151=v79:FindFirstChild("leaderstats");if v1151 then local v1525=0 + 0 ;while true do if (1==v1525) then if v1151:FindFirstChild("Speed") then v263.Text='<b>Speed</b> - <font color=\"#55AAFF\">'   .. v243(v1151.Speed.Value)   .. "</font>" ;end break;end if (v1525==(0 + 0)) then if v1151:FindFirstChild("Power") then v261.Text='<b>Power</b> - <font color=\"#55FF55\">'   .. v243(v1151.Power.Value)   .. "</font>" ;end if v1151:FindFirstChild("Cash") then v262.Text='<b>Cash</b> - <font color=\"#FFAA00\">'   .. v243(v1151.Cash.Value)   .. "</font>" ;end v1525=565 -(510 + 54) ;end end end break;end end end);end end);v206(v260,"Rebirth Once Now",function() pcall(function() if v242.SkipRebirthAnim then v220.RF.InitSkip:InvokeServer();end v220.RF.Rebirth:InvokeServer();end);end);local v264=v203(v249.right,"Sea Wave Farm & Looting","rbxassetid://10734898592");v204(v264,"Auto Wave Farm (Full Loop)",false,function(v803) v242.AutoWaveFarm=v803;end);v204(v264,"Auto Open Sea (Start Wave)",false,function(v805) v242.AutoStartWave=v805;end);v204(v264,"Auto Collect Wave Items",false,function(v807) v242.AutoCollectWaveItems=v807;end);v204(v264,"Auto Finish & Deliver Loot",false,function(v809) v242.AutoFinishWave=v809;end);v204(v264,"Auto Extend Wave Timer",false,function(v811) v242.AutoResetWave=v811;end);local v265=v210(v264,"<b>Wave Status</b>",'<font color=\"#AAAAAA\">Closed</font>');local v266=v210(v264,"<b>Seabed Items</b>",'<font color=\"#55AAFF\">0 items</font>');task.spawn(function() while true do task.wait(1 -0 );pcall(function() local v1152=36 -(13 + 23) ;local v1153;local v1154;while true do if (v1152==(0 -0)) then v1153=v79:GetAttribute("IsWaveActive")==true ;v265.Text="<b>Wave Status</b> - "   .. ((v1153 and '<font color=\"#55FF55\">Active (Open)</font>') or '<font color=\"#AAAAAA\">Closed</font>') ;v1152=1;end if (v1152==1) then v1154=0 -0 ;if workspace:FindFirstChild("SpawnedItems") then v1154= #workspace.SpawnedItems:GetChildren();end v1152=3 -1 ;end if (v1152==2) then v266.Text='<b>Seabed Items</b> - <font color=\"#55AAFF\">'   .. v1154   .. " items</font>" ;break;end end end);end end);v206(v264,"Open Sea Now (Max 5s Time)",function() pcall(function() if v227 then v227:Start(5);else v221.RF.Start:InvokeServer(1093 -(830 + 258) );end end);end);v206(v264,"Collect All Wave Items Now",function() pcall(function() v236();end);end);v206(v264,"Finish & Deliver Loot Now",function() pcall(function() v237();end);end);v206(v264,"Reset Wave Timer to Max",function() pcall(function() v221.RF.ResetWaveToMax:InvokeServer();end);end);local v267=v203(v249.right,"Animals & Offline Income","rbxassetid://10747372992");v204(v267,"Auto Collect Offline Cash",false,function(v813) v242.AutoCollectOfflineCash=v813;end);v204(v267,"Auto Equip Best Animals",false,function(v815) v242.AutoEquipBestAnimals=v815;end);v204(v267,"Auto Steal Animals",false,function(v817) v242.AutoStealAnimals=v817;end);v206(v267,"Collect Offline Cash Now",function() pcall(function() v218.RF.CollectOfflineCash:InvokeServer();end);end);v206(v267,"Equip Best Animals Now",function() pcall(function() v218.RF.EquipBest:InvokeServer();end);end);local v268=v203(v250.left,"Egg Placement & Hatching","rbxassetid://10747372992");v204(v268,"Auto Place Selected Egg",false,function(v819) v242.AutoPlaceEggs=v819;end);v204(v268,"Auto Hatch Plot Eggs",false,function(v821) v242.AutoHatchPlotEggs=v821;end);v204(v268,"Fast Hatch (Skip Timer)",true,function(v823) v242.FastHatch=v823;end);local v269={};for v825,v826 in ipairs(v239) do table.insert(v269,v826.name);end v207(v268,"Select Egg Type",v269,(v239[1] and v239[1].name) or "Basic Egg" ,function(v827,v828) if v239[v828] then v242.SelectedEgg=v239[v828].id;end end);v206(v268,"Place Selected Egg to Plot",function() pcall(function() v238(v242.SelectedEgg);end);end);v206(v268,"Hatch Ready Plot Eggs Now",function() pcall(function() local v1082=0;local v1083;while true do if (v1082==(0 -0)) then v1083=v223.RF.GetMyPlotId:InvokeServer();if v1083 then local v1517=workspace.Plots:FindFirstChild(tostring(v1083));local v1518=v1517 and v1517:FindFirstChild(tostring(v1083)) ;local v1519=v1518 and v1518:FindFirstChild("Eggs") ;if v1519 then for v1570,v1571 in ipairs(v1519:GetChildren()) do local v1572=v1571:GetAttribute("EggId");if v1572 then local v1597=0 + 0 ;local v1598;while true do if (v1597==(0 + 0)) then v1598=((v1571:GetAttribute("StartTime") or 0) + (v1571:GetAttribute("Duration") or (1441 -(860 + 581)))) -workspace:GetServerTimeNow() ;if (v1598<=0) then v219.RF.HatchEgg:InvokeServer(v1572);elseif v242.FastHatch then v219.RF.InitSkip:InvokeServer(v1572);end break;end end end end end end break;end end end);end);local v270=v203(v250.right,"Plot Egg Automation","rbxassetid://10709789810");local v271=v210(v270,"<b>Plot Eggs Placed</b>",'<font color=\"#55FF55\">0</font>');task.spawn(function() while true do local v1084=0 -0 ;while true do if (v1084==(0 + 0)) then task.wait(242.5 -(237 + 4) );pcall(function() local v1471=0;local v1472;while true do if ((0 -0)==v1471) then v1472=v223.RF.GetMyPlotId:InvokeServer();if v1472 then local v1577=0 -0 ;local v1578;local v1579;local v1580;local v1581;while true do if (v1577==(3 -1)) then v271.Text='<b>Plot Eggs Placed</b> - <font color=\"#55FF55\">'   .. tostring(v1581)   .. "</font>" ;break;end if (v1577==(0 + 0)) then v1578=workspace.Plots:FindFirstChild(tostring(v1472));v1579=v1578 and v1578:FindFirstChild(tostring(v1472)) ;v1577=1;end if (v1577==(1 + 0)) then v1580=v1579 and v1579:FindFirstChild("Eggs") ;v1581=(v1580 and  #v1580:GetChildren()) or (0 -0) ;v1577=1 + 1 ;end end end break;end end end);break;end end end end);v206(v270,"Teleport to My Eggs",function() pcall(function() local v1085=v223.RF.GetMyPlotId:InvokeServer();if (v1085 and v240.Plots["Plot "   .. v1085 ]) then v241(v240.Plots["Plot "   .. v1085 ]);end end);end);local v272=v203(v251.left,"Plot Teleportation","rbxassetid://10723415903");v206(v272,"Teleport to My Plot (Instant)",function() pcall(function() v223.RF.TeleportToPlot:InvokeServer();end);end);for v829=1 + 0 ,1431 -(85 + 1341)  do local v830=0 -0 ;local v831;while true do if (v830==(0 -0)) then v831="Plot "   .. v829 ;v206(v272,"Teleport to "   .. v831 ,function() v241(v240.Plots[v831]);end);break;end end end local v273=v203(v251.left,"Sea Exploration Areas","rbxassetid://10734898592");v206(v273,"Teleport to Spawn Location",function() v241(v240.Areas["Spawn Location"]);end);v206(v273,"Teleport to Sea Edge (Wave Station)",function() v241(v240.Areas["Sea Edge"]);end);v206(v273,"Teleport to Common Sea",function() v241(v240.Areas.Common);end);v206(v273,"Teleport to Uncommon Sea",function() v241(v240.Areas.Uncommon);end);v206(v273,"Teleport to Rare Sea",function() v241(v240.Areas.Rare);end);v206(v273,"Teleport to Epic Sea",function() v241(v240.Areas.Epic);end);v206(v273,"Teleport to Floor 1 Sea",function() v241(v240.Areas.Floor1);end);local v274=v203(v251.right,"Boss & Event Portals","rbxassetid://10734896881");v206(v274,"Teleport to Boss 1 Portal",function() v241(v240.Portals["Boss 1"]);end);v206(v274,"Teleport to Boss 2 Portal",function() v241(v240.Portals["Boss 2"]);end);v206(v274,"Teleport to Boss 3 Portal",function() v241(v240.Portals["Boss 3"]);end);v206(v274,"Teleport to Boss 4 Portal",function() v241(v240.Portals["Boss 4"]);end);v206(v274,"Teleport to Boss 5 Portal",function() v241(v240.Portals["Boss 5"]);end);v206(v274,"Teleport to Zeus Portal",function() v241(v240.Portals["Zeus Portal"]);end);v206(v274,"Teleport to Devil Portal",function() v241(v240.Portals["Devil Portal"]);end);local v275=v203(v252.left,"Free Claimable Rewards","rbxassetid://10709789810");v204(v275,"Auto Claim Playtime Gifts (1-12)",false,function(v832) v242.AutoClaimGifts=v832;end);v204(v275,"Auto Spin Lucky Wheel",false,function(v834) v242.AutoSpinWheel=v834;end);v204(v275,"Auto Claim Daily Reward",false,function(v836) v242.AutoDailyReward=v836;end);v204(v275,"Auto Claim VIP Daily Reward",false,function(v838) v242.AutoVIPDailyReward=v838;end);v204(v275,"Auto Claim Free Shop Item",false,function(v840) v242.AutoFreeShop=v840;end);v206(v275,"Claim All 12 Playtime Gifts",function() pcall(function() for v1157=1,384 -(45 + 327)  do local v1158=0 -0 ;while true do if (v1158==(502 -(444 + 58))) then v214.RF.ClaimGift:InvokeServer(v1157);task.wait(0.08 + 0 );break;end end end end);end);v206(v275,"Spin Lucky Wheel Now",function() pcall(function() v217.RF.SpinWheel:InvokeServer();end);end);v206(v275,"Claim Daily Reward Now",function() pcall(function() local v1086=v229 and v229:GetPlayerData() ;local v1087=((v1086 and v1086.DailyReward and v1086.DailyReward.LastClaimedDay) or 0) + 1 + 0 ;if (v1087<=(4 + 3)) then v215.RF.ClaimReward:InvokeServer(v1087);end end);end);local v276=v203(v252.right,"Stat & Slot Upgrades","rbxassetid://10723425376");v204(v276,"Auto Upgrade Speed (Cash)",false,function(v842) v242.AutoSpeedUpgrade=v842;end);v204(v276,"Auto Upgrade Carry (Cash)",false,function(v844) v242.AutoCarryUpgrade=v844;end);v204(v276,"Auto Upgrade Base Slots (Cash)",false,function(v846) v242.AutoSlotUpgrade=v846;end);v206(v276,"Upgrade Speed Once (Cash)",function() pcall(function() v222.RF.Upgrade:InvokeServer("MovementSpeed");end);end);v206(v276,"Upgrade Carry Once (Cash)",function() pcall(function() v222.RF.Upgrade:InvokeServer("Carry");end);end);v206(v276,"Upgrade Base Slots Once (Cash)",function() pcall(function() v222.RF.Upgrade:InvokeServer("PlotUpgrade");end);end);v206(v276,"Prompt Speed Tier (Robux)",function() pcall(function() v222.RF.PromptSpeedTier:InvokeServer();end);end);v206(v276,"Prompt Animal Slot Tier (Robux)",function() pcall(function() v222.RF.PromptAnimalSlotTier:InvokeServer();end);end);local v277=v203(v253.left,"Movement Enhancements","rbxassetid://10747373176");v205(v277,"WalkSpeed",46 -30 ,250,1748 -(64 + 1668) ,function(v848) local v849=1973 -(1227 + 746) ;while true do if (0==v849) then v242.WalkSpeed=v848;pcall(function() if (v79.Character and v79.Character:FindFirstChild("Humanoid")) then v79.Character.Humanoid.WalkSpeed=v848;end end);break;end end end);v205(v277,"JumpPower",153 -103 ,300,92 -42 ,function(v850) v242.JumpPower=v850;pcall(function() if (v79.Character and v79.Character:FindFirstChild("Humanoid")) then v79.Character.Humanoid.JumpPower=v850;end end);end);v204(v277,"Infinite Jump",false,function(v852) v242.InfiniteJump=v852;end);v204(v277,"Noclip (Walk Through Walls)",false,function(v854) v242.Noclip=v854;end);local v278=v203(v253.right,"Visuals & ESP","rbxassetid://10723415903");v204(v278,"Player ESP",false,function(v856) v242.PlayerESP=v856;if  not v856 then v248();end end);v204(v278,"Egg ESP",false,function(v858) v242.EggESP=v858;if  not v858 then v248();end end);v206(v278,"Rejoin Same Server",function() v83:TeleportToPlaceInstance(game.PlaceId,game.JobId,v79);end);v206(v278,"Server Hop (Different Server)",function() pcall(function() local v1088="https://games.roblox.com/v1/games/"   .. game.PlaceId   .. "/servers/Public?sortOrder=Asc&limit=100" ;local v1089=game:HttpGet(v1088);local v1090=v75:JSONDecode(v1089);if (v1090 and v1090.data) then for v1400,v1401 in ipairs(v1090.data) do if (v1401.playing and (v1401.playing<v1401.maxPlayers) and (v1401.id~=game.JobId)) then v83:TeleportToPlaceInstance(game.PlaceId,v1401.id,v79);break;end end end end);end);local v279=v203(v254.left,"Community","rbxassetid://10734888228");v206(v279,"Join Discord (ArcaHUB)",function() setclipboard("https://discord.gg/ZEcqg4HVY5");end);local v280=v203(v254.left,"Account Status","rbxassetid://10747373176");v210(v280,'<b>User</b> - <font color=\"#55FF55\">'   .. v79.Name   .. "</font>" );v210(v280,'<b>Status</b> - <font color=\"#55FF55\">ArcaHUB VIP</font>');v210(v280,'<b>Executor</b> - <font color=\"#55FF55\">'   .. ((identifyexecutor and identifyexecutor()) or "Unknown")   .. "</font>" );local v281=v203(v254.left,"Game Session","rbxassetid://10723415903");v210(v281,'<b>Game</b> - <font color=\"#55AAFF\">Open Sea For Animals!</font>');v210(v281,'<b>Place ID</b> - <font color=\"#55AAFF\">'   .. game.PlaceId   .. "</font>" );local v282=tick();local v283=v210(v281,'<b>Session time</b> - <font color=\"#FFAA00\">0m 0s</font>');task.spawn(function() while true do task.wait(495 -(415 + 79) );local v1091=tick() -v282 ;local v1092=math.floor(v1091/(2 + 58) );local v1093=math.floor(v1091%(551 -(142 + 349)) );v283.Text='<b>Session time</b> - <font color=\"#FFAA00\">'   .. v1092   .. "m "   .. v1093   .. "s</font>" ;end end);local v284=((game.JobId~="") and (string.sub(game.JobId,1 + 0 ,15)   .. "...")) or "Local Server" ;v210(v281,'<b>Server</b> - <font color=\"#AAAAAA\">'   .. v284   .. "</font>" );v206(v281,"Copy Job ID Teleport Script",function() if (game.JobId~="") then setclipboard('game:GetService("TeleportService"):TeleportToPlaceInstance('   .. game.PlaceId   .. ', "'   .. game.JobId   .. '", game.Players.LocalPlayer)' );end end);local v285=v203(v254.right,"Script Details","rbxassetid://10734943448");v210(v285,'<b>Script Name</b> - <font color=\"#55AAFF\">ArcaHUB</font>');v210(v285,'<b>Version</b> - <font color=\"#55FF55\">1.0.0 Modern</font>');v210(v285,'<b>Framework</b> - <font color=\"#FFAA00\">Knit 1.7.0</font>');local v286=v203(v254.right,"Creator Links","rbxassetid://10723404337");v206(v286,"Discord",function() setclipboard("https://discord.gg/ZEcqg4HVY5");end);v206(v286,"Rscript",function() setclipboard("https://rscripts.net/@ArcaLaurient");end);v206(v286,"Scriptverse",function() setclipboard("https://scriptverse.net/u/arcalaurient");end);local function v287(v860,v861) return (math.abs(v860.R-v861.R )<(0.01 -0)) and (math.abs(v860.G-v861.G )<(0.01 + 0)) and (math.abs(v860.B-v861.B )<(0.01 + 0)) ;end local function v288(v862,v863) local v864=v91[v862];v91[v862]=v863;for v1095,v1096 in ipairs(v86:GetDescendants()) do local v1097=0 -0 ;while true do if (v1097==0) then if (v1096:IsA("TextLabel") or v1096:IsA("TextBox") or v1096:IsA("TextButton")) then if v287(v1096.TextColor3,v864) then v1096.TextColor3=v863;end end if (v1096:IsA("Frame") or v1096:IsA("ScrollingFrame") or v1096:IsA("TextButton") or v1096:IsA("ImageButton")) then if v287(v1096.BackgroundColor3,v864) then v1096.BackgroundColor3=v863;end end v1097=1865 -(1710 + 154) ;end if (v1097==(319 -(200 + 118))) then if (v1096:IsA("ImageLabel") or v1096:IsA("ImageButton")) then if v287(v1096.ImageColor3,v864) then v1096.ImageColor3=v863;end end if v1096:IsA("UIStroke") then if v287(v1096.Color,v864) then v1096.Color=v863;end end break;end end end end local v289=v203(v255.left,"Color Customization","rbxassetid://10734910430");v209(v289,"Background Color",v91.Background,function(v866) v288("Background",v866);end);v209(v289,"Accent Color",v91.Accent,function(v867) v288("Accent",v867);end);v209(v289,"Outline Color",v91.Border,function(v868) v288("Border",v868);end);v209(v289,"Font Color",v91.Text,function(v869) v288("Text",v869);end);v206(v289,"Cycle Background Image",function() v114=(v114% #v113) + 1 ;v115.Image=v113[v114];end);local v290=v203(v255.right,"Preset Themes","rbxassetid://10723433811");local v291={Default={Background=Color3.fromRGB(5 + 7 ,12,12),Accent=Color3.fromRGB(255,148 -63 ,0 -0 ),Border=Color3.fromRGB(32 + 3 ,35,35),Text=Color3.fromRGB(243 + 2 ,132 + 113 ,40 + 205 ),Element=Color3.fromRGB(51 -27 ,1274 -(363 + 887) ,24),Sidebar=Color3.fromRGB(27 -11 ,76 -60 ,3 + 13 )},Ouroboros={Background=Color3.fromRGB(11 -6 ,4 + 1 ,1669 -(674 + 990) ),Accent=Color3.fromRGB(255,29 + 71 ,0),Border=Color3.fromRGB(21 + 29 ,20,0 -0 ),Text=Color3.fromRGB(1310 -(507 + 548) ,1057 -(289 + 548) ,2018 -(821 + 997) ),Element=Color3.fromRGB(270 -(195 + 60) ,5 + 10 ,1516 -(251 + 1250) ),Sidebar=Color3.fromRGB(23 -15 ,6 + 2 ,1040 -(809 + 223) )},Light={Background=Color3.fromRGB(350 -110 ,240,720 -480 ),Accent=Color3.fromRGB(0 -0 ,89 + 31 ,134 + 121 ),Border=Color3.fromRGB(817 -(14 + 603) ,329 -(118 + 11) ,33 + 167 ),Text=Color3.fromRGB(20,17 + 3 ,20),Element=Color3.fromRGB(641 -421 ,1169 -(551 + 398) ,220),Sidebar=Color3.fromRGB(146 + 84 ,82 + 148 ,187 + 43 )},Matrix={Background=Color3.fromRGB(0,37 -27 ,0 -0 ),Accent=Color3.fromRGB(0,255,0),Border=Color3.fromRGB(0 + 0 ,198 -148 ,0),Text=Color3.fromRGB(0 + 0 ,289 -(40 + 49) ,0 -0 ),Element=Color3.fromRGB(490 -(99 + 391) ,20,0),Sidebar=Color3.fromRGB(0 + 0 ,65 -50 ,0 -0 )},Blood={Background=Color3.fromRGB(15 + 0 ,0,0),Accent=Color3.fromRGB(670 -415 ,0,0),Border=Color3.fromRGB(1654 -(1032 + 572) ,417 -(203 + 214) ,1817 -(568 + 1249) ),Text=Color3.fromRGB(200 + 55 ,360 -210 ,579 -429 ),Element=Color3.fromRGB(1331 -(913 + 393) ,0 -0 ,0 -0 ),Sidebar=Color3.fromRGB(430 -(269 + 141) ,0,0 -0 )},Midnight={Background=Color3.fromRGB(1981 -(362 + 1619) ,0,15),Accent=Color3.fromRGB(1625 -(950 + 675) ,100,99 + 156 ),Border=Color3.fromRGB(0,1179 -(216 + 963) ,1337 -(485 + 802) ),Text=Color3.fromRGB(150,709 -(432 + 127) ,1328 -(1065 + 8) ),Element=Color3.fromRGB(0 + 0 ,0,1626 -(635 + 966) ),Sidebar=Color3.fromRGB(0 + 0 ,0,62 -(5 + 37) )}};v207(v290,"Select Preset Theme",{"Default","Ouroboros","Light","Matrix","Blood","Midnight"},"Default",function(v872) local v873=v291[v872];if v873 then v288("Background",v873.Background);v288("Sidebar",v873.Sidebar);v288("Element",v873.Element);v288("Border",v873.Border);v288("Accent",v873.Accent);v288("Text",v873.Text);end end);local v292=v203(v255.right,"Display Scaling","rbxassetid://10723425376");v205(v292,"UI Scale (%)",50,71 + 79 ,207 -107 ,function(v874) if v94 then v94.Scale=v874/100 ;end end);local v293=nil;v204(v292,"Background Blur",false,function(v875) if v875 then local v1160=0 -0 ;while true do if ((0 -0)==v1160) then if  not v293 then v293=Instance.new("BlurEffect");v293.Size=15;v293.Parent=v85;end v293.Enabled=true;break;end end elseif v293 then v293.Enabled=false;end end);v205(v292,"Corner Radius",0 -0 ,24,5 + 1 ,function(v876) v91.Radius=UDim.new(529 -(318 + 211) ,v876);for v1098,v1099 in ipairs(v86:GetDescendants()) do if (v1099:IsA("UICorner") and (v1099.Parent~=minimizeBtn)) then v1099.CornerRadius=v91.Radius;end end end);local v294=v203(v256.left,"Menu Controls","rbxassetid://10734950309");local v295=Enum.KeyCode.RightControl;local v296=false;local v297=Instance.new("ImageButton");v297.Size=UDim2.new(0 -0 ,1627 -(963 + 624) ,0 + 0 ,886 -(518 + 328) );v297.Position=UDim2.new(0.5 -0 , -20,0 -0 ,337 -(301 + 16) );v297.BackgroundColor3=v91.Background;v297.Image="rbxassetid://10709761813";v297.ImageColor3=v91.Accent;v297.Visible=true;v297.Active=true;v297.Draggable=true;v297.Parent=v86;Instance.new("UICorner",v297).CornerRadius=UDim.new(0,23 -15 );local v308=Instance.new("UIStroke");v308.Color=v91.Border;v308.Parent=v297;v297.MouseButton1Click:Connect(function() v296= not v296;v98.Visible= not v296;end);v80.InputBegan:Connect(function(v879,v880) if ( not v880 and (v879.KeyCode==v295)) then local v1161=0 -0 ;while true do if (v1161==(0 -0)) then v296= not v296;v98.Visible= not v296;break;end end end end);v208(v294,"Minimize Keybind",Enum.KeyCode.RightControl,function(v881) v295=v881;end);local v311=0 + 0 ;v204(v294,"Anti AFK",true,function(v882) v242.AntiAFK=v882;if v882 then v311=tick() + math.random(171 + 129 ,1280 -680 ) ;end end);v79.Idled:Connect(function() if v242.AntiAFK then local v1162=0 + 0 ;while true do if (v1162==(0 + 0)) then v84:CaptureController();v84:ClickButton2(Vector2.new());break;end end end end);v81.Heartbeat:Connect(function() if (v242.AntiAFK and (tick()>=v311)) then v311=tick() + math.random(953 -653 ,194 + 406 ) ;pcall(function() local v1321=v79.Character and v79.Character:FindFirstChild("Humanoid") ;if v1321 then v1321.Jump=true;end end);end end);local v312=v203(v256.left,"Graphics & FPS Boost","rbxassetid://10734896881");v204(v312,"Performance Mode",false,function(v884) if v884 then v85.GlobalShadows=false;v85.FogEnd=9000000507 -(829 + 190) ;for v1322,v1323 in pairs(workspace:GetDescendants()) do if v1323:IsA("BasePart") then v1323.Material=Enum.Material.SmoothPlastic;end end else v85.GlobalShadows=true;end end);v204(v312,"Better FPS (Low Quality)",false,function(v885) if v885 then for v1324,v1325 in pairs(workspace:GetDescendants()) do if v1325:IsA("BasePart") then local v1478=0 -0 ;while true do if (v1478==(0 -0)) then v1325.CastShadow=false;v1325.Material=Enum.Material.SmoothPlastic;break;end end elseif (v1325:IsA("Decal") or v1325:IsA("Texture") or v1325:IsA("ParticleEmitter") or v1325:IsA("Trail")) then pcall(function() v1325.Enabled=false;end);pcall(function() v1325.Transparency=1;end);end end end end);local v313=v249;local v314=Color3.new(v91.Accent.R * (0.2 -0) ,v91.Accent.G * (0.2 -0) ,v91.Accent.B * (0.2 + 0) );v313.btn.BackgroundColor3=v314;v313.btn.BackgroundTransparency=0 + 0 ;v313.icon.ImageColor3=v91.Accent;v313.highlight.Size=UDim2.new(0 -0 ,3 + 0 ,613 -(520 + 93) ,298 -(259 + 17) );v313.frame.Visible=true;v160.Text="ArcaHUB - Main";v148="Main";
+-- Cleanup Existing UI
+if LocalPlayer.PlayerGui:FindFirstChild("ArcaHUB") then
+    LocalPlayer.PlayerGui.ArcaHUB:Destroy()
+end
+
+-- ScreenGui Container
+local screen = Instance.new("ScreenGui")
+screen.Name = "ArcaHUB"
+screen.ResetOnSpawn = false
+screen.Parent = LocalPlayer.PlayerGui
+
+-- ==========================================
+-- DESIGN SYSTEM (THEME)
+-- ==========================================
+local theme = {
+    Accent = Color3.fromRGB(255, 85, 0),       -- Vibrant Orange
+    Background = Color3.fromRGB(12, 12, 12),   -- Deep Dark Base
+    Sidebar = Color3.fromRGB(16, 16, 16),      -- Slightly lighter for depth
+    Card = Color3.fromRGB(18, 18, 18),         -- Section background
+    Element = Color3.fromRGB(24, 24, 24),      -- Input/Dropdown background
+    Border = Color3.fromRGB(35, 35, 35),       -- Subtle dividers
+    Text = Color3.fromRGB(245, 245, 245),      -- Primary Text
+    TextDim = Color3.fromRGB(140, 140, 140),   -- Secondary Text / Inactive
+    Hover = Color3.fromRGB(30, 30, 30),        -- Generic Hover State
+    Radius = UDim.new(0, 6)                    -- Universal Corner Radius
+}
+
+-- Hover Helper
+local function applyHover(btn, defaultCol, hoverCol)
+    btn.MouseEnter:Connect(function()
+        TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundColor3 = hoverCol}):Play()
+    end)
+    btn.MouseLeave:Connect(function()
+        TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundColor3 = defaultCol}):Play()
+    end)
+end
+
+-- Global State & Scale
+local state = { UIScale = 1 }
+local uiScaleObj = Instance.new("UIScale")
+uiScaleObj.Scale = state.UIScale
+uiScaleObj.Parent = screen
+
+-- Main Container
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 750, 0, 520)
+MainFrame.Position = UDim2.new(0.5, -375, 0.5, -260)
+MainFrame.BackgroundColor3 = theme.Background
+MainFrame.BorderSizePixel = 0
+MainFrame.Active = true
+MainFrame.Draggable = true
+MainFrame.Parent = screen
+Instance.new("UICorner", MainFrame).CornerRadius = theme.Radius
+
+local mainStroke = Instance.new("UIStroke")
+mainStroke.Color = theme.Border
+mainStroke.Parent = MainFrame
+
+-- Background Image
+local bgImages = {"", "rbxassetid://10709761813", "rbxassetid://7733917120", "rbxassetid://10723415766"}
+local bgIdx = 1
+local bgImageLabel = Instance.new("ImageLabel")
+bgImageLabel.Size = UDim2.new(1, 0, 1, 0)
+bgImageLabel.BackgroundTransparency = 1
+bgImageLabel.ImageTransparency = 0.8
+bgImageLabel.ZIndex = 0
+bgImageLabel.Parent = MainFrame
+Instance.new("UICorner", bgImageLabel).CornerRadius = theme.Radius
+
+-- Sidebar
+local Sidebar = Instance.new("Frame")
+Sidebar.Size = UDim2.new(0, 64, 1, 0)
+Sidebar.BackgroundColor3 = theme.Sidebar
+Sidebar.BorderSizePixel = 0
+Sidebar.Parent = MainFrame
+Instance.new("UICorner", Sidebar).CornerRadius = theme.Radius
+
+local Title = Instance.new("ImageLabel")
+Title.Size = UDim2.new(0, 26, 0, 26)
+Title.Position = UDim2.new(0.5, -13, 0, 15)
+Title.BackgroundTransparency = 1
+Title.Image = "rbxassetid://10709761813" -- Lucide Aperture
+Title.ImageColor3 = theme.Accent
+Title.Parent = Sidebar
+
+local tabContainer = Instance.new("Frame")
+tabContainer.Size = UDim2.new(1, 0, 1, -115)
+tabContainer.Position = UDim2.new(0, 0, 0, 60)
+tabContainer.BackgroundTransparency = 1
+tabContainer.Parent = Sidebar
+local tabLayout = Instance.new("UIListLayout")
+tabLayout.Padding = UDim.new(0, 8)
+tabLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+tabLayout.Parent = tabContainer
+
+-- Content Container
+local tabs = {}
+local currentTab = nil
+local Content = Instance.new("Frame")
+Content.Name = "Content"
+Content.Size = UDim2.new(1, -64, 1, 0)
+Content.Position = UDim2.new(0, 64, 0, 0)
+Content.BackgroundTransparency = 1
+Content.Parent = MainFrame
+
+-- Header
+local Header = Instance.new("Frame")
+Header.Size = UDim2.new(1, 0, 0, 60)
+Header.Position = UDim2.new(0, 0, 0, 0)
+Header.BackgroundTransparency = 1
+Header.Parent = Content
+
+local HeaderTitle = Instance.new("TextLabel")
+HeaderTitle.Size = UDim2.new(0, 320, 1, 0)
+HeaderTitle.Position = UDim2.new(0, 16, 0, 0)
+HeaderTitle.BackgroundTransparency = 1
+HeaderTitle.Text = "ArcaHUB"
+HeaderTitle.TextColor3 = theme.Text
+HeaderTitle.Font = Enum.Font.Gotham
+HeaderTitle.TextSize = 20
+HeaderTitle.TextXAlignment = Enum.TextXAlignment.Left
+HeaderTitle.Parent = Header
+
+local SearchBoxContainer = Instance.new("Frame")
+SearchBoxContainer.Size = UDim2.new(0, 220, 0, 32)
+SearchBoxContainer.Position = UDim2.new(1, -236, 0.5, -16)
+SearchBoxContainer.BackgroundColor3 = theme.Element
+SearchBoxContainer.Parent = Header
+Instance.new("UICorner", SearchBoxContainer).CornerRadius = theme.Radius
+Instance.new("UIStroke", SearchBoxContainer).Color = theme.Border
+
+local SearchIcon = Instance.new("ImageLabel")
+SearchIcon.Size = UDim2.new(0, 16, 0, 16)
+SearchIcon.Position = UDim2.new(0, 10, 0.5, -8)
+SearchIcon.BackgroundTransparency = 1
+SearchIcon.Image = "rbxassetid://10734943674"
+SearchIcon.ImageColor3 = theme.TextDim
+SearchIcon.Parent = SearchBoxContainer
+
+local SearchInput = Instance.new("TextBox")
+SearchInput.Size = UDim2.new(1, -34, 1, 0)
+SearchInput.Position = UDim2.new(0, 34, 0, 0)
+SearchInput.BackgroundTransparency = 1
+SearchInput.Text = ""
+SearchInput.PlaceholderText = "Search features..."
+SearchInput.PlaceholderColor3 = theme.TextDim
+SearchInput.TextColor3 = theme.Text
+SearchInput.Font = Enum.Font.Gotham
+SearchInput.TextSize = 13
+SearchInput.TextXAlignment = Enum.TextXAlignment.Left
+SearchInput.Parent = SearchBoxContainer
+
+local registeredSearchItems = {}
+SearchInput:GetPropertyChangedSignal("Text"):Connect(function()
+    local q = string.lower(SearchInput.Text)
+    for _, item in ipairs(registeredSearchItems) do
+        if item.frame and item.name then
+            if q == "" or string.find(string.lower(item.name), q) then
+                item.frame.Visible = true
+            else
+                item.frame.Visible = false
+            end
+        end
+    end
+end)
+
+-- Tabs logic
+local function addTab(name, iconId)
+    local isSettings = (name == "Settings")
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 42, 0, 42)
+    btn.BackgroundColor3 = theme.Sidebar
+    btn.BackgroundTransparency = 1
+    btn.Text = ""
+    btn.AutoButtonColor = false
+    btn.Parent = isSettings and Sidebar or tabContainer
+    if isSettings then btn.Position = UDim2.new(0, 11, 1, -55) end
+    Instance.new("UICorner", btn).CornerRadius = theme.Radius
+
+    local highlight = Instance.new("Frame")
+    highlight.Size = UDim2.new(0, 3, 0, 0)
+    highlight.Position = UDim2.new(0, -11, 0.5, 0)
+    highlight.AnchorPoint = Vector2.new(0, 0.5)
+    highlight.BackgroundColor3 = theme.Accent
+    highlight.BorderSizePixel = 0
+    highlight.Parent = btn
+    Instance.new("UICorner", highlight).CornerRadius = UDim.new(0, 2)
+
+    local icon = Instance.new("ImageLabel")
+    icon.Size = UDim2.new(0, 20, 0, 20)
+    icon.Position = UDim2.new(0.5, -10, 0.5, -10)
+    icon.BackgroundTransparency = 1
+    icon.Image = iconId or "rbxassetid://6026568210"
+    icon.ImageColor3 = theme.TextDim
+    icon.Parent = btn
+
+    btn.MouseEnter:Connect(function()
+        if currentTab ~= name then
+            TweenService:Create(icon, TweenInfo.new(0.2), {ImageColor3 = theme.Text}):Play()
+            TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundTransparency = 0.6, BackgroundColor3 = theme.Hover}):Play()
+        end
+    end)
+    btn.MouseLeave:Connect(function()
+        if currentTab ~= name then
+            TweenService:Create(icon, TweenInfo.new(0.2), {ImageColor3 = theme.TextDim}):Play()
+            TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundTransparency = 1}):Play()
+        end
+    end)
+
+    local contentFrame = Instance.new("Frame")
+    contentFrame.Size = UDim2.new(1, 0, 1, -60)
+    contentFrame.Position = UDim2.new(0, 0, 0, 60)
+    contentFrame.BackgroundTransparency = 1
+    contentFrame.Visible = false
+    contentFrame.Parent = Content
+    
+    local leftPanel = Instance.new("ScrollingFrame")
+    leftPanel.Size = UDim2.new(0.5, -24, 1, -40)
+    leftPanel.Position = UDim2.new(0, 16, 0, 20)
+    leftPanel.BackgroundTransparency = 1
+    leftPanel.ScrollBarThickness = 2
+    leftPanel.ScrollBarImageColor3 = theme.Border
+    leftPanel.BorderSizePixel = 0
+    leftPanel.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    leftPanel.CanvasSize = UDim2.new(0, 0, 0, 0)
+    leftPanel.Parent = contentFrame
+    local lPad = Instance.new("UIPadding")
+    lPad.PaddingBottom = UDim.new(0, 20)
+    lPad.Parent = leftPanel
+    local ll = Instance.new("UIListLayout")
+    ll.Padding = UDim.new(0, 12)
+    ll.Parent = leftPanel
+
+    local rightPanel = Instance.new("ScrollingFrame")
+    rightPanel.Size = UDim2.new(0.5, -24, 1, -40)
+    rightPanel.Position = UDim2.new(0.5, 8, 0, 20)
+    rightPanel.BackgroundTransparency = 1
+    rightPanel.ScrollBarThickness = 2
+    rightPanel.ScrollBarImageColor3 = theme.Border
+    rightPanel.BorderSizePixel = 0
+    rightPanel.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    rightPanel.CanvasSize = UDim2.new(0, 0, 0, 0)
+    rightPanel.Parent = contentFrame
+    local rPad = Instance.new("UIPadding")
+    rPad.PaddingBottom = UDim.new(0, 20)
+    rPad.Parent = rightPanel
+    local rl = Instance.new("UIListLayout")
+    rl.Padding = UDim.new(0, 12)
+    rl.Parent = rightPanel
+
+    btn.MouseButton1Click:Connect(function()
+        if currentTab == name then return end
+        
+        if currentTab then
+            local oldData = tabs[currentTab]
+            local oldFrame = oldData.frame
+            local oldTabName = currentTab
+            
+            TweenService:Create(oldData.btn, TweenInfo.new(0.2), {BackgroundTransparency = 1}):Play()
+            TweenService:Create(oldData.icon, TweenInfo.new(0.2), {ImageColor3 = theme.TextDim}):Play()
+            TweenService:Create(oldData.highlight, TweenInfo.new(0.2), {Size = UDim2.new(0, 3, 0, 0)}):Play()
+            
+            TweenService:Create(oldData.left, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.In), {Position = UDim2.new(0, -24, 0, 20)}):Play()
+            TweenService:Create(oldData.right, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.In), {Position = UDim2.new(0.5, 48, 0, 20)}):Play()
+            
+            task.delay(0.25, function()
+                if currentTab ~= oldTabName then oldFrame.Visible = false end
+            end)
+        end
+        
+        local activeBgColor = Color3.new(theme.Accent.R * 0.2, theme.Accent.G * 0.2, theme.Accent.B * 0.2)
+        TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundTransparency = 0, BackgroundColor3 = activeBgColor}):Play()
+        TweenService:Create(icon, TweenInfo.new(0.2), {ImageColor3 = theme.Accent}):Play()
+        TweenService:Create(highlight, TweenInfo.new(0.2, Enum.EasingStyle.Bounce), {Size = UDim2.new(0, 3, 0, 22)}):Play()
+        contentFrame.Visible = true
+        
+        leftPanel.Position = UDim2.new(0, 56, 0, 20)
+        rightPanel.Position = UDim2.new(0.5, -32, 0, 20)
+        
+        TweenService:Create(leftPanel, TweenInfo.new(0.4, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Position = UDim2.new(0, 16, 0, 20)}):Play()
+        TweenService:Create(rightPanel, TweenInfo.new(0.4, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 8, 0, 20)}):Play()
+        
+        HeaderTitle.Text = "ArcaHUB - " .. name
+        currentTab = name
+    end)
+
+    tabs[name] = {left = leftPanel, right = rightPanel, btn = btn, icon = icon, frame = contentFrame, highlight = highlight}
+    return tabs[name]
+end
+
+-- ==========================================
+-- COMPONENT BUILDERS
+-- ==========================================
+local function createSection(parent, title, iconId)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0, 40)
+    frame.BackgroundColor3 = theme.Card
+    frame.Parent = parent
+    Instance.new("UICorner", frame).CornerRadius = theme.Radius
+    
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = theme.Border
+    stroke.Parent = frame
+
+    local header = Instance.new("TextLabel")
+    header.Size = UDim2.new(1, -24, 0, 35)
+    header.Position = UDim2.new(0, 12, 0, 0)
+    
+    if iconId then
+        header.Position = UDim2.new(0, 36, 0, 0)
+        local icon = Instance.new("ImageLabel")
+        icon.Size = UDim2.new(0, 16, 0, 16)
+        icon.Position = UDim2.new(0, 12, 0, 9)
+        icon.BackgroundTransparency = 1
+        icon.Image = iconId
+        icon.ImageColor3 = theme.TextDim
+        icon.Parent = frame
+    end
+    
+    header.BackgroundTransparency = 1
+    header.Text = string.upper(title)
+    header.TextColor3 = theme.TextDim
+    header.Font = Enum.Font.Gotham
+    header.TextSize = 11
+    header.TextXAlignment = Enum.TextXAlignment.Left
+    header.Parent = frame
+
+    local container = Instance.new("Frame")
+    container.Size = UDim2.new(1, -16, 1, -35)
+    container.Position = UDim2.new(0, 8, 0, 35)
+    container.BackgroundTransparency = 1
+    container.Parent = frame
+    
+    local cl = Instance.new("UIListLayout")
+    cl.Padding = UDim.new(0, 6)
+    cl.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    cl.Parent = container
+
+    local function updateSize()
+        frame.Size = UDim2.new(1, 0, 0, 35 + cl.AbsoluteContentSize.Y + 12)
+    end
+    cl:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(updateSize)
+    task.delay(0.1, updateSize)
+    return container
+end
+
+local function createToggle(parent, text, default, callback)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0, 32)
+    frame.BackgroundTransparency = 1
+    frame.Parent = parent
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1, -60, 1, 0)
+    label.Position = UDim2.new(0, 8, 0, 0)
+    label.BackgroundTransparency = 1
+    label.Text = text
+    label.TextColor3 = theme.Text
+    label.Font = Enum.Font.Gotham
+    label.TextSize = 13
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.Parent = frame
+
+    local toggleBtn = Instance.new("TextButton")
+    toggleBtn.Size = UDim2.new(0, 38, 0, 20)
+    toggleBtn.Position = UDim2.new(1, -46, 0.5, -10)
+    toggleBtn.BackgroundColor3 = default and theme.Accent or theme.Element
+    toggleBtn.Text = ""
+    toggleBtn.AutoButtonColor = false
+    toggleBtn.Parent = frame
+    Instance.new("UICorner", toggleBtn).CornerRadius = UDim.new(1, 0)
+    
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = theme.Border
+    stroke.Parent = toggleBtn
+
+    local circle = Instance.new("Frame")
+    circle.Size = UDim2.new(0, 14, 0, 14)
+    circle.Position = default and UDim2.new(1, -17, 0.5, -7) or UDim2.new(0, 3, 0.5, -7)
+    circle.BackgroundColor3 = theme.Text
+    circle.Parent = toggleBtn
+    Instance.new("UICorner", circle).CornerRadius = UDim.new(1, 0)
+
+    local currentState = default
+    local function updateState(newState)
+        currentState = newState
+        local goalColor = currentState and theme.Accent or theme.Element
+        local goalPos = currentState and UDim2.new(1, -17, 0.5, -7) or UDim2.new(0, 3, 0.5, -7)
+
+        TweenService:Create(toggleBtn, TweenInfo.new(0.25, Enum.EasingStyle.Quint), {BackgroundColor3 = goalColor}):Play()
+        TweenService:Create(circle, TweenInfo.new(0.25, Enum.EasingStyle.Quint), {Position = goalPos}):Play()
+        if stroke then TweenService:Create(stroke, TweenInfo.new(0.2), {Transparency = currentState and 1 or 0}):Play() end
+        callback(currentState)
+    end
+
+    toggleBtn.MouseButton1Click:Connect(function()
+        updateState(not currentState)
+    end)
+
+    table.insert(registeredSearchItems, {name = text, frame = frame})
+    return {
+        Set = updateState,
+        Get = function() return currentState end
+    }
+end
+
+local function createSlider(parent, text, min, max, default, callback)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0, 38)
+    frame.BackgroundTransparency = 1
+    frame.Parent = parent
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(0.4, 0, 0, 16)
+    label.Position = UDim2.new(0, 8, 0, 2)
+    label.BackgroundTransparency = 1
+    label.Text = text
+    label.TextColor3 = theme.Text
+    label.Font = Enum.Font.Gotham
+    label.TextSize = 13
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.Parent = frame
+
+    local sliderBg = Instance.new("TextButton")
+    sliderBg.Size = UDim2.new(1, -16, 0, 6)
+    sliderBg.Position = UDim2.new(0, 8, 0, 24)
+    sliderBg.BackgroundColor3 = theme.Element
+    sliderBg.Text = ""
+    sliderBg.AutoButtonColor = false
+    sliderBg.Parent = frame
+    Instance.new("UICorner", sliderBg).CornerRadius = UDim.new(1, 0)
+    
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = theme.Border
+    stroke.Parent = sliderBg
+
+    local sliderFill = Instance.new("Frame")
+    sliderFill.Size = UDim2.new((default-min)/(max-min), 0, 1, 0)
+    sliderFill.BackgroundColor3 = theme.Accent
+    sliderFill.Parent = sliderBg
+    Instance.new("UICorner", sliderFill).CornerRadius = UDim.new(1, 0)
+
+    local valInput = Instance.new("TextBox")
+    valInput.Size = UDim2.new(0, 40, 0, 18)
+    valInput.Position = UDim2.new(1, -48, 0, 2)
+    valInput.BackgroundColor3 = theme.Element
+    valInput.Text = tostring(default)
+    valInput.TextColor3 = theme.TextDim
+    valInput.Font = Enum.Font.Gotham
+    valInput.TextSize = 11
+    valInput.Parent = frame
+    Instance.new("UICorner", valInput).CornerRadius = theme.Radius
+    Instance.new("UIStroke", valInput).Color = theme.Border
+
+    local currentVal = default
+    local dragging = false
+    
+    valInput.FocusLost:Connect(function()
+        local num = tonumber(valInput.Text)
+        if num then
+            num = math.clamp(num, min, max)
+            currentVal = num
+            valInput.Text = tostring(num)
+            local pct = (num - min) / (max - min)
+            TweenService:Create(sliderFill, TweenInfo.new(0.05), {Size = UDim2.new(pct, 0, 1, 0)}):Play()
+            callback(num)
+        else
+            valInput.Text = tostring(currentVal)
+        end
+    end)
+
+    sliderBg.MouseButton1Down:Connect(function() dragging = true end)
+    UIS.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end
+    end)
+    UIS.InputChanged:Connect(function(input)
+        if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+            local mousePos = UIS:GetMouseLocation().X
+            local relPos = mousePos - sliderBg.AbsolutePosition.X
+            local pct = math.clamp(relPos / sliderBg.AbsoluteSize.X, 0, 1)
+            local val = min + (max - min) * pct
+            val = math.floor(val * 10) / 10
+            currentVal = val
+            TweenService:Create(sliderFill, TweenInfo.new(0.05), {Size = UDim2.new(pct, 0, 1, 0)}):Play()
+            valInput.Text = tostring(val)
+            callback(val)
+        end
+    end)
+
+    table.insert(registeredSearchItems, {name = text, frame = frame})
+end
+
+local function createButton(parent, text, callback)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0, 36)
+    frame.BackgroundTransparency = 1
+    frame.Parent = parent
+
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(1, -16, 0, 32)
+    btn.Position = UDim2.new(0, 8, 0, 2)
+    btn.BackgroundColor3 = theme.Element
+    btn.Text = text
+    btn.TextColor3 = theme.Text
+    btn.Font = Enum.Font.Gotham
+    btn.TextSize = 13
+    btn.AutoButtonColor = false
+    btn.Parent = frame
+    Instance.new("UICorner", btn).CornerRadius = theme.Radius
+    
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = theme.Border
+    stroke.Parent = btn
+
+    btn.MouseButton1Click:Connect(function()
+        TweenService:Create(btn, TweenInfo.new(0.1), {BackgroundColor3 = theme.Accent}):Play()
+        task.delay(0.12, function()
+            TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundColor3 = theme.Element}):Play()
+        end)
+        callback()
+    end)
+
+    applyHover(btn, theme.Element, theme.Hover)
+    table.insert(registeredSearchItems, {name = text, frame = frame})
+    return btn
+end
+
+local function createDropdown(parent, text, options, default, callback)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0, 36)
+    frame.BackgroundTransparency = 1
+    frame.ClipsDescendants = true
+    frame.Parent = parent
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1, -130, 0, 32)
+    label.Position = UDim2.new(0, 8, 0, 2)
+    label.BackgroundTransparency = 1
+    label.Text = text
+    label.TextColor3 = theme.Text
+    label.Font = Enum.Font.Gotham
+    label.TextSize = 13
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.Parent = frame
+
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 115, 0, 24)
+    btn.Position = UDim2.new(1, -123, 0, 6)
+    btn.BackgroundColor3 = theme.Element
+    btn.TextColor3 = theme.TextDim
+    btn.Font = Enum.Font.Gotham
+    btn.TextSize = 11
+    btn.AutoButtonColor = false
+    btn.Text = default
+    btn.Parent = frame
+    Instance.new("UICorner", btn).CornerRadius = theme.Radius
+    Instance.new("UIStroke", btn).Color = theme.Border
+    
+    local dropContainer = Instance.new("ScrollingFrame")
+    local dropHeight = math.min(#options * 24, 140)
+    dropContainer.Size = UDim2.new(1, -16, 0, dropHeight)
+    dropContainer.Position = UDim2.new(0, 8, 0, 36)
+    dropContainer.BackgroundColor3 = theme.Element
+    dropContainer.BorderSizePixel = 0
+    dropContainer.ScrollBarThickness = 2
+    dropContainer.ScrollBarImageColor3 = theme.Border
+    dropContainer.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    dropContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
+    dropContainer.Parent = frame
+    Instance.new("UICorner", dropContainer).CornerRadius = theme.Radius
+    Instance.new("UIStroke", dropContainer).Color = theme.Border
+    
+    local listLayout = Instance.new("UIListLayout")
+    listLayout.Parent = dropContainer
+    
+    local expanded = false
+    btn.MouseButton1Click:Connect(function()
+        expanded = not expanded
+        if expanded then
+            TweenService:Create(frame, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Size = UDim2.new(1, 0, 0, 36 + dropHeight + 4)}):Play()
+        else
+            TweenService:Create(frame, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Size = UDim2.new(1, 0, 0, 36)}):Play()
+        end
+    end)
+    
+    for i, opt in ipairs(options) do
+        local optBtn = Instance.new("TextButton")
+        optBtn.Size = UDim2.new(1, 0, 0, 24)
+        optBtn.BackgroundTransparency = 1
+        optBtn.TextColor3 = theme.TextDim
+        optBtn.Font = Enum.Font.Gotham
+        optBtn.TextSize = 11
+        optBtn.Text = opt
+        optBtn.Parent = dropContainer
+        
+        optBtn.MouseButton1Click:Connect(function()
+            btn.Text = opt
+            expanded = false
+            TweenService:Create(frame, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Size = UDim2.new(1, 0, 0, 36)}):Play()
+            callback(opt, i)
+        end)
+    end
+
+    table.insert(registeredSearchItems, {name = text, frame = frame})
+    return {
+        Set = function(val)
+            btn.Text = val
+        end
+    }
+end
+
+local function createKeybind(parent, text, defaultKey, callback)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0, 36)
+    frame.BackgroundTransparency = 1
+    frame.Parent = parent
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1, -120, 0, 36)
+    label.Position = UDim2.new(0, 8, 0, 0)
+    label.BackgroundTransparency = 1
+    label.Text = text
+    label.TextColor3 = theme.Text
+    label.Font = Enum.Font.Gotham
+    label.TextSize = 13
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.Parent = frame
+
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 100, 0, 24)
+    btn.Position = UDim2.new(1, -108, 0, 6)
+    btn.BackgroundColor3 = theme.Element
+    btn.TextColor3 = theme.TextDim
+    btn.Font = Enum.Font.Gotham
+    btn.TextSize = 12
+    btn.AutoButtonColor = false
+    btn.Text = defaultKey.Name
+    btn.Parent = frame
+    Instance.new("UICorner", btn).CornerRadius = theme.Radius
+    Instance.new("UIStroke", btn).Color = theme.Border
+
+    local isBinding = false
+    btn.MouseButton1Click:Connect(function()
+        if not isBinding then
+            isBinding = true
+            btn.Text = "..."
+            TweenService:Create(btn, TweenInfo.new(0.2), {TextColor3 = theme.Accent}):Play()
+        end
+    end)
+
+    UIS.InputBegan:Connect(function(input, processed)
+        if isBinding and input.UserInputType == Enum.UserInputType.Keyboard then
+            isBinding = false
+            local key = input.KeyCode
+            btn.Text = key.Name
+            TweenService:Create(btn, TweenInfo.new(0.2), {TextColor3 = theme.TextDim}):Play()
+            callback(key)
+        end
+    end)
+
+    table.insert(registeredSearchItems, {name = text, frame = frame})
+end
+
+local function createColorPicker(parent, text, defaultColor, callback)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0, 32)
+    frame.BackgroundTransparency = 1
+    frame.Parent = parent
+    frame.ClipsDescendants = true
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1, -60, 0, 32)
+    label.Position = UDim2.new(0, 8, 0, 0)
+    label.BackgroundTransparency = 1
+    label.Text = text
+    label.TextColor3 = theme.Text
+    label.Font = Enum.Font.Gotham
+    label.TextSize = 13
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.Parent = frame
+
+    local colorDisplayBtn = Instance.new("TextButton")
+    colorDisplayBtn.Size = UDim2.new(0, 42, 0, 20)
+    colorDisplayBtn.Position = UDim2.new(1, -50, 0, 6)
+    colorDisplayBtn.BackgroundColor3 = defaultColor
+    colorDisplayBtn.Text = ""
+    colorDisplayBtn.AutoButtonColor = false
+    colorDisplayBtn.Parent = frame
+    Instance.new("UICorner", colorDisplayBtn).CornerRadius = UDim.new(0, 4)
+    Instance.new("UIStroke", colorDisplayBtn).Color = theme.Border
+
+    local expanded = false
+    local currentColor = defaultColor
+
+    local pickerContainer = Instance.new("Frame")
+    pickerContainer.Size = UDim2.new(1, -16, 0, 95)
+    pickerContainer.Position = UDim2.new(0, 8, 0, 36)
+    pickerContainer.BackgroundColor3 = theme.Element
+    pickerContainer.Parent = frame
+    Instance.new("UICorner", pickerContainer).CornerRadius = theme.Radius
+    Instance.new("UIStroke", pickerContainer).Color = theme.Border
+
+    local function makeRgbSlider(yPos, colorName, initialVal, updateRgbCallback)
+        local sFrame = Instance.new("Frame")
+        sFrame.Size = UDim2.new(1, -20, 0, 20)
+        sFrame.Position = UDim2.new(0, 10, 0, yPos)
+        sFrame.BackgroundTransparency = 1
+        sFrame.Parent = pickerContainer
+
+        local cLabel = Instance.new("TextLabel")
+        cLabel.Size = UDim2.new(0, 15, 1, 0)
+        cLabel.BackgroundTransparency = 1
+        cLabel.Text = colorName
+        cLabel.TextColor3 = theme.TextDim
+        cLabel.Font = Enum.Font.Gotham
+        cLabel.TextSize = 11
+        cLabel.Parent = sFrame
+
+        local sliderBg = Instance.new("TextButton")
+        sliderBg.Size = UDim2.new(1, -25, 0, 4)
+        sliderBg.Position = UDim2.new(0, 25, 0.5, -2)
+        sliderBg.BackgroundColor3 = theme.Card
+        sliderBg.Text = ""
+        sliderBg.AutoButtonColor = false
+        sliderBg.Parent = sFrame
+        Instance.new("UICorner", sliderBg).CornerRadius = UDim.new(1, 0)
+
+        local sliderFill = Instance.new("Frame")
+        sliderFill.Size = UDim2.new(initialVal/255, 0, 1, 0)
+        sliderFill.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        if colorName == "R" then sliderFill.BackgroundColor3 = Color3.fromRGB(255, 70, 70) end
+        if colorName == "G" then sliderFill.BackgroundColor3 = Color3.fromRGB(70, 255, 70) end
+        if colorName == "B" then sliderFill.BackgroundColor3 = Color3.fromRGB(70, 120, 255) end
+        sliderFill.Parent = sliderBg
+        Instance.new("UICorner", sliderFill).CornerRadius = UDim.new(1, 0)
+
+        local dragging = false
+        sliderBg.MouseButton1Down:Connect(function() dragging = true end)
+        UIS.InputEnded:Connect(function(input) 
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end 
+        end)
+        UIS.InputChanged:Connect(function(input)
+            if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+                local pct = math.clamp((UIS:GetMouseLocation().X - sliderBg.AbsolutePosition.X) / sliderBg.AbsoluteSize.X, 0, 1)
+                TweenService:Create(sliderFill, TweenInfo.new(0.05), {Size = UDim2.new(pct, 0, 1, 0)}):Play()
+                updateRgbCallback(math.floor(pct * 255))
+            end
+        end)
+    end
+
+    local r, g, b = math.floor(currentColor.R*255), math.floor(currentColor.G*255), math.floor(currentColor.B*255)
+    
+    local updateColor = function()
+        currentColor = Color3.fromRGB(r, g, b)
+        colorDisplayBtn.BackgroundColor3 = currentColor
+        callback(currentColor)
+    end
+
+    makeRgbSlider(10, "R", r, function(val) r = val updateColor() end)
+    makeRgbSlider(35, "G", g, function(val) g = val updateColor() end)
+    makeRgbSlider(60, "B", b, function(val) b = val updateColor() end)
+
+    colorDisplayBtn.MouseButton1Click:Connect(function()
+        expanded = not expanded
+        if expanded then
+            TweenService:Create(frame, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Size = UDim2.new(1, 0, 0, 140)}):Play()
+        else
+            TweenService:Create(frame, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Size = UDim2.new(1, 0, 0, 32)}):Play()
+        end
+    end)
+end
+
+local function createLabel(parent, text, rightText)
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0, 24)
+    frame.BackgroundTransparency = 1
+    frame.Parent = parent
+    
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(0.55, -8, 1, 0)
+    label.Position = UDim2.new(0, 8, 0, 0)
+    label.BackgroundTransparency = 1
+    label.Text = text
+    label.RichText = true
+    label.TextColor3 = theme.Text
+    label.Font = Enum.Font.Gotham
+    label.TextSize = 13
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.Parent = frame
+    
+    local rightLabel = Instance.new("TextLabel")
+    rightLabel.Size = UDim2.new(0.45, -8, 1, 0)
+    rightLabel.Position = UDim2.new(0.55, 0, 0, 0)
+    rightLabel.BackgroundTransparency = 1
+    rightLabel.Text = rightText or ""
+    rightLabel.RichText = true
+    rightLabel.TextColor3 = theme.TextDim
+    rightLabel.Font = Enum.Font.Gotham
+    rightLabel.TextSize = 13
+    rightLabel.TextXAlignment = Enum.TextXAlignment.Right
+    rightLabel.Parent = frame
+    
+    local obj = {
+        frame = frame,
+        label = label,
+        rightLabel = rightLabel,
+        Set = function(self, newRight, newLeft)
+            if newRight then rightLabel.Text = newRight end
+            if newLeft then label.Text = newLeft end
+        end
+    }
+    
+    return setmetatable(obj, {
+        __index = label,
+        __newindex = function(t, k, v)
+            if k == "Text" then
+                if string.find(tostring(v), " %- ") then
+                    local parts = string.split(tostring(v), " - ")
+                    label.Text = parts[1]
+                    rightLabel.Text = parts[2]
+                else
+                    label.Text = tostring(v)
+                end
+            else
+                label[k] = v
+            end
+        end
+    })
+end
+
+-- ==========================================
+-- KNIT FRAMEWORK SERVICES & CONTROLLERS
+-- ==========================================
+local knitPkg = ReplicatedStorage:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.7.0"):WaitForChild("knit")
+local knitServices = knitPkg:WaitForChild("Services")
+
+local TrainingService = knitServices:WaitForChild("TrainingService")
+local PlaytimeRewardService = knitServices:WaitForChild("PlaytimeRewardService")
+local DailyRewardService = knitServices:WaitForChild("DailyRewardService")
+local FreeShopService = knitServices:WaitForChild("FreeShopService")
+local SpinWheelService = knitServices:WaitForChild("SpinWheelService")
+local AnimalService = knitServices:WaitForChild("AnimalService")
+local EggService = knitServices:WaitForChild("EggService")
+local RebirthService = knitServices:WaitForChild("RebirthService")
+local WaveService = knitServices:WaitForChild("WaveService")
+local UpgradesService = knitServices:WaitForChild("UpgradesService")
+local PlotService = knitServices:WaitForChild("PlotService")
+local WarpService = knitServices:WaitForChild("WarpService")
+local PickaxeService = knitServices:FindFirstChild("PickaxeService")
+
+-- Client Controllers & Shared Utilities
+local TrainingController = nil
+local WaveController = nil
+local EggController = nil
+local ReplicaController = nil
+local PickupController = nil
+local PickupUtils = nil
+local PlotUtils = nil
+local Modifiers = nil
+
+pcall(function()
+    local KnitClient = require(knitPkg)
+    TrainingController = KnitClient.GetController("TrainingController")
+    WaveController = KnitClient.GetController("WaveController")
+    EggController = KnitClient.GetController("EggController")
+    ReplicaController = KnitClient.GetController("ReplicaController")
+    PickupController = KnitClient.GetController("PickupController")
+end)
+
+pcall(function()
+    PickupUtils = require(ReplicatedStorage:WaitForChild("GameShared"):WaitForChild("PickupUtils"))
+end)
+pcall(function()
+    PlotUtils = require(ReplicatedStorage:WaitForChild("GameShared"):WaitForChild("PlotUtils"))
+end)
+pcall(function()
+    Modifiers = require(ReplicatedStorage:WaitForChild("Modifiers"))
+end)
+
+-- ==========================================
+-- GAME DATA DEFINITIONS
+-- ==========================================
+local DumbbellsList = {}
+pcall(function()
+    local TrainConfig = require(ReplicatedStorage.Configs.TrainToolConfig)
+    local raw = TrainConfig.TRAIN_TOOLS or TrainConfig
+    for id, info in pairs(raw) do
+        table.insert(DumbbellsList, {
+            id = id,
+            name = info.name or info.displayName or id,
+            gain = info.gainPerTrain or info.power or 0,
+            order = info.layoutOrder or info.order or 0,
+            price = info.defaultPrice or info.price or 0
+        })
+    end
+    table.sort(DumbbellsList, function(a, b)
+        if a.order ~= b.order then return a.order < b.order end
+        return a.gain < b.gain
+    end)
+end)
+
+-- Reliable fallback if config require fails
+if #DumbbellsList == 0 then
+    DumbbellsList = {
+        { id = "dumbell", name = "Dumbbell", gain = 1, order = 2, price = 10 },
+        { id = "dumbbellcircle", name = "Circle Dumbbell", gain = 2, order = 3, price = 15 },
+        { id = "strawberry dumbbell", name = "Strawberry Dumbbell", gain = 5, order = 4, price = 19 },
+        { id = "wooddumbbell", name = "Wood Dumbbell", gain = 20, order = 5, price = 39 },
+        { id = "geardumbbell", name = "Gear Dumbbell", gain = 100, order = 6, price = 69 },
+        { id = "nucleardumbbell", name = "Nuclear Dumbbell", gain = 500, order = 7, price = 99 },
+        { id = "Present dumbbell", name = "Present Dumbbell", gain = 2500, order = 8, price = 139 },
+        { id = "donutdumbbell", name = "Donut Dumbbell", gain = 12500, order = 9, price = 199 },
+        { id = "pancakedumbbell", name = "Pancake Dumbbell", gain = 60000, order = 10, price = 249 },
+        { id = "cubedumbbell", name = "Frozen Dumbbell", gain = 300000, order = 11, price = 299 },
+        { id = "rocketdumbbell", name = "Rocket Dumbbell", gain = 1500000, order = 12, price = 399 },
+        { id = "anvildumbbell", name = "Anvil Dumbbell", gain = 7500000, order = 13, price = 549 },
+        { id = "burger dumbbell", name = "Burger Dumbbell", gain = 37500000, order = 14, price = 799 },
+        { id = "skulldumbbell", name = "Skull Dumbbell", gain = 180750000, order = 15, price = 999 },
+        { id = "rubikdumbbell", name = "Rubik Dumbbell", gain = 937500000, order = 16, price = 1199 },
+        { id = "spikedumbbell", name = "Spike Dumbbell", gain = 5000000000, order = 17, price = 1499 },
+        { id = "golddumbbell", name = "Gold Dumbbell", gain = 25000000000, order = 18, price = 1749 },
+        { id = "diamonddumbbell", name = "Diamond Dumbbell", gain = 125000000000, order = 19, price = 1999 },
+        { id = "bunnydumbbell", name = "Bunny Dumbbell", gain = 625000000000, order = 20, price = 2249 },
+        { id = "birthdaydumbbell", name = "Birthday Dumbbell", gain = 3125000000000, order = 21, price = 2499 },
+        { id = "1970car", name = "1970 Car", gain = 15625000000000, order = 22, price = 2749 },
+        { id = "passenger_plane", name = "Plane Dumbbell", gain = 78125000000000, order = 23, price = 3499 },
+        { id = "summerdumbbell", name = "Summer Dumbbell", gain = 1000000000, order = 24, price = 0 }
+    }
+end
+
+-- ==========================================
+-- HELPER FUNCTIONS FOR DUMBBELLS & WAVES
+-- ==========================================
+
+-- Helper: Get the best dumbbell owned by the player (Anti-Spam capable)
+local function getBestOwnedDumbbell()
+    local pData = nil
+    if ReplicaController then
+        pcall(function() pData = ReplicaController:GetPlayerData() end)
+    end
+    if not pData or not pData.OwnedTrainTools then
+        return nil, nil
+    end
+
+    -- DumbbellsList is sorted from lowest to highest tier
+    for i = #DumbbellsList, 1, -1 do
+        local tool = DumbbellsList[i]
+        if pData.OwnedTrainTools[tool.id] == true then
+            return tool, pData.EquippedTrainTool
+        end
+    end
+    return nil, pData.EquippedTrainTool
+end
+
+-- Helper: Collect spawned items during a wave
+local function collectWaveItems()
+    local spawnedFolder = workspace:FindFirstChild("SpawnedItems")
+    if not spawnedFolder then return 0 end
+
+    local maxPickup = 1
+    if Modifiers then
+        pcall(function() maxPickup = Modifiers.Get(LocalPlayer, "MaxPickup") end)
+    end
+
+    local currentHeld = 0
+    if PickupUtils then
+        pcall(function() currentHeld = #PickupUtils.GetPickables(LocalPlayer) end)
+    end
+
+    local collected = 0
+    for _, item in ipairs(spawnedFolder:GetChildren()) do
+        if currentHeld >= maxPickup then break end
+        if item:HasTag("Pickable") and not item:GetAttribute("OwnerId") then
+            if PickupController then
+                local s, r = pcall(function() return PickupController:Pickup(item) end)
+                if s and r then
+                    currentHeld = currentHeld + 1
+                    collected = collected + 1
+                end
+            end
+        end
+    end
+    return collected
+end
+
+-- Helper: Cleanly deliver collected wave items and finish wave
+local function finishAndDeliverWave()
+    local itemIds = {}
+    if PickupController then
+        pcall(function() itemIds = PickupController:GetItemIds() end)
+    end
+    if PickupUtils then
+        pcall(function()
+            for _, v in ipairs(PickupUtils.GetPickables(LocalPlayer)) do
+                v:Destroy()
+            end
+        end)
+    end
+    pcall(function()
+        WaveService.RF.Finished:InvokeServer(itemIds)
+    end)
+end
+
+-- Helper: Place egg from inventory onto player's plot surface
+local function placeEggFromInventory(selectedEggType)
+    local pData = nil
+    if ReplicaController then
+        pcall(function() pData = ReplicaController:GetPlayerData() end)
+    end
+    if not pData or not pData.Inventory then return false end
+
+    local myPlot = nil
+    if PlotUtils then
+        pcall(function() myPlot = PlotUtils.GetPlayerPlot(LocalPlayer) end)
+    end
+    if not myPlot then
+        local myPlotId = nil
+        pcall(function() myPlotId = PlotService.RF.GetMyPlotId:InvokeServer() end)
+        if myPlotId then myPlot = workspace.Plots:FindFirstChild(tostring(myPlotId)) end
+    end
+    local surface = myPlot and myPlot:FindFirstChild("PlotSurface", true)
+    if not surface then return false end
+
+    for id, item in pairs(pData.Inventory) do
+        if item.itemType == "Egg" and item.innerEntity then
+            if not selectedEggType or selectedEggType == "all" or item.innerEntity.eggType == selectedEggType then
+                local offsetX = math.random(-10, 10)
+                local offsetZ = math.random(-10, 10)
+                local targetCF = CFrame.new(surface.Position + Vector3.new(offsetX, 1.5, offsetZ))
+                local s, r = pcall(function()
+                    return EggService.RF.PlaceEgg:InvokeServer(id, targetCF)
+                end)
+                if s and r then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
+local EggsList = {
+    { id = "basic_egg", name = "Basic Egg" },
+    { id = "seal_egg", name = "Seal Egg" },
+    { id = "tiger_egg", name = "Tiger Egg" },
+    { id = "bats_egg", name = "Bat Egg" },
+    { id = "ocean_egg", name = "Ocean Egg" },
+    { id = "mamut_egg", name = "Mamut Egg" },
+    { id = "gorilla_egg", name = "Gorilla Egg" },
+    { id = "snake_egg", name = "Snake Egg" },
+    { id = "la_everything_egg", name = "La Everything Egg" },
+    { id = "snails_egg", name = "Snails Egg" },
+    { id = "magician_egg", name = "Magician Egg" },
+    { id = "osctrich_egg", name = "Osctrich Egg" },
+    { id = "polarbear_egg", name = "Polarbear Egg" },
+    { id = "deer_egg", name = "Corals Egg" },
+    { id = "glacial_egg", name = "Glacial Egg" },
+    { id = "trex_egg", name = "Trex Egg" },
+    { id = "sleepy_egg", name = "Sleepy Egg" },
+    { id = "volt_egg", name = "Volt Egg" },
+    { id = "dragon_egg", name = "Dragon Egg" },
+    { id = "capybara_egg", name = "Capybara Egg" },
+    { id = "mouse_egg", name = "Mouse Egg" },
+    { id = "frogs_egg", name = "Frog Egg" },
+    { id = "sphinx_egg", name = "Sphinx Egg" }
+}
+
+-- Teleport Coordinate Constants
+local Coords = {
+    Areas = {
+        ["Spawn Location"] = Vector3.new(717, 74, 308),
+        ["Sea Edge"] = Vector3.new(661, 78, 325),
+        Common = Vector3.new(531, 42, 306),
+        Uncommon = Vector3.new(391, 42, 306),
+        Rare = Vector3.new(251, 42, 306),
+        Epic = Vector3.new(110, 42, 306),
+        Floor1 = Vector3.new(-599, 42, 306)
+    },
+    Portals = {
+        ["Boss 1"] = Vector3.new(412, 50, 344),
+        ["Boss 2"] = Vector3.new(211, 50, 271),
+        ["Boss 3"] = Vector3.new(-12, 49, 344),
+        ["Boss 4"] = Vector3.new(-194, 48, 273),
+        ["Boss 5"] = Vector3.new(-416, 49, 342),
+        ["Zeus Portal"] = Vector3.new(412, 43, 283),
+        ["Devil Portal"] = Vector3.new(412, 43, 283)
+    },
+    Plots = {
+        ["Plot 1"] = Vector3.new(733, 81, 182),
+        ["Plot 2"] = Vector3.new(733, 81, 254),
+        ["Plot 3"] = Vector3.new(733, 81, 326),
+        ["Plot 4"] = Vector3.new(733, 81, 398),
+        ["Plot 5"] = Vector3.new(733, 81, 470)
+    }
+}
+
+-- Helper to teleport player character
+local function teleportPlayer(targetPos)
+    pcall(function()
+        local char = LocalPlayer.Character
+        local hrp = char and char:FindFirstChild("HumanoidRootPart")
+        if hrp then
+            hrp.CFrame = CFrame.new(targetPos)
+        end
+    end)
+end
+
+-- ==========================================
+-- CONFIGURATION & SCRIPT STATE
+-- ==========================================
+local config = {
+    -- Auto Train
+    AutoTrain = false,
+    AutoEquipBestDumbbell = false,
+    AutoBuyDumbbells = false,
+    AutoClaimTrainBonus = false,
+    SelectedDumbbell = "dumbell",
+    
+    -- Wave & Animals
+    AutoWaveFarm = false,          -- Full automated wave loop (Open -> Loot -> Deliver)
+    AutoStartWave = false,         -- Open sea only
+    AutoCollectWaveItems = false,  -- Loot seabed items only
+    AutoFinishWave = false,        -- Finish / deliver wave loot only
+    AutoResetWave = false,         -- Extend wave timer to max
+    AutoCollectOfflineCash = false,
+    AutoEquipBestAnimals = false,
+    AutoStealAnimals = false,
+    
+    -- Eggs
+    AutoPlaceEggs = false,
+    AutoHatchEgg = false,
+    FastHatch = true,
+    SelectedEgg = "basic_egg",
+    HatchAmount = 1,
+    AutoHatchPlotEggs = false,
+    
+    -- Rewards & Upgrades
+    AutoClaimGifts = false,
+    AutoSpinWheel = false,
+    AutoDailyReward = false,
+    AutoVIPDailyReward = false,
+    AutoFreeShop = false,
+    AutoRebirth = false,
+    SkipRebirthAnim = true,
+    AutoSpeedUpgrade = false,
+    AutoCarryUpgrade = false,
+    AutoSlotUpgrade = false,
+    
+    -- Player
+    WalkSpeed = 16,
+    JumpPower = 50,
+    InfiniteJump = false,
+    Noclip = false,
+    
+    -- ESP
+    PlayerESP = false,
+    AnimalESP = false,
+    EggESP = false,
+    
+    -- System
+    AntiAFK = false
+}
+
+-- Format Numbers (1K, 1M, 1B, 1T)
+local function formatNumber(n)
+    n = tonumber(n) or 0
+    if n >= 1e12 then return string.format("%.2fT", n / 1e12) end
+    if n >= 1e9 then return string.format("%.2fB", n / 1e9) end
+    if n >= 1e6 then return string.format("%.2fM", n / 1e6) end
+    if n >= 1e3 then return string.format("%.2fK", n / 1e3) end
+    return tostring(math.floor(n))
+end
+
+-- ==========================================
+-- BACKGROUND LOOPS & WORKERS
+-- ==========================================
+
+-- 1. Auto Training Worker
+task.spawn(function()
+    while true do
+        task.wait(0.5)
+        if config.AutoTrain then
+            pcall(function()
+                if TrainingController then
+                    if not TrainingController:IsTraining() then
+                        local myPlot = nil
+                        if PlotUtils then
+                            pcall(function() myPlot = PlotUtils.GetPlayerPlot(LocalPlayer) end)
+                        end
+                        if not myPlot then
+                            local myPlotId = nil
+                            pcall(function() myPlotId = PlotService.RF.GetMyPlotId:InvokeServer() end)
+                            if myPlotId then myPlot = workspace.Plots:FindFirstChild(tostring(myPlotId)) end
+                        end
+                        local inner = myPlot and (myPlot:FindFirstChild(myPlot.Name) or myPlot)
+                        local placeholder = inner and inner:FindFirstChild("TrainingAreaPlaceholder")
+                        if placeholder then
+                            TrainingController:StartTraining(placeholder)
+                        else
+                            TrainingController:StartTraining()
+                        end
+                    end
+                else
+                    TrainingService.RF.StartTraining:InvokeServer()
+                end
+            end)
+        else
+            if TrainingController and TrainingController:IsTraining() then
+                pcall(function() TrainingController:StopTraining() end)
+            end
+        end
+    end
+end)
+
+-- 2. Auto Equip Best & Buy Dumbbells Worker (Anti-Spam)
+task.spawn(function()
+    while true do
+        task.wait(2.0)
+        if config.AutoBuyDumbbells then
+            pcall(function()
+                for _, item in ipairs(DumbbellsList) do
+                    pcall(function() TrainingService.RF.BuyTrainTool:InvokeServer(item.id) end)
+                    task.wait(0.1)
+                end
+            end)
+        end
+        if config.AutoEquipBestDumbbell then
+            pcall(function()
+                local bestTool, equippedId = getBestOwnedDumbbell()
+                -- ONLY equip if bestTool exists AND it's not already equipped! NO SPAM!
+                if bestTool and equippedId ~= bestTool.id then
+                    TrainingService.RF.EquipTrainTool:InvokeServer(bestTool.id)
+                end
+            end)
+        end
+        if config.AutoClaimTrainBonus then
+            pcall(function()
+                TrainingService.RF.ClaimBonus:InvokeServer()
+            end)
+        end
+    end
+end)
+
+-- 3. Auto Wave Farm & Animals Worker
+local waveFarmBusy = false
+task.spawn(function()
+    while true do
+        task.wait(1.0)
+        
+        -- Full Automated Wave Farming Loop
+        if config.AutoWaveFarm then
+            if not waveFarmBusy then
+                waveFarmBusy = true
+                pcall(function()
+                    local isWaveActive = LocalPlayer:GetAttribute("IsWaveActive") == true
+                    if not isWaveActive then
+                        -- Start wave with max extension (5)
+                        if WaveController then
+                            pcall(function() WaveController:Start(5) end)
+                        else
+                            pcall(function() WaveService.RF.Start:InvokeServer(5) end)
+                        end
+                        task.wait(1.6)
+                    end
+                    
+                    if LocalPlayer:GetAttribute("IsWaveActive") == true then
+                        -- Collect items
+                        collectWaveItems()
+                        
+                        local currentHeld = 0
+                        if PickupUtils then
+                            pcall(function() currentHeld = #PickupUtils.GetPickables(LocalPlayer) end)
+                        end
+                        local maxPickup = 1
+                        if Modifiers then
+                            pcall(function() maxPickup = Modifiers.Get(LocalPlayer, "MaxPickup") end)
+                        end
+                        
+                        local spawnedFolder = workspace:FindFirstChild("SpawnedItems")
+                        local remaining = spawnedFolder and #spawnedFolder:GetChildren() or 0
+                        
+                        -- If bag is full or no more items on seabed, deliver loot!
+                        if currentHeld >= maxPickup or remaining == 0 then
+                            finishAndDeliverWave()
+                            task.wait(1.0)
+                        else
+                            if config.AutoResetWave then
+                                pcall(function() WaveService.RF.ResetWaveToMax:InvokeServer() end)
+                            end
+                        end
+                    end
+                end)
+                waveFarmBusy = false
+            end
+        else
+            -- Granular Manual Toggles
+            if config.AutoStartWave and not LocalPlayer:GetAttribute("IsWaveActive") then
+                pcall(function()
+                    if WaveController then
+                        WaveController:Start(5)
+                    else
+                        WaveService.RF.Start:InvokeServer(5)
+                    end
+                end)
+            end
+            if config.AutoCollectWaveItems and LocalPlayer:GetAttribute("IsWaveActive") then
+                pcall(function() collectWaveItems() end)
+            end
+            if config.AutoFinishWave and LocalPlayer:GetAttribute("IsWaveActive") then
+                pcall(function() finishAndDeliverWave() end)
+            end
+            if config.AutoResetWave and LocalPlayer:GetAttribute("IsWaveActive") then
+                pcall(function() WaveService.RF.ResetWaveToMax:InvokeServer() end)
+            end
+        end
+
+        -- Animals & Offline Income
+        if config.AutoCollectOfflineCash then
+            pcall(function() AnimalService.RF.CollectOfflineCash:InvokeServer() end)
+        end
+        if config.AutoEquipBestAnimals then
+            pcall(function() AnimalService.RF.EquipBest:InvokeServer() end)
+        end
+        if config.AutoStealAnimals then
+            pcall(function()
+                for _, plot in ipairs(workspace.Plots:GetChildren()) do
+                    local inner = plot:FindFirstChild(plot.Name)
+                    local animals = inner and inner:FindFirstChild("Animals")
+                    if animals then
+                        for _, anim in ipairs(animals:GetChildren()) do
+                            local ownerId = anim:GetAttribute("OwnerId")
+                            local entityId = anim:GetAttribute("EntityId")
+                            if ownerId and ownerId ~= LocalPlayer.UserId and entityId then
+                                local ownerPlayer = Players:GetPlayerByUserId(ownerId)
+                                if ownerPlayer then
+                                    pcall(function() AnimalService.RF.Steal:InvokeServer(ownerPlayer, entityId) end)
+                                    task.wait(0.08)
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+
+-- 4. Auto Egg Hatching & Placement Worker
+task.spawn(function()
+    while true do
+        task.wait(1.5)
+        if config.AutoPlaceEggs then
+            pcall(function()
+                placeEggFromInventory(config.SelectedEgg)
+            end)
+        end
+        if config.AutoHatchPlotEggs then
+            pcall(function()
+                local myPlotId = nil
+                pcall(function() myPlotId = PlotService.RF.GetMyPlotId:InvokeServer() end)
+                if myPlotId then
+                    local plot = workspace.Plots:FindFirstChild(tostring(myPlotId))
+                    local inner = plot and (plot:FindFirstChild(tostring(myPlotId)) or plot)
+                    local eggsFolder = inner and inner:FindFirstChild("Eggs")
+                    if eggsFolder then
+                        for _, egg in ipairs(eggsFolder:GetChildren()) do
+                            local eggId = egg:GetAttribute("EggId")
+                            if eggId then
+                                local remaining = (egg:GetAttribute("StartTime") or 0) + (egg:GetAttribute("Duration") or 0) - workspace:GetServerTimeNow()
+                                if remaining <= 0 then
+                                    pcall(function() EggService.RF.HatchEgg:InvokeServer(eggId) end)
+                                elseif config.FastHatch then
+                                    pcall(function() EggService.RF.InitSkip:InvokeServer(eggId) end)
+                                end
+                            end
+                            task.wait(0.15)
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+
+-- 5. Auto Rewards & Free Items Worker
+task.spawn(function()
+    while true do
+        task.wait(3.0)
+        if config.AutoClaimGifts then
+            pcall(function()
+                for i = 1, 12 do
+                    pcall(function() PlaytimeRewardService.RF.ClaimGift:InvokeServer(i) end)
+                    task.wait(0.1)
+                end
+            end)
+        end
+        if config.AutoSpinWheel then
+            pcall(function() SpinWheelService.RF.SpinWheel:InvokeServer() end)
+        end
+        if config.AutoDailyReward then
+            pcall(function()
+                local pData = nil
+                if ReplicaController then pData = ReplicaController:GetPlayerData() end
+                local nextDay = ((pData and pData.DailyReward and pData.DailyReward.LastClaimedDay) or 0) + 1
+                if nextDay <= 7 then
+                    DailyRewardService.RF.ClaimReward:InvokeServer(nextDay)
+                end
+            end)
+        end
+        if config.AutoVIPDailyReward then
+            pcall(function() DailyRewardService.RF.ClaimVIPReward:InvokeServer() end)
+        end
+        if config.AutoFreeShop then
+            pcall(function() FreeShopService.RF.Claim:InvokeServer() end)
+        end
+        if config.AutoRebirth then
+            pcall(function()
+                if config.SkipRebirthAnim then
+                    pcall(function() RebirthService.RF.InitSkip:InvokeServer() end)
+                end
+                RebirthService.RF.Rebirth:InvokeServer()
+            end)
+        end
+        if config.AutoSpeedUpgrade then
+            pcall(function() UpgradesService.RF.Upgrade:InvokeServer("MovementSpeed") end)
+        end
+        if config.AutoCarryUpgrade then
+            pcall(function() UpgradesService.RF.Upgrade:InvokeServer("Carry") end)
+        end
+        if config.AutoSlotUpgrade then
+            pcall(function() UpgradesService.RF.Upgrade:InvokeServer("PlotUpgrade") end)
+        end
+    end
+end)
+
+-- 6. Movement, Speed & Noclip Listeners
+RunService.Stepped:Connect(function()
+    if config.Noclip and LocalPlayer.Character then
+        for _, part in ipairs(LocalPlayer.Character:GetDescendants()) do
+            if part:IsA("BasePart") and part.CanCollide then
+                part.CanCollide = false
+            end
+        end
+    end
+    if LocalPlayer.Character then
+        local hum = LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+        if hum then
+            if hum.WalkSpeed ~= config.WalkSpeed and config.WalkSpeed ~= 16 then
+                hum.WalkSpeed = config.WalkSpeed
+            end
+            if hum.JumpPower ~= config.JumpPower and config.JumpPower ~= 50 then
+                hum.JumpPower = config.JumpPower
+            end
+        end
+    end
+end)
+
+UIS.JumpRequest:Connect(function()
+    if config.InfiniteJump and LocalPlayer.Character then
+        local hum = LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+        if hum then
+            hum:ChangeState(Enum.HumanoidStateType.Jumping)
+        end
+    end
+end)
+
+-- 7. ESP Storage & Manager
+local espFolder = Instance.new("Folder")
+espFolder.Name = "ArcaHUB_ESP"
+espFolder.Parent = CoreGui
+
+local function clearESP()
+    for _, obj in ipairs(espFolder:GetChildren()) do
+        obj:Destroy()
+    end
+end
+
+task.spawn(function()
+    while true do
+        task.wait(2.0)
+        if not (config.PlayerESP or config.AnimalESP or config.EggESP) then
+            clearESP()
+        else
+            -- Player ESP
+            if config.PlayerESP then
+                for _, player in ipairs(Players:GetPlayers()) do
+                    if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                        local hrp = player.Character.HumanoidRootPart
+                        local bb = espFolder:FindFirstChild("PESP_" .. player.Name)
+                        if not bb then
+                            bb = Instance.new("BillboardGui")
+                            bb.Name = "PESP_" .. player.Name
+                            bb.AlwaysOnTop = true
+                            bb.Size = UDim2.new(0, 100, 0, 30)
+                            bb.Adornee = hrp
+                            bb.Parent = espFolder
+                            local lbl = Instance.new("TextLabel", bb)
+                            lbl.Size = UDim2.new(1, 0, 1, 0)
+                            lbl.BackgroundTransparency = 1
+                            lbl.TextColor3 = Color3.fromRGB(255, 100, 100)
+                            lbl.Text = player.DisplayName .. "\n[" .. math.floor((hrp.Position - LocalPlayer.Character.HumanoidRootPart.Position).Magnitude) .. "m]"
+                            lbl.Font = Enum.Font.GothamBold
+                            lbl.TextSize = 11
+                        else
+                            local lbl = bb:FindFirstChildOfClass("TextLabel")
+                            if lbl and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                                lbl.Text = player.DisplayName .. "\n[" .. math.floor((hrp.Position - LocalPlayer.Character.HumanoidRootPart.Position).Magnitude) .. "m]"
+                            end
+                        end
+                    end
+                end
+            end
+            
+            -- Egg ESP
+            if config.EggESP then
+                for _, plot in ipairs(workspace.Plots:GetChildren()) do
+                    local inner = plot:FindFirstChild(plot.Name)
+                    local eggsFolder = inner and inner:FindFirstChild("Eggs")
+                    if eggsFolder then
+                        for _, egg in ipairs(eggsFolder:GetChildren()) do
+                            local part = egg:IsA("BasePart") and egg or egg:FindFirstChildWhichIsA("BasePart", true)
+                            if part then
+                                local bb = espFolder:FindFirstChild("EESP_" .. egg:GetDebugId())
+                                if not bb then
+                                    bb = Instance.new("BillboardGui")
+                                    bb.Name = "EESP_" .. egg:GetDebugId()
+                                    bb.AlwaysOnTop = true
+                                    bb.Size = UDim2.new(0, 100, 0, 24)
+                                    bb.Adornee = part
+                                    bb.Parent = espFolder
+                                    local lbl = Instance.new("TextLabel", bb)
+                                    lbl.Size = UDim2.new(1, 0, 1, 0)
+                                    lbl.BackgroundTransparency = 1
+                                    lbl.TextColor3 = Color3.fromRGB(255, 215, 0)
+                                    lbl.Text = "🥚 " .. egg.Name
+                                    lbl.Font = Enum.Font.GothamBold
+                                    lbl.TextSize = 10
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+
+-- ==========================================
+-- CREATE TABS
+-- ==========================================
+local tabMain = addTab("Main", "rbxassetid://10709761813")       -- Aperture Core
+local tabEggs = addTab("Eggs", "rbxassetid://10747372992")       -- Box/Egg
+local tabTeleport = addTab("Teleport", "rbxassetid://10723415903") -- Map/Globe
+local tabRewards = addTab("Rewards", "rbxassetid://10709789810") -- Gift Box
+local tabPlayer = addTab("Player", "rbxassetid://10747373176")   -- User
+local tabProfile = addTab("Profile", "rbxassetid://10747373176") -- Identity Card
+local tabCustom = addTab("Customization", "rbxassetid://10747376349") -- Palette
+local tabSettings = addTab("Settings", "rbxassetid://10734950309") -- Cog
+
+-- ==========================================
+-- 1. MAIN TAB (Auto Train, Waves & Animals)
+-- ==========================================
+
+-- Left Column: Auto Training & Dumbbells
+local trainSec = createSection(tabMain.left, "Auto Training & Dumbbell", "rbxassetid://10709761813")
+createToggle(trainSec, "Auto Train (Power)", false, function(state)
+    config.AutoTrain = state
+    if not state and TrainingController then
+        pcall(function() TrainingController:StopTraining() end)
+    end
+end)
+
+createToggle(trainSec, "Auto Equip Best Dumbbell (Anti-Spam)", false, function(state)
+    config.AutoEquipBestDumbbell = state
+end)
+
+createToggle(trainSec, "Auto Buy Dumbbells", false, function(state)
+    config.AutoBuyDumbbells = state
+end)
+
+createToggle(trainSec, "Auto Claim Train Bonus", false, function(state)
+    config.AutoClaimTrainBonus = state
+end)
+
+local currentDumbbellLabel = createLabel(trainSec, "<b>Equipped Dumbbell</b>", "<font color=\"#FFAA00\">Loading...</font>")
+task.spawn(function()
+    while true do
+        task.wait(1.0)
+        pcall(function()
+            local pData = nil
+            if ReplicaController then pData = ReplicaController:GetPlayerData() end
+            local eq = pData and pData.EquippedTrainTool or "None"
+            local toolName = eq
+            for _, t in ipairs(DumbbellsList) do
+                if t.id == eq then
+                    toolName = t.name
+                    break
+                end
+            end
+            currentDumbbellLabel.Text = "<b>Equipped</b> - <font color=\"#FFAA00\">" .. toolName .. "</font>"
+        end)
+    end
+end)
+
+local dumbbellNames = {}
+for _, item in ipairs(DumbbellsList) do
+    table.insert(dumbbellNames, item.name)
+end
+
+createDropdown(trainSec, "Select Dumbbell", dumbbellNames, (DumbbellsList[1] and DumbbellsList[1].name or "Dumbbell"), function(selected, idx)
+    if DumbbellsList[idx] then
+        config.SelectedDumbbell = DumbbellsList[idx].id
+    end
+end)
+
+createButton(trainSec, "Equip Selected Dumbbell", function()
+    pcall(function()
+        TrainingService.RF.EquipTrainTool:InvokeServer(config.SelectedDumbbell)
+    end)
+end)
+
+createButton(trainSec, "Buy Selected Dumbbell", function()
+    pcall(function()
+        TrainingService.RF.BuyTrainTool:InvokeServer(config.SelectedDumbbell)
+    end)
+end)
+
+createButton(trainSec, "Train Once Now", function()
+    pcall(function()
+        if TrainingController then
+            TrainingController:StartTraining()
+            task.delay(0.5, function()
+                if not config.AutoTrain then TrainingController:StopTraining() end
+            end)
+        else
+            TrainingService.RF.StartTraining:InvokeServer()
+        end
+    end)
+end)
+
+-- Left Column: Rebirth & Progression Stats
+local rebirthSec = createSection(tabMain.left, "Rebirth & Progression", "rbxassetid://10747375132")
+createToggle(rebirthSec, "Auto Rebirth", false, function(state) config.AutoRebirth = state end)
+createToggle(rebirthSec, "Skip Rebirth Animation", true, function(state) config.SkipRebirthAnim = state end)
+
+local powerStatLabel = createLabel(rebirthSec, "<b>Power</b>", "<font color=\"#55FF55\">0</font>")
+local cashStatLabel = createLabel(rebirthSec, "<b>Cash</b>", "<font color=\"#FFAA00\">0</font>")
+local speedStatLabel = createLabel(rebirthSec, "<b>Speed</b>", "<font color=\"#55AAFF\">0</font>")
+
+task.spawn(function()
+    while true do
+        task.wait(1.0)
+        pcall(function()
+            local ls = LocalPlayer:FindFirstChild("leaderstats")
+            if ls then
+                if ls:FindFirstChild("Power") then
+                    powerStatLabel.Text = "<b>Power</b> - <font color=\"#55FF55\">" .. formatNumber(ls.Power.Value) .. "</font>"
+                end
+                if ls:FindFirstChild("Cash") then
+                    cashStatLabel.Text = "<b>Cash</b> - <font color=\"#FFAA00\">" .. formatNumber(ls.Cash.Value) .. "</font>"
+                end
+                if ls:FindFirstChild("Speed") then
+                    speedStatLabel.Text = "<b>Speed</b> - <font color=\"#55AAFF\">" .. formatNumber(ls.Speed.Value) .. "</font>"
+                end
+            end
+        end)
+    end
+end)
+
+createButton(rebirthSec, "Rebirth Once Now", function()
+    pcall(function()
+        if config.SkipRebirthAnim then RebirthService.RF.InitSkip:InvokeServer() end
+        RebirthService.RF.Rebirth:InvokeServer()
+    end)
+end)
+
+-- Right Column: Sea Wave Farm & Defense
+local waveSec = createSection(tabMain.right, "Sea Wave Farm & Looting", "rbxassetid://10734898592")
+createToggle(waveSec, "Auto Wave Farm (Full Loop)", false, function(state)
+    config.AutoWaveFarm = state
+end)
+createToggle(waveSec, "Auto Open Sea (Start Wave)", false, function(state)
+    config.AutoStartWave = state
+end)
+createToggle(waveSec, "Auto Collect Wave Items", false, function(state)
+    config.AutoCollectWaveItems = state
+end)
+createToggle(waveSec, "Auto Finish & Deliver Loot", false, function(state)
+    config.AutoFinishWave = state
+end)
+createToggle(waveSec, "Auto Extend Wave Timer", false, function(state)
+    config.AutoResetWave = state
+end)
+
+local waveStatusLabel = createLabel(waveSec, "<b>Wave Status</b>", "<font color=\"#AAAAAA\">Closed</font>")
+local waveItemsLabel = createLabel(waveSec, "<b>Seabed Items</b>", "<font color=\"#55AAFF\">0 items</font>")
+
+task.spawn(function()
+    while true do
+        task.wait(1.0)
+        pcall(function()
+            local isActive = LocalPlayer:GetAttribute("IsWaveActive") == true
+            waveStatusLabel.Text = "<b>Wave Status</b> - " .. (isActive and "<font color=\"#55FF55\">Active (Open)</font>" or "<font color=\"#AAAAAA\">Closed</font>")
+            local count = 0
+            if workspace:FindFirstChild("SpawnedItems") then
+                count = #workspace.SpawnedItems:GetChildren()
+            end
+            waveItemsLabel.Text = "<b>Seabed Items</b> - <font color=\"#55AAFF\">" .. count .. " items</font>"
+        end)
+    end
+end)
+
+createButton(waveSec, "Open Sea Now (Max 5s Time)", function()
+    pcall(function()
+        if WaveController then
+            WaveController:Start(5)
+        else
+            WaveService.RF.Start:InvokeServer(5)
+        end
+    end)
+end)
+
+createButton(waveSec, "Collect All Wave Items Now", function()
+    pcall(function()
+        collectWaveItems()
+    end)
+end)
+
+createButton(waveSec, "Finish & Deliver Loot Now", function()
+    pcall(function()
+        finishAndDeliverWave()
+    end)
+end)
+
+createButton(waveSec, "Reset Wave Timer to Max", function()
+    pcall(function()
+        WaveService.RF.ResetWaveToMax:InvokeServer()
+    end)
+end)
+
+-- Right Column: Animals & Offline Farm
+local animalSec = createSection(tabMain.right, "Animals & Offline Income", "rbxassetid://10747372992")
+createToggle(animalSec, "Auto Collect Offline Cash", false, function(state) config.AutoCollectOfflineCash = state end)
+createToggle(animalSec, "Auto Equip Best Animals", false, function(state) config.AutoEquipBestAnimals = state end)
+createToggle(animalSec, "Auto Steal Animals", false, function(state) config.AutoStealAnimals = state end)
+
+createButton(animalSec, "Collect Offline Cash Now", function()
+    pcall(function() AnimalService.RF.CollectOfflineCash:InvokeServer() end)
+end)
+
+createButton(animalSec, "Equip Best Animals Now", function()
+    pcall(function() AnimalService.RF.EquipBest:InvokeServer() end)
+end)
+
+-- ==========================================
+-- 2. EGGS TAB (Hatching & Plot Eggs)
+-- ==========================================
+local eggHatchSec = createSection(tabEggs.left, "Egg Placement & Hatching", "rbxassetid://10747372992")
+createToggle(eggHatchSec, "Auto Place Selected Egg", false, function(state) config.AutoPlaceEggs = state end)
+createToggle(eggHatchSec, "Auto Hatch Plot Eggs", false, function(state) config.AutoHatchPlotEggs = state end)
+createToggle(eggHatchSec, "Fast Hatch (Skip Timer)", true, function(state) config.FastHatch = state end)
+
+local eggNames = {}
+for _, item in ipairs(EggsList) do
+    table.insert(eggNames, item.name)
+end
+
+createDropdown(eggHatchSec, "Select Egg Type", eggNames, (EggsList[1] and EggsList[1].name or "Basic Egg"), function(selected, idx)
+    if EggsList[idx] then
+        config.SelectedEgg = EggsList[idx].id
+    end
+end)
+
+createButton(eggHatchSec, "Place Selected Egg to Plot", function()
+    pcall(function()
+        placeEggFromInventory(config.SelectedEgg)
+    end)
+end)
+
+createButton(eggHatchSec, "Hatch Ready Plot Eggs Now", function()
+    pcall(function()
+        local myPlotId = PlotService.RF.GetMyPlotId:InvokeServer()
+        if myPlotId then
+            local plot = workspace.Plots:FindFirstChild(tostring(myPlotId))
+            local inner = plot and plot:FindFirstChild(tostring(myPlotId))
+            local eggsFolder = inner and inner:FindFirstChild("Eggs")
+            if eggsFolder then
+                for _, egg in ipairs(eggsFolder:GetChildren()) do
+                    local eggId = egg:GetAttribute("EggId")
+                    if eggId then
+                        local remaining = (egg:GetAttribute("StartTime") or 0) + (egg:GetAttribute("Duration") or 0) - workspace:GetServerTimeNow()
+                        if remaining <= 0 then
+                            EggService.RF.HatchEgg:InvokeServer(eggId)
+                        elseif config.FastHatch then
+                            EggService.RF.InitSkip:InvokeServer(eggId)
+                        end
+                    end
+                end
+            end
+        end
+    end)
+end)
+
+local plotEggSec = createSection(tabEggs.right, "Plot Egg Automation", "rbxassetid://10709789810")
+local plotEggCountLabel = createLabel(plotEggSec, "<b>Plot Eggs Placed</b>", "<font color=\"#55FF55\">0</font>")
+task.spawn(function()
+    while true do
+        task.wait(1.5)
+        pcall(function()
+            local myPlotId = PlotService.RF.GetMyPlotId:InvokeServer()
+            if myPlotId then
+                local plot = workspace.Plots:FindFirstChild(tostring(myPlotId))
+                local inner = plot and plot:FindFirstChild(tostring(myPlotId))
+                local eggsFolder = inner and inner:FindFirstChild("Eggs")
+                local count = eggsFolder and #eggsFolder:GetChildren() or 0
+                plotEggCountLabel.Text = "<b>Plot Eggs Placed</b> - <font color=\"#55FF55\">" .. tostring(count) .. "</font>"
+            end
+        end)
+    end
+end)
+
+createButton(plotEggSec, "Teleport to My Eggs", function()
+    pcall(function()
+        local myPlotId = PlotService.RF.GetMyPlotId:InvokeServer()
+        if myPlotId and Coords.Plots["Plot " .. myPlotId] then
+            teleportPlayer(Coords.Plots["Plot " .. myPlotId])
+        end
+    end)
+end)
+
+-- ==========================================
+-- 3. TELEPORT TAB (Plots, Sea Areas & Bosses)
+-- ==========================================
+local plotTpSec = createSection(tabTeleport.left, "Plot Teleportation", "rbxassetid://10723415903")
+createButton(plotTpSec, "Teleport to My Plot (Instant)", function()
+    pcall(function() PlotService.RF.TeleportToPlot:InvokeServer() end)
+end)
+
+for i = 1, 5 do
+    local pName = "Plot " .. i
+    createButton(plotTpSec, "Teleport to " .. pName, function()
+        teleportPlayer(Coords.Plots[pName])
+    end)
+end
+
+local seaAreaSec = createSection(tabTeleport.left, "Sea Exploration Areas", "rbxassetid://10734898592")
+createButton(seaAreaSec, "Teleport to Spawn Location", function() teleportPlayer(Coords.Areas["Spawn Location"]) end)
+createButton(seaAreaSec, "Teleport to Sea Edge (Wave Station)", function() teleportPlayer(Coords.Areas["Sea Edge"]) end)
+createButton(seaAreaSec, "Teleport to Common Sea", function() teleportPlayer(Coords.Areas.Common) end)
+createButton(seaAreaSec, "Teleport to Uncommon Sea", function() teleportPlayer(Coords.Areas.Uncommon) end)
+createButton(seaAreaSec, "Teleport to Rare Sea", function() teleportPlayer(Coords.Areas.Rare) end)
+createButton(seaAreaSec, "Teleport to Epic Sea", function() teleportPlayer(Coords.Areas.Epic) end)
+createButton(seaAreaSec, "Teleport to Floor 1 Sea", function() teleportPlayer(Coords.Areas.Floor1) end)
+
+local bossPortalSec = createSection(tabTeleport.right, "Boss & Event Portals", "rbxassetid://10734896881")
+createButton(bossPortalSec, "Teleport to Boss 1 Portal", function() teleportPlayer(Coords.Portals["Boss 1"]) end)
+createButton(bossPortalSec, "Teleport to Boss 2 Portal", function() teleportPlayer(Coords.Portals["Boss 2"]) end)
+createButton(bossPortalSec, "Teleport to Boss 3 Portal", function() teleportPlayer(Coords.Portals["Boss 3"]) end)
+createButton(bossPortalSec, "Teleport to Boss 4 Portal", function() teleportPlayer(Coords.Portals["Boss 4"]) end)
+createButton(bossPortalSec, "Teleport to Boss 5 Portal", function() teleportPlayer(Coords.Portals["Boss 5"]) end)
+createButton(bossPortalSec, "Teleport to Zeus Portal", function() teleportPlayer(Coords.Portals["Zeus Portal"]) end)
+createButton(bossPortalSec, "Teleport to Devil Portal", function() teleportPlayer(Coords.Portals["Devil Portal"]) end)
+
+-- ==========================================
+-- 4. REWARDS & UPGRADES TAB
+-- ==========================================
+local rewardSec = createSection(tabRewards.left, "Free Claimable Rewards", "rbxassetid://10709789810")
+createToggle(rewardSec, "Auto Claim Playtime Gifts (1-12)", false, function(state) config.AutoClaimGifts = state end)
+createToggle(rewardSec, "Auto Spin Lucky Wheel", false, function(state) config.AutoSpinWheel = state end)
+createToggle(rewardSec, "Auto Claim Daily Reward", false, function(state) config.AutoDailyReward = state end)
+createToggle(rewardSec, "Auto Claim VIP Daily Reward", false, function(state) config.AutoVIPDailyReward = state end)
+createToggle(rewardSec, "Auto Claim Free Shop Item", false, function(state) config.AutoFreeShop = state end)
+
+createButton(rewardSec, "Claim All 12 Playtime Gifts", function()
+    pcall(function()
+        for i = 1, 12 do
+            PlaytimeRewardService.RF.ClaimGift:InvokeServer(i)
+            task.wait(0.08)
+        end
+    end)
+end)
+
+createButton(rewardSec, "Spin Lucky Wheel Now", function()
+    pcall(function() SpinWheelService.RF.SpinWheel:InvokeServer() end)
+end)
+
+createButton(rewardSec, "Claim Daily Reward Now", function()
+    pcall(function()
+        local pData = ReplicaController and ReplicaController:GetPlayerData()
+        local nextDay = ((pData and pData.DailyReward and pData.DailyReward.LastClaimedDay) or 0) + 1
+        if nextDay <= 7 then
+            DailyRewardService.RF.ClaimReward:InvokeServer(nextDay)
+        end
+    end)
+end)
+
+local upgradeSec = createSection(tabRewards.right, "Stat & Slot Upgrades", "rbxassetid://10723425376")
+createToggle(upgradeSec, "Auto Upgrade Speed (Cash)", false, function(state) config.AutoSpeedUpgrade = state end)
+createToggle(upgradeSec, "Auto Upgrade Carry (Cash)", false, function(state) config.AutoCarryUpgrade = state end)
+createToggle(upgradeSec, "Auto Upgrade Base Slots (Cash)", false, function(state) config.AutoSlotUpgrade = state end)
+
+createButton(upgradeSec, "Upgrade Speed Once (Cash)", function()
+    pcall(function() UpgradesService.RF.Upgrade:InvokeServer("MovementSpeed") end)
+end)
+
+createButton(upgradeSec, "Upgrade Carry Once (Cash)", function()
+    pcall(function() UpgradesService.RF.Upgrade:InvokeServer("Carry") end)
+end)
+
+createButton(upgradeSec, "Upgrade Base Slots Once (Cash)", function()
+    pcall(function() UpgradesService.RF.Upgrade:InvokeServer("PlotUpgrade") end)
+end)
+
+createButton(upgradeSec, "Prompt Speed Tier (Robux)", function()
+    pcall(function() UpgradesService.RF.PromptSpeedTier:InvokeServer() end)
+end)
+
+createButton(upgradeSec, "Prompt Animal Slot Tier (Robux)", function()
+    pcall(function() UpgradesService.RF.PromptAnimalSlotTier:InvokeServer() end)
+end)
+
+-- ==========================================
+-- 5. PLAYER TAB (Movement & Visuals)
+-- ==========================================
+local moveSec = createSection(tabPlayer.left, "Movement Enhancements", "rbxassetid://10747373176")
+createSlider(moveSec, "WalkSpeed", 16, 250, 16, function(val)
+    config.WalkSpeed = val
+    pcall(function()
+        if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+            LocalPlayer.Character.Humanoid.WalkSpeed = val
+        end
+    end)
+end)
+
+createSlider(moveSec, "JumpPower", 50, 300, 50, function(val)
+    config.JumpPower = val
+    pcall(function()
+        if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+            LocalPlayer.Character.Humanoid.JumpPower = val
+        end
+    end)
+end)
+
+createToggle(moveSec, "Infinite Jump", false, function(state) config.InfiniteJump = state end)
+createToggle(moveSec, "Noclip (Walk Through Walls)", false, function(state) config.Noclip = state end)
+
+local visualSec = createSection(tabPlayer.right, "Visuals & ESP", "rbxassetid://10723415903")
+createToggle(visualSec, "Player ESP", false, function(state)
+    config.PlayerESP = state
+    if not state then clearESP() end
+end)
+
+createToggle(visualSec, "Egg ESP", false, function(state)
+    config.EggESP = state
+    if not state then clearESP() end
+end)
+
+createButton(visualSec, "Rejoin Same Server", function()
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer)
+end)
+
+createButton(visualSec, "Server Hop (Different Server)", function()
+    pcall(function()
+        local serversApi = "https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100"
+        local res = game:HttpGet(serversApi)
+        local data = HttpService:JSONDecode(res)
+        if data and data.data then
+            for _, s in ipairs(data.data) do
+                if s.playing and s.playing < s.maxPlayers and s.id ~= game.JobId then
+                    TeleportService:TeleportToPlaceInstance(game.PlaceId, s.id, LocalPlayer)
+                    break
+                end
+            end
+        end
+    end)
+end)
+
+-- ==========================================
+-- 6. PROFILE TAB
+-- ==========================================
+local discordSec = createSection(tabProfile.left, "Community", "rbxassetid://10734888228")
+createButton(discordSec, "Join Discord (ArcaHUB)", function()
+    setclipboard("https://discord.gg/ZEcqg4HVY5")
+end)
+
+local accountSec = createSection(tabProfile.left, "Account Status", "rbxassetid://10747373176")
+createLabel(accountSec, "<b>User</b> - <font color=\"#55FF55\">" .. LocalPlayer.Name .. "</font>")
+createLabel(accountSec, "<b>Status</b> - <font color=\"#55FF55\">ArcaHUB VIP</font>")
+createLabel(accountSec, "<b>Executor</b> - <font color=\"#55FF55\">" .. (identifyexecutor and identifyexecutor() or "Unknown") .. "</font>")
+
+local gameInfoSec = createSection(tabProfile.left, "Game Session", "rbxassetid://10723415903")
+createLabel(gameInfoSec, "<b>Game</b> - <font color=\"#55AAFF\">Open Sea For Animals!</font>")
+createLabel(gameInfoSec, "<b>Place ID</b> - <font color=\"#55AAFF\">" .. game.PlaceId .. "</font>")
+
+local sessionStart = tick()
+local sessionLabel = createLabel(gameInfoSec, "<b>Session time</b> - <font color=\"#FFAA00\">0m 0s</font>")
+task.spawn(function()
+    while true do
+        task.wait(1)
+        local diff = tick() - sessionStart
+        local m = math.floor(diff / 60)
+        local s = math.floor(diff % 60)
+        sessionLabel.Text = "<b>Session time</b> - <font color=\"#FFAA00\">" .. m .. "m " .. s .. "s</font>"
+    end
+end)
+
+local shortJobId = game.JobId ~= "" and (string.sub(game.JobId, 1, 15) .. "...") or "Local Server"
+createLabel(gameInfoSec, "<b>Server</b> - <font color=\"#AAAAAA\">" .. shortJobId .. "</font>")
+createButton(gameInfoSec, "Copy Job ID Teleport Script", function()
+    if game.JobId ~= "" then
+        setclipboard('game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..', "'..game.JobId..'", game.Players.LocalPlayer)')
+    end
+end)
+
+local scriptSec = createSection(tabProfile.right, "Script Details", "rbxassetid://10734943448")
+createLabel(scriptSec, "<b>Script Name</b> - <font color=\"#55AAFF\">ArcaHUB</font>")
+createLabel(scriptSec, "<b>Version</b> - <font color=\"#55FF55\">1.0.0 Modern</font>")
+createLabel(scriptSec, "<b>Framework</b> - <font color=\"#FFAA00\">Knit 1.7.0</font>")
+
+local socialSec = createSection(tabProfile.right, "Creator Links", "rbxassetid://10723404337")
+createButton(socialSec, "Discord", function() setclipboard("https://discord.gg/ZEcqg4HVY5") end)
+createButton(socialSec, "Rscript", function() setclipboard("https://rscripts.net/@ArcaLaurient") end)
+createButton(socialSec, "Scriptverse", function() setclipboard("https://scriptverse.net/u/arcalaurient") end)
+
+-- ==========================================
+-- 7. CUSTOMIZATION TAB
+-- ==========================================
+local function isColorClose(c1, c2)
+    return math.abs(c1.R - c2.R) < 0.01 and math.abs(c1.G - c2.G) < 0.01 and math.abs(c1.B - c2.B) < 0.01
+end
+
+local function applyThemeUpdate(key, newColor)
+    local oldColor = theme[key]
+    theme[key] = newColor
+    for _, obj in ipairs(screen:GetDescendants()) do
+        if obj:IsA("TextLabel") or obj:IsA("TextBox") or obj:IsA("TextButton") then
+            if isColorClose(obj.TextColor3, oldColor) then obj.TextColor3 = newColor end
+        end
+        if obj:IsA("Frame") or obj:IsA("ScrollingFrame") or obj:IsA("TextButton") or obj:IsA("ImageButton") then
+            if isColorClose(obj.BackgroundColor3, oldColor) then obj.BackgroundColor3 = newColor end
+        end
+        if obj:IsA("ImageLabel") or obj:IsA("ImageButton") then
+            if isColorClose(obj.ImageColor3, oldColor) then obj.ImageColor3 = newColor end
+        end
+        if obj:IsA("UIStroke") then
+            if isColorClose(obj.Color, oldColor) then obj.Color = newColor end
+        end
+    end
+end
+
+local themesSec = createSection(tabCustom.left, "Color Customization", "rbxassetid://10734910430")
+createColorPicker(themesSec, "Background Color", theme.Background, function(color) applyThemeUpdate("Background", color) end)
+createColorPicker(themesSec, "Accent Color", theme.Accent, function(color) applyThemeUpdate("Accent", color) end)
+createColorPicker(themesSec, "Outline Color", theme.Border, function(color) applyThemeUpdate("Border", color) end)
+createColorPicker(themesSec, "Font Color", theme.Text, function(color) applyThemeUpdate("Text", color) end)
+
+createButton(themesSec, "Cycle Background Image", function()
+    bgIdx = (bgIdx % #bgImages) + 1
+    bgImageLabel.Image = bgImages[bgIdx]
+end)
+
+local themeListSec = createSection(tabCustom.right, "Preset Themes", "rbxassetid://10723433811")
+local presets = {
+    ["Default"] = {Background = Color3.fromRGB(12, 12, 12), Accent = Color3.fromRGB(255, 85, 0), Border = Color3.fromRGB(35, 35, 35), Text = Color3.fromRGB(245, 245, 245), Element = Color3.fromRGB(24, 24, 24), Sidebar = Color3.fromRGB(16, 16, 16)},
+    ["Ouroboros"] = {Background = Color3.fromRGB(5, 5, 5), Accent = Color3.fromRGB(255, 100, 0), Border = Color3.fromRGB(50, 20, 0), Text = Color3.fromRGB(255, 220, 200), Element = Color3.fromRGB(15, 15, 15), Sidebar = Color3.fromRGB(8, 8, 8)},
+    ["Light"] = {Background = Color3.fromRGB(240, 240, 240), Accent = Color3.fromRGB(0, 120, 255), Border = Color3.fromRGB(200, 200, 200), Text = Color3.fromRGB(20, 20, 20), Element = Color3.fromRGB(220, 220, 220), Sidebar = Color3.fromRGB(230, 230, 230)},
+    ["Matrix"] = {Background = Color3.fromRGB(0, 10, 0), Accent = Color3.fromRGB(0, 255, 0), Border = Color3.fromRGB(0, 50, 0), Text = Color3.fromRGB(0, 200, 0), Element = Color3.fromRGB(0, 20, 0), Sidebar = Color3.fromRGB(0, 15, 0)},
+    ["Blood"] = {Background = Color3.fromRGB(15, 0, 0), Accent = Color3.fromRGB(255, 0, 0), Border = Color3.fromRGB(50, 0, 0), Text = Color3.fromRGB(255, 150, 150), Element = Color3.fromRGB(25, 0, 0), Sidebar = Color3.fromRGB(20, 0, 0)},
+    ["Midnight"] = {Background = Color3.fromRGB(0, 0, 15), Accent = Color3.fromRGB(0, 100, 255), Border = Color3.fromRGB(0, 0, 50), Text = Color3.fromRGB(150, 150, 255), Element = Color3.fromRGB(0, 0, 25), Sidebar = Color3.fromRGB(0, 0, 20)}
+}
+createDropdown(themeListSec, "Select Preset Theme", {"Default", "Ouroboros", "Light", "Matrix", "Blood", "Midnight"}, "Default", function(val)
+    local p = presets[val]
+    if p then
+        applyThemeUpdate("Background", p.Background)
+        applyThemeUpdate("Sidebar", p.Sidebar)
+        applyThemeUpdate("Element", p.Element)
+        applyThemeUpdate("Border", p.Border)
+        applyThemeUpdate("Accent", p.Accent)
+        applyThemeUpdate("Text", p.Text)
+    end
+end)
+
+local extraSec = createSection(tabCustom.right, "Display Scaling", "rbxassetid://10723425376")
+createSlider(extraSec, "UI Scale (%)", 50, 150, 100, function(val)
+    if uiScaleObj then uiScaleObj.Scale = val / 100 end
+end)
+
+local blurEffect = nil
+createToggle(extraSec, "Background Blur", false, function(state)
+    if state then
+        if not blurEffect then
+            blurEffect = Instance.new("BlurEffect")
+            blurEffect.Size = 15
+            blurEffect.Parent = Lighting
+        end
+        blurEffect.Enabled = true
+    else
+        if blurEffect then blurEffect.Enabled = false end
+    end
+end)
+
+createSlider(extraSec, "Corner Radius", 0, 24, 6, function(val)
+    theme.Radius = UDim.new(0, val)
+    for _, obj in ipairs(screen:GetDescendants()) do
+        if obj:IsA("UICorner") and obj.Parent ~= minimizeBtn then
+            obj.CornerRadius = theme.Radius
+        end
+    end
+end)
+
+-- ==========================================
+-- 8. SETTINGS TAB
+-- ==========================================
+local menuSec = createSection(tabSettings.left, "Menu Controls", "rbxassetid://10734950309")
+local currentMinimizeBind = Enum.KeyCode.RightControl
+local isMinimized = false
+
+local minimizeBtn = Instance.new("ImageButton")
+minimizeBtn.Size = UDim2.new(0, 40, 0, 40)
+minimizeBtn.Position = UDim2.new(0.5, -20, 0, 20)
+minimizeBtn.BackgroundColor3 = theme.Background
+minimizeBtn.Image = "rbxassetid://10709761813"
+minimizeBtn.ImageColor3 = theme.Accent
+minimizeBtn.Visible = true
+minimizeBtn.Active = true
+minimizeBtn.Draggable = true
+minimizeBtn.Parent = screen
+Instance.new("UICorner", minimizeBtn).CornerRadius = UDim.new(0, 8)
+local minimizeStroke = Instance.new("UIStroke")
+minimizeStroke.Color = theme.Border
+minimizeStroke.Parent = minimizeBtn
+
+minimizeBtn.MouseButton1Click:Connect(function()
+    isMinimized = not isMinimized
+    MainFrame.Visible = not isMinimized
+end)
+
+UIS.InputBegan:Connect(function(input, processed)
+    if not processed and input.KeyCode == currentMinimizeBind then
+        isMinimized = not isMinimized
+        MainFrame.Visible = not isMinimized
+    end
+end)
+
+createKeybind(menuSec, "Minimize Keybind", Enum.KeyCode.RightControl, function(key)
+    currentMinimizeBind = key
+end)
+
+local nextJump = 0
+createToggle(menuSec, "Anti AFK", true, function(state)
+    config.AntiAFK = state
+    if state then nextJump = tick() + math.random(300, 600) end
+end)
+
+-- Anti AFK Handlers
+LocalPlayer.Idled:Connect(function()
+    if config.AntiAFK then
+        VirtualUser:CaptureController()
+        VirtualUser:ClickButton2(Vector2.new())
+    end
+end)
+
+RunService.Heartbeat:Connect(function()
+    if config.AntiAFK and tick() >= nextJump then
+        nextJump = tick() + math.random(300, 600)
+        pcall(function()
+            local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid")
+            if hum then hum.Jump = true end
+        end)
+    end
+end)
+
+local fpsSec = createSection(tabSettings.left, "Graphics & FPS Boost", "rbxassetid://10734896881")
+createToggle(fpsSec, "Performance Mode", false, function(state)
+    if state then
+        Lighting.GlobalShadows = false
+        Lighting.FogEnd = 9e9
+        for _, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.Material = Enum.Material.SmoothPlastic
+            end
+        end
+    else
+        Lighting.GlobalShadows = true
+    end
+end)
+
+createToggle(fpsSec, "Better FPS (Low Quality)", false, function(state)
+    if state then
+        for _, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.CastShadow = false
+                v.Material = Enum.Material.SmoothPlastic
+            elseif v:IsA("Decal") or v:IsA("Texture") or v:IsA("ParticleEmitter") or v:IsA("Trail") then
+                pcall(function() v.Enabled = false end)
+                pcall(function() v.Transparency = 1 end)
+            end
+        end
+    end
+end)
+
+-- Select Default First Tab
+local activeTab = tabMain
+local activeBgColor = Color3.new(theme.Accent.R * 0.2, theme.Accent.G * 0.2, theme.Accent.B * 0.2)
+activeTab.btn.BackgroundColor3 = activeBgColor
+activeTab.btn.BackgroundTransparency = 0
+activeTab.icon.ImageColor3 = theme.Accent
+activeTab.highlight.Size = UDim2.new(0, 3, 0, 22)
+activeTab.frame.Visible = true
+HeaderTitle.Text = "ArcaHUB - Main"
+currentTab = "Main"
